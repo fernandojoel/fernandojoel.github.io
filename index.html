@@ -879,6 +879,10 @@ nav.site a{white-space:nowrap}
     document.getElementById("explore").scrollIntoView({behavior:reduce?"auto":"smooth"});
   })});
   clearBtn.addEventListener("click",function(){state={emp:"all",type:"all"}; apply()});
+  [].forEach.call(document.querySelectorAll('a[href^="#"]'),function(a){a.addEventListener("click",function(ev){
+    var id=a.getAttribute("href").slice(1), t=id&&document.getElementById(id);
+    if(t&&t.hidden){ ev.preventDefault(); state={emp:"all",type:"all"}; apply(); t.scrollIntoView({behavior:reduce?"auto":"smooth"}); history.replaceState(null,"","#"+id); }
+  })});
   apply();
 
   var btn=document.getElementById("themeBtn");
