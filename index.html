@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fernando Jorge — Content Strategist and Technical Writer</title>
+<meta name="description" content="Portfolio of Fernando Jorge: cybersecurity research, thought leadership, product marketing and technical documentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7F5; --surface:#FFFFFF; --ink:#13233A; --muted:#556275; --rule:#D8DDE2;
+  --accent:#0F6A69; --accent-soft:#E2EFEE; --node:#B97A1F;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1722; --surface:#152132; --ink:#E6EBF1; --muted:#9AA7B8; --rule:#2A384B;
+    --accent:#5DB8B3; --accent-soft:#1A3236; --node:#E2A64E; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1722; --surface:#152132; --ink:#E6EBF1; --muted:#9AA7B8; --rule:#2A384B;
+  --accent:#5DB8B3; --accent-soft:#1A3236; --node:#E2A64E; color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--serif); font-size:1.125rem; line-height:1.6; -webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--accent); text-underline-offset:.18em; text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+.wrap{max-width:68rem; margin:0 auto; padding:0 1.5rem}
+
+/* Header */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--bg)}
+header.site{position:sticky; top:env(safe-area-inset-top,0px); z-index:9; background:var(--bg); border-bottom:1px solid var(--rule)}
+header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:3.75rem}
+.brand{font-family:var(--sans); font-weight:600; font-size:1rem; color:var(--ink); text-decoration:none}
+nav.site ul{display:flex; gap:1.4rem; list-style:none; margin:0; padding:0; font-family:var(--sans); font-size:.95rem}
+nav.site a{color:var(--muted); text-decoration:none}
+nav.site a:hover{color:var(--ink)}
+@media (max-width:640px){ nav.site ul{gap:.9rem; font-size:.875rem} .brand{display:none} header.site .wrap{justify-content:center} }
+
+/* Hero */
+.hero{padding:5rem 0 3.5rem}
+.hero h1{font-weight:500; font-size:clamp(2.75rem,7vw,5.25rem); line-height:1.02; letter-spacing:-.02em; margin:0 0 1.25rem}
+.hero .lede{font-size:clamp(1.2rem,2.2vw,1.45rem); max-width:38rem; color:var(--ink); margin:0}
+.hero .lede-2{max-width:38rem; color:var(--muted); margin:1rem 0 0}
+
+/* Career trace: the signature element */
+.trace{margin:3.5rem 0 0; position:relative}
+.trace-caption{font-family:var(--sans); font-size:.9rem; color:var(--muted); margin:0 0 1.25rem}
+.trace ol{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(6,1fr); position:relative}
+.trace ol::before{content:""; position:absolute; left:calc(100%/12); right:calc(100%/12); top:.55rem; height:2px;
+  background:linear-gradient(90deg, var(--muted) 0%, var(--muted) 30%, var(--accent) 50%, var(--accent) 100%); opacity:.9}
+.trace li{position:relative; text-align:center; padding:0 .35rem}
+.trace .dot{display:block; width:1.1rem; height:1.1rem; margin:0 auto .8rem; border-radius:50%; background:var(--bg); border:2px solid var(--muted); position:relative; z-index:1}
+.trace li.sec .dot{border-color:var(--accent)}
+.trace li.now .dot{background:var(--node); border-color:var(--node)}
+.trace .co{display:block; font-family:var(--sans); font-weight:600; font-size:.95rem}
+.trace .yr{display:block; font-family:var(--sans); font-size:.85rem; color:var(--muted)}
+.trace .what{display:block; font-size:.95rem; color:var(--muted); line-height:1.35; margin-top:.35rem}
+.trace-legend{display:flex; gap:1.5rem; flex-wrap:wrap; font-family:var(--sans); font-size:.85rem; color:var(--muted); margin-top:1.5rem}
+.trace-legend span::before{content:""; display:inline-block; width:1.25rem; height:2px; vertical-align:middle; margin-right:.45rem; background:var(--muted)}
+.trace-legend span.s::before{background:var(--accent)}
+@media (max-width:760px){
+  .trace ol{grid-template-columns:1fr; gap:1.4rem; padding-left:2rem}
+  .trace ol::before{left:.5rem; right:auto; top:.5rem; bottom:.5rem; width:2px; height:auto;
+    background:linear-gradient(180deg, var(--muted) 0%, var(--muted) 30%, var(--accent) 50%, var(--accent) 100%)}
+  .trace li{text-align:left; padding:0}
+  .trace .dot{position:absolute; left:-2rem; top:.15rem; margin:0}
+}
+
+/* Sections */
+section.block{padding:4.5rem 0; border-top:1px solid var(--rule)}
+section.block h2{font-weight:500; font-size:clamp(2rem,4vw,2.75rem); line-height:1.1; letter-spacing:-.01em; margin:0 0 .75rem}
+section.block .intro{max-width:40rem; color:var(--muted); margin:0 0 2.5rem}
+
+/* What I write */
+.kinds{display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin:0; padding:0; list-style:none}
+.kinds h3{font-family:var(--sans); font-size:1rem; font-weight:600; margin:0 0 .4rem}
+.kinds p{margin:0; font-size:1rem; color:var(--muted); line-height:1.5}
+@media (max-width:860px){.kinds{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.kinds{grid-template-columns:1fr}}
+
+/* Featured work */
+.featured{list-style:none; margin:0; padding:0}
+.featured > li{display:grid; grid-template-columns:13rem 1fr; gap:2rem; padding:1.75rem 0; border-top:1px solid var(--rule)}
+.featured > li:last-child{border-bottom:1px solid var(--rule)}
+.meta{font-family:var(--sans); font-size:.9rem; color:var(--muted); line-height:1.5}
+.meta strong{display:block; color:var(--ink); font-weight:600}
+.featured h3{font-weight:500; font-size:1.55rem; line-height:1.2; margin:0 0 .5rem}
+.featured .sum{margin:0 0 .9rem; max-width:40rem}
+details{max-width:40rem}
+summary{cursor:pointer; font-family:var(--sans); font-size:.95rem; font-weight:500; color:var(--accent); list-style:none; display:inline-flex; align-items:center; gap:.5rem}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+"; display:inline-grid; place-items:center; width:1.25rem; height:1.25rem; border:1px solid var(--accent); border-radius:50%; font-size:.9rem; line-height:1}
+details[open] summary::before{content:"\2212"}
+details[open] summary{margin-bottom:1rem}
+.cs h4{font-family:var(--sans); font-size:.95rem; font-weight:600; margin:1.1rem 0 .35rem}
+.cs p{margin:0}
+.cs ul{margin:0; padding-left:1.15rem}
+.cs li{margin:.35rem 0}
+.pdf{display:inline-block; margin-top:1.1rem; font-family:var(--sans); font-size:.95rem; font-weight:500}
+@media (max-width:760px){ .featured > li{grid-template-columns:1fr; gap:.6rem} }
+
+/* More work */
+.employer{margin:0 0 3rem}
+.employer h3{font-weight:500; font-size:1.5rem; margin:0 0 .25rem}
+.employer > p{margin:0 0 1rem; color:var(--muted); max-width:40rem}
+.pieces{list-style:none; margin:0; padding:0}
+.pieces li{display:grid; grid-template-columns:1fr 9.5rem 4.5rem; gap:1.25rem; align-items:baseline; padding:.85rem 0; border-top:1px solid var(--rule)}
+.pieces li:last-child{border-bottom:1px solid var(--rule)}
+.pieces .t a{font-size:1.1rem}
+.pieces .t span{display:block; font-size:.95rem; color:var(--muted); line-height:1.45}
+.pieces .k, .pieces .y{font-family:var(--sans); font-size:.875rem; color:var(--muted)}
+.pieces .y{text-align:right}
+@media (max-width:640px){ .pieces li{grid-template-columns:1fr auto; } .pieces .k{grid-column:1} .pieces .y{grid-row:2; grid-column:2} }
+
+/* Engineering */
+.eng{display:grid; grid-template-columns:repeat(2,1fr); gap:2rem 3rem; list-style:none; margin:0; padding:0}
+.eng h3{font-family:var(--sans); font-size:1rem; font-weight:600; margin:0 0 .4rem}
+.eng p{margin:0; font-size:1.02rem; color:var(--muted)}
+@media (max-width:700px){.eng{grid-template-columns:1fr}}
+
+/* Contact */
+.contact p{max-width:38rem}
+.contact .mail{font-size:clamp(1.4rem,3.5vw,2rem); font-weight:500}
+footer{padding:2rem 0 3rem; border-top:1px solid var(--rule); font-family:var(--sans); font-size:.85rem; color:var(--muted)}
+footer p{margin:0; max-width:46rem}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Fernando Jorge</a>
+    <nav class="site" aria-label="Sections">
+      <ul>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#work">More work</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Fernando Jorge</h1>
+      <p class="lede">Cybersecurity content strategist and technical writer. I turn complex systems into content people can use.</p>
+      <p class="lede-2">I started as an engineer, writing provisioning guides and test plans for voice networks. I’ve spent the years since bringing that same precision to cybersecurity research, thought leadership, product marketing and documentation.</p>
+
+      <div class="trace">
+        <p class="trace-caption">Fifteen years, six companies, one through-line: make the complicated clear.</p>
+        <ol>
+          <li><span class="dot"></span><span class="co">AT&amp;T</span><span class="yr">2011–2013</span><span class="what">Provisioning guides and engineering memos</span></li>
+          <li><span class="dot"></span><span class="co">Edgewater</span><span class="yr">2013–2014</span><span class="what">Manuals, knowledge base articles, test plans</span></li>
+          <li class="sec"><span class="dot"></span><span class="co">Forcepoint</span><span class="yr">2018–2019</span><span class="what">Ebooks, whitepapers, solution briefs</span></li>
+          <li class="sec"><span class="dot"></span><span class="co">Devo</span><span class="yr">2021–2022</span><span class="what">Launch content, case studies, partner briefs</span></li>
+          <li class="sec"><span class="dot"></span><span class="co">Splunk</span><span class="yr">2023–2024</span><span class="what">Guides, product briefs, admin documentation</span></li>
+          <li class="sec now"><span class="dot"></span><span class="co">Cyberhaven</span><span class="yr">2026</span><span class="what">Research, executive playbooks, datasheets, docs</span></li>
+        </ol>
+        <div class="trace-legend"><span>Telecom engineering documentation</span><span class="s">Cybersecurity content</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="kinds-h">
+    <div class="wrap">
+      <h2 id="kinds-h">What I write</h2>
+      <p class="intro">Whatever the format, my approach is the same: lead with the reader’s real problem, give them a structure they can act on, and back every claim with evidence.</p>
+      <ul class="kinds">
+        <li><h3>Research and thought leadership</h3><p>Data reports, ebooks, whitepapers and executive playbooks.</p></li>
+        <li><h3>Product marketing</h3><p>Solution briefs, datasheets, feature briefs and infographics.</p></li>
+        <li><h3>Customer and partner stories</h3><p>Case studies and joint solution briefs.</p></li>
+        <li><h3>Technical documentation</h3><p>Installation guides, admin docs, knowledge base articles and test plans.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="featured" aria-labelledby="featured-h">
+    <div class="wrap">
+      <h2 id="featured-h">Featured work</h2>
+      <p class="intro">Ten pieces that show the range of my work. Open any one to see the problem it had to solve and the choices I made.</p>
+      <ul class="featured">
+
+        <li>
+          <div class="meta"><strong>Cyberhaven</strong>2026<br>Co-authored whitepaper</div>
+          <div>
+            <h3>Inside a CISO’s Playbook: What Agentic Security Looks Like in Practice</h3>
+            <p class="sum">How one security team uses AI agents to keep pace with engineering, told for CISOs and the engineers who report to them.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Turn three internal AI-agent projects from Cyberhaven’s security team into a credible story about scaling security with AI, without it reading like a sales pitch.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I opened with a concrete tension, a 200:1 ratio of engineers to application security staff, so readers feel the problem before any solution appears.</li>
+                  <li>I gave every agent the same three-line summary (what it is, what it does, what it means), then a technical deep dive and an architecture diagram. Executives can stop at the summary; engineers can keep going.</li>
+                  <li>I credited each engineering lead by name, so the paper reads as peer-to-peer practitioner content.</li>
+                  <li>I closed with results and open questions to peers, inviting a conversation rather than a hard sell.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1t3Or6WdPUcivLLeY8O63WRRXG1NCHzOA/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Cyberhaven</strong>2026<br>Research report</div>
+          <div>
+            <h3>2026 AI Adoption and Risk Report: Six-Month Update</h3>
+            <p class="sum">Six months of enterprise telemetry, turned into one clear finding about where AI risk is moving.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Turn product telemetry into one clear story for security leaders and press, while staying honest about what the data does and doesn’t prove.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I put the key numbers up front so skimmers and journalists find the quotable findings in seconds.</li>
+                  <li>I built a single thesis from two datasets: chat-based AI tools are consolidating while endpoint AI agents are accelerating, so risk is moving from applications to workflows.</li>
+                  <li>I flagged the limits of the data, separating share of use from overall adoption and labeling one explanation a working hypothesis.</li>
+                  <li>I ended by translating the findings into what security programs should do next.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1v0chDeDSMx0hJJw4cwwWPNn4a8EzDuxf/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Cyberhaven</strong>2026<br>Practitioner playbook</div>
+          <div>
+            <h3>The Insider Risk Incident Response Playbook</h3>
+            <p class="sum">A 14-step investigation checklist connecting classic insider risk to the new risks AI agents create.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Make a familiar topic feel new, and give practitioners something they can actually use during an investigation.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I structured the playbook as a chain of questions: why insider risk happens, how AI changes it, how to investigate it and how to build a program.</li>
+                  <li>I built a 14-step response checklist with a product capability mapped to each step, so the product shows up as the answer rather than the pitch.</li>
+                  <li>I added a risk curve across the employee lifecycle and a four-stage maturity model so readers can place their own organization.</li>
+                  <li>I supported the argument with first-party research and an IDC study.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1Sv9vYr1DtbcJo_Hys9ne5yeDt9bUrtXq/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Cyberhaven</strong>2026<br>Ebook</div>
+          <div>
+            <h3>Securing Data in the Agentic Enterprise</h3>
+            <p class="sum">Why existing security tools can’t govern AI agents, and a three-pillar framework for what can.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Explain an architectural gap in the market and introduce a new framework, without attacking competitors.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I argued from architecture: legacy tools rest on four assumptions that AI agents break, which lets readers reach the conclusion themselves.</li>
+                  <li>I introduced a three-pillar framework (visibility, observability, controls) anchored by one repeatable principle: protect workflows, not just data.</li>
+                  <li>I added a chapter on human accountability, using a general counsel analogy that resonates with executives.</li>
+                  <li>I ended with a six-question audit checklist so every reader leaves with a next step.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1xwt5o9V61XYK_wTG3ohg-3P5sLaXOCU5/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Splunk</strong>2024<br>Educational ebook</div>
+          <div>
+            <h3>The Essential Guide to User and Entity Behavior Analytics</h3>
+            <p class="sum">A buyer’s education in UEBA that earns trust first and introduces the product last.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Teach buyers what UEBA is and how to evaluate it, before asking them to consider Splunk.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I opened with research on alert overload and attacker dwell time to establish the pain.</li>
+                  <li>I defined the category through relatable examples, such as a marketer suddenly running complex database queries.</li>
+                  <li>I framed five essential capabilities as evaluation criteria readers can apply to any vendor.</li>
+                  <li>I held the product until the final section, keeping the guide educational in tone.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1xNoIpqcXiJN2C1YRqnASbyPcyD4iRLA3/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Splunk</strong>2024<br>Product documentation</div>
+          <div>
+            <h3>UBA 5.4.0: Customize Anomaly Scoring Rules</h3>
+            <p class="sum">Admin documentation for a complex scoring system, written so changes don’t break threat prioritization.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Explain a scoring system clearly enough that administrators can customize it safely.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I explained why an admin would customize scoring before explaining how.</li>
+                  <li>I used a worked example with exact operators and score changes, then spelled out the resulting math.</li>
+                  <li>I put score types and the effects of edits and upgrades into tables, including a warning that upgrades can erase customizations.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1e7VyTL9gSeBkAJYflGyA2BNQazKvUkMi/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Devo</strong>2022<br>Whitepaper</div>
+          <div>
+            <h3>5 Step Guide to Getting Started with the MITRE ATT&amp;CK Framework</h3>
+            <p class="sum">A practical method built on a vendor-neutral framework, with the product alongside rather than in the way.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Use a respected industry framework to attract security practitioners, then connect it naturally to Devo’s automation product.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I explained the framework and the value of community-built standards before mentioning the product.</li>
+                  <li>I organized the method as five practical steps, each paired with a short “How Devo Delivers” sidebar, so method and product sit side by side.</li>
+                  <li>I included a table of contents and the full list of ATT&amp;CK tactics so the paper doubles as a reference.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1jbFZCZ0GciBxagB3gGuCLDogbixEPrzl/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Devo</strong>2021<br>Customer case study</div>
+          <div>
+            <h3>Sprout Social Customer Case Study</h3>
+            <p class="sum">How a fast-growing SaaS company scaled its security operations, told in the customer’s own words.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Turn a customer’s experience into a credible, specific story for prospects evaluating a cloud SIEM.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I used a challenge, solution and results sidebar so readers grasp the story in seconds.</li>
+                  <li>I led with a concrete time saving in the customer’s words: a 2–5 minute query instead of 15–20 minutes across several tools.</li>
+                  <li>I emphasized the shared cloud-first, partnership angle that speaks to similar buyers.</li>
+                  <li>I showed value beyond the security team, including how the customer communicates risk to stakeholders.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1J2KF0VX9gCGdwM_8DndoLhVg-0aXqf3M/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Forcepoint</strong>2019<br>Ebook</div>
+          <div>
+            <h3>Rethinking Data Security with a Risk-adaptive Approach</h3>
+            <p class="sum">One employee’s day, told twice, to show why block-or-allow data protection falls short.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Make the case for a new category, risk-adaptive protection, to buyers used to the block-or-allow model.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I built the ebook around one persona, Kate the research chemist, and told her story twice: once under traditional rules, where a harmless USB backup is blocked, and once under risk-adaptive protection, where low-risk Kate works freely and phished Kate is contained.</li>
+                  <li>I showed the impact on both the employee and the administrator, so both readers see themselves.</li>
+                  <li>I placed the shift on a timeline from threat-centric to behavior-centric security and backed it with Gartner research.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1rIWUwRq7xWmD4H0hZhYQifal3kP7C6pm/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="meta"><strong>Edgewater Networks</strong>2013<br>Knowledge base article</div>
+          <div>
+            <h3>How to Read a MOS Message</h3>
+            <p class="sum">A troubleshooting article that helps administrators read call-quality scores without calling support.</p>
+            <details><summary>Read the case study</summary>
+              <div class="cs">
+                <h4>The challenge</h4>
+                <p>Help network administrators interpret call-quality scores in device logs and fix problems on their own.</p>
+                <h4>My approach</h4>
+                <ul>
+                  <li>I opened with the three questions users actually ask and answered them in order.</li>
+                  <li>I used a simple diagram to show which half of the call path the device measures, correcting a common misunderstanding.</li>
+                  <li>I walked through real log lines, numbered and explained one at a time.</li>
+                  <li>I ended with troubleshooting checklists split by call direction, including a known phone quirk and how to test for it.</li>
+                </ul>
+                <a class="pdf" href="https://drive.google.com/file/d/1vx-4hJ6n9NyGzZIHYrcf9UAv5OjYb4j-/view" target="_blank" rel="noopener">Open the PDF</a>
+              </div>
+            </details>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <h2 id="work-h">More work</h2>
+      <p class="intro">More of my published work, grouped by company, newest first. Every title opens the PDF.</p>
+
+      <div class="employer">
+        <h3>Cyberhaven</h3>
+        <p>Research, sales enablement and product documentation, all built around one message: data security for the agentic enterprise.</p>
+        <ul class="pieces">
+          <li><div class="t"><a href="https://drive.google.com/file/d/1cWshQSNRS4r271lSmG2cfGT4Mf7k6U3L/view" target="_blank" rel="noopener">AI Risk Management Framework Checklist</a><span>A two-page self-assessment mapped to the NIST AI framework.</span></div><div class="k">Checklist</div><div class="y">2026</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1om4FMNcnrACs7sObJA6XylNqBgsqse_Z/view" target="_blank" rel="noopener">Jamf Installation Documentation</a><span>Step-by-step macOS sensor deployment with prerequisites and a known issue.</span></div><div class="k">Product docs</div><div class="y">2026</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1MRYoTXb9amEuvFKeFNDCZUcMT1Ok-Z-b/view" target="_blank" rel="noopener">Data Security for Manufacturers</a><span>Speaks the language of CAD files, formulas and export controls.</span></div><div class="k">Datasheet</div><div class="y">2026</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1x5AVxHZP7tcj8lyQwCDfDYTb-HE7P_Z9/view" target="_blank" rel="noopener">Turnkey Migration Service</a><span>Who the service is for, and a simple three-step process.</span></div><div class="k">Datasheet</div><div class="y">2026</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1T63khPJdm5CirVtEcCNfY3WHXHP6t1af/view" target="_blank" rel="noopener">The Three Pillars of Durable Data Security</a><span>The core architecture argument, distilled into three dependent layers.</span></div><div class="k">Datasheet</div><div class="y">2026</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1cjXAohoW5KhZPabMEMqqpcwy10lw76sq/view" target="_blank" rel="noopener">Complete Data Lineage for Every Workflow</a><span>One differentiator, explained: conversation-level understanding.</span></div><div class="k">Datasheet</div><div class="y">2026</div></li>
+        </ul>
+      </div>
+
+      <div class="employer">
+        <h3>Splunk</h3>
+        <p>A complete content set for one product line, from education to administration.</p>
+        <ul class="pieces">
+          <li><div class="t"><a href="https://drive.google.com/file/d/1RTpCR4jKvUxvO3QIIFANKQUjoKdmIgEa/view" target="_blank" rel="noopener">Splunk User Behavior Analytics Product Brief</a><span>Three benefits and five threat types a buyer can scan in a minute.</span></div><div class="k">Product brief</div><div class="y">2024</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1chmKE6AdrjGrtV9rXhjZAC5s2Oa-1RGU/view" target="_blank" rel="noopener">Splunk Integrated Behavior Analytics</a><span>A crawl, walk, run model that gives every team an entry point.</span></div><div class="k">Whitepaper</div><div class="y">2023</div></li>
+        </ul>
+      </div>
+
+      <div class="employer">
+        <h3>Devo</h3>
+        <p>Launch and positioning content during a SOAR acquisition and the move toward an autonomous SOC.</p>
+        <ul class="pieces">
+          <li><div class="t"><a href="https://drive.google.com/file/d/1Mk5m0AYN-uBy9RAPU384zTMvrXdoXQhP/view" target="_blank" rel="noopener">Devo SOAR</a><span>A new product introduced through quantified benefits.</span></div><div class="k">Solution brief</div><div class="y">2022</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1UByESxFvmDPm-CtwB56PjIuSrVXB3dit/view" target="_blank" rel="noopener">Strategic Zero Trust Compliance</a><span>A federal mandate and an agency win, used to frame zero trust.</span></div><div class="k">Public-sector brief</div><div class="y">2022</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1VgTAeuzGWCpYvC84z8N4XE9ktsmd_Xao/view" target="_blank" rel="noopener">Devo Multitenancy for MSSPs</a><span>Each feature paired with a business outcome for service providers.</span></div><div class="k">Solution brief</div><div class="y">2022</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1ve8f0CNNLgkB9qSTCJaYxh8aULfXRuYq/view" target="_blank" rel="noopener">Devo and Kognos</a><span>A partner story built on one idea: a SIEM should tell stories, not create alerts.</span></div><div class="k">Partner brief</div><div class="y">2022</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/10TL3DQeVIGuIOGR5gFaGxDNIf6zGkYzD/view" target="_blank" rel="noopener">5 Things Your Security Data Isn’t Telling You</a><span>Five scannable points for a campaign.</span></div><div class="k">Infographic</div><div class="y">2022</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1XrQmbg01LB_CGNmc-fTgwnwCyrVyk6_G/view" target="_blank" rel="noopener">Devo Flow</a><span>Three concrete detection use cases for a visual analytics editor.</span></div><div class="k">Solution brief</div><div class="y">2021</div></li>
+        </ul>
+      </div>
+
+      <div class="employer">
+        <h3>Forcepoint</h3>
+        <p>Ebooks, whitepapers and briefs that introduced risk-adaptive, human-centric data protection.</p>
+        <ul class="pieces">
+          <li><div class="t"><a href="https://drive.google.com/file/d/1N05QA7EPHd1aqQhobWgTqWFGs2ZwloU5/view" target="_blank" rel="noopener">9 Steps to Building an Insider Threat Defense Program</a><span>Program-level guidance with memorable governance rules.</span></div><div class="k">Whitepaper</div><div class="y">2019</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1Z70-pxUtrEwL-Hrfy5YOwpJu0u5-Pubx/view" target="_blank" rel="noopener">Forcepoint Dynamic Data Protection</a><span>Risk-adaptive enforcement, made concrete.</span></div><div class="k">Solution brief</div><div class="y">2019</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1kDELtdE-vNmLXAFPT-NuQzIKdYOG9bYA/view" target="_blank" rel="noopener">Forcepoint DLP Cloud Applications</a><span>A trusted product extended to the cloud for existing customers.</span></div><div class="k">Solution brief</div><div class="y">2019</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1RnkbM5-4TMtGxiNPRyNcod6Q6EKjCT8o/view" target="_blank" rel="noopener">Enhancing Forcepoint DLP with Boldon James</a><span>How user labeling and automation work better together.</span></div><div class="k">Partner brief</div><div class="y">2019</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1sCf6f9XT-6TLgbeAGRiO5dIUZGovoZjj/view" target="_blank" rel="noopener">Take Action to Uncover and Protect Shadow Data</a><span>The shadow data problem, made tangible with numbers.</span></div><div class="k">Infographic</div><div class="y">2019</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/170cACvdnxTnrbTCDbnTrDYvuiA7lFwIb/view" target="_blank" rel="noopener">Incident Risk Ranking</a><span>A new analytics feature, explained in plain language.</span></div><div class="k">Feature brief</div><div class="y">2018</div></li>
+        </ul>
+      </div>
+
+      <div class="employer">
+        <h3>Edgewater Networks</h3>
+        <p>Customer-facing technical guides and datasheets for VoIP edge devices.</p>
+        <ul class="pieces">
+          <li><div class="t"><a href="https://drive.google.com/file/d/1VAzFC_rG77nWsjSaelezly9Pgnw7hftm/view" target="_blank" rel="noopener">EdgeMarc 7301 Enterprise Session Border Controller</a><span>Benefits and features at a glance, led by scale numbers.</span></div><div class="k">Datasheet</div><div class="y">2014</div></li>
+          <li><div class="t"><a href="https://drive.google.com/file/d/1cTt6Ie5ii-T_J7R6XWAquQV-3w7H3OVb/view" target="_blank" rel="noopener">SIP Trunking Configuration Guide for Avaya IP Office</a><span>A validated configuration for installers, with limits stated up front.</span></div><div class="k">Interop guide</div><div class="y">2013</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="engineering" aria-labelledby="eng-h">
+    <div class="wrap">
+      <h2 id="eng-h">Engineering documentation</h2>
+      <p class="intro">Before moving into cybersecurity content, I wrote documentation as an engineer. Much of it was internal or customer-confidential, so I describe it here. Samples are available on request with sensitive details removed.</p>
+      <ul class="eng">
+        <li><h3>Product manuals and installation guides</h3><p>At Edgewater Networks I contributed to the EdgeView Virtual Appliance installation and user guides and the EdgeMarc VoIP System user guide, covering VMware deployment, licensing, system sizing and administration.</p></li>
+        <li><h3>QA test plans</h3><p>I authored structured test plans for dual-WAN and LTE failover and for FXS/FXO telephony features, with defined terms, numbered test steps and expected results for every scenario.</p></li>
+        <li><h3>Interoperability and configuration guides</h3><p>I wrote a step-by-step BroadWorks provisioning guide that pairs each CLI command with its expected output, plus quick references for enabling network services.</p></li>
+        <li><h3>Provisioning guidelines and engineering memos</h3><p>On AT&amp;T’s switch design team, I documented automated IP phone provisioning, including architecture, templates and troubleshooting built from lab-tested failure scenarios, plus concise configuration memos.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Let’s talk</h2>
+      <p>I’m open to content strategy, technical writing and product marketing roles in cybersecurity and enterprise technology. The fastest way to reach me is by email.</p>
+      <p><a class="mail" href="mailto:fernandojoel@gmail.com">fernandojoel@gmail.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>All work samples were created for and are owned by their respective employers. They’re shown here as examples of my work.</p>
+  </div>
+</footer>
+
+</body>
+</html>
