@@ -242,7 +242,7 @@ nav.site a{white-space:nowrap}
 <h1>Fernando Jorge</h1>
 <p class="lede">Cybersecurity content strategist and technical writer. I turn complex systems into content people can use.</p>
 <p class="lede-2">I started as an engineer, writing provisioning guides and test plans for voice networks. I’ve spent the years since bringing that same precision to cybersecurity research, thought leadership, product marketing and documentation.</p>
-<ul class="stats"><li><strong>39</strong><span>published samples</span></li><li><strong>7</strong><span>companies</span></li><li><strong>20+</strong><span>years of writing</span></li></ul>
+<ul class="stats"><li><strong>40</strong><span>published samples</span></li><li><strong>7</strong><span>companies</span></li><li><strong>20+</strong><span>years of writing</span></li></ul>
 <div class="trace">
 <p class="trace-caption">More than twenty years, seven companies, one through-line: make the complicated clear.</p>
 <ol>
@@ -312,7 +312,7 @@ nav.site a{white-space:nowrap}
 <li data-emp="independent" data-type="project" id="dspm-recs-project">
 <div class="meta"><strong>Independent project</strong>2026<br/>Interactive research tool</div>
 <div>
-<h3><a href="/dspm/">DSPM Recs: evidence before rankings</a></h3>
+<h3><a href="dspm/">DSPM Recs: evidence before rankings</a></h3>
 <p class="sum">A DSPM-only comparison prototype that makes source coverage, review relevance, and missing evidence visible instead of presenting unsupported scores.</p>
 <details><summary>Read the case study</summary><div class="cs">
 <h4>The challenge</h4><p>Vendor-wide reviews often mix DSPM with DLP and other security products. A useful comparison needs product-specific evidence and clear source boundaries.</p>
@@ -322,7 +322,7 @@ nav.site a{white-space:nowrap}
 <li>Kept Reddit user sentiment separate from review-platform star ratings and removed historical DLP scores from the public prototype.</li>
 </ul>
 <h4>Current status</h4><p>The public prototype and private review workflow are built. Live data collection and source licensing are not connected; the demo explicitly shows where evidence is missing.</p>
-<a class="pdf" href="/dspm/">Explore DSPM Recs</a>
+<a class="pdf" href="dspm/">Explore DSPM Recs</a>
 </div></details>
 </div></li>
 <li data-emp="cyberhaven" data-type="research">
@@ -843,7 +843,7 @@ nav.site a{white-space:nowrap}
 <div class="wrap">
 <h2 id="contact-h">Let’s talk</h2>
 <p>I’m open to content strategy, technical writing and product marketing roles in cybersecurity and enterprise technology. The fastest way to reach me is by email.</p>
-<p><a class="mail" href="mailto:fernandojoel@gmail.com">fernandojoel@gmail.com</a></p>
+<p><a class="mail" href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a></p>
 </div>
 </section>
 </main>
@@ -858,7 +858,7 @@ nav.site a{white-space:nowrap}
   var root=document.documentElement;
   var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   var names={independent:"independent projects",cyberhaven:"Cyberhaven",splunk:"Splunk",devo:"Devo",forcepoint:"Forcepoint",edgewater:"Edgewater Networks",att:"AT&T",provider:"the security service provider"};
-  var types={project:"interactive projects",research:"research and thought leadership pieces",marketing:"product marketing pieces",stories:"customer and partner stories",docs:"technical docs",blog:"blog posts"};
+  var types={project:"interactive projects",project1:"interactive project",research:"research and thought leadership pieces",marketing:"product marketing pieces",stories:"customer and partner stories",docs:"technical docs",blog:"blog posts"};
   var state={emp:"all",type:"all"};
   var items=[].slice.call(document.querySelectorAll("[data-type][data-emp]"));
   var chips=[].slice.call(document.querySelectorAll(".chip"));
@@ -882,7 +882,7 @@ nav.site a{white-space:nowrap}
     clearBtn.hidden=!filtered;
     if(!filtered) status.textContent="Showing all "+items.length+" samples.";
     else if(shown===0) status.textContent="No public samples"+(state.emp!=="all"?" from "+names[state.emp]:"")+".";
-    else status.textContent="Showing "+shown+" "+(state.type==="all"?(shown===1?"sample":"samples"):types[state.type])+(state.emp!=="all"?" from "+names[state.emp]:"")+".";
+    else status.textContent="Showing "+shown+" "+(state.type==="all"?(shown===1?"sample":"samples"):(shown===1&&types[state.type+"1"]?types[state.type+"1"]:types[state.type]))+(state.emp!=="all"?" from "+names[state.emp]:"")+".";
     if(shown===0){
       none.hidden=false;
       if(state.emp==="provider") none.textContent="As product marketing manager at a security reseller and service provider (2019–2022), my work was under NDA, so it isn’t published here. The company is named on my resume, and I’m happy to talk about the work in an interview.";
