@@ -280,12 +280,14 @@ nav.site a{white-space:nowrap}
         <li><button class="chip" type="button" data-type="marketing" aria-pressed="false">Product marketing</button></li>
         <li><button class="chip" type="button" data-type="stories" aria-pressed="false">Customer and partner stories</button></li>
         <li><button class="chip" type="button" data-type="docs" aria-pressed="false">Technical docs</button></li>
+        <li><button class="chip" type="button" data-type="project" aria-pressed="false">Interactive projects</button></li>
         <li><button class="chip" type="button" data-type="blog" aria-pressed="false">Blog posts</button></li>
       </ul>
       <div class="filter-row">
         <label for="empSel">Company</label>
         <select id="empSel">
-          <option value="all">All companies</option>
+          <option value="all">All companies and projects</option>
+          <option value="independent">Independent projects</option>
           <option value="cyberhaven">Cyberhaven</option>
           <option value="splunk">Splunk</option>
           <option value="devo">Devo</option>
@@ -305,8 +307,24 @@ nav.site a{white-space:nowrap}
 <section class="block" id="featured" aria-labelledby="featured-h">
 <div class="wrap">
 <h2 id="featured-h">Featured work</h2>
-<p class="intro">Ten pieces that show the range of my work. Open any one to see the problem it had to solve and the choices I made.</p>
+<p class="intro">Selected projects and pieces that show the range of my work. Open any one to see the problem it had to solve and the choices I made.</p>
 <ul class="featured">
+<li data-emp="independent" data-type="project" id="dspm-recs-project">
+<div class="meta"><strong>Independent project</strong>2026<br/>Interactive research tool</div>
+<div>
+<h3><a href="/dspm/">DSPM Recs: evidence before rankings</a></h3>
+<p class="sum">A DSPM-only comparison prototype that makes source coverage, review relevance, and missing evidence visible instead of presenting unsupported scores.</p>
+<details><summary>Read the case study</summary><div class="cs">
+<h4>The challenge</h4><p>Vendor-wide reviews often mix DSPM with DLP and other security products. A useful comparison needs product-specific evidence and clear source boundaries.</p>
+<h4>The approach</h4><ul>
+<li>Created a six-vendor comparison interface with separate planned coverage for Reddit, G2, and Gartner Peer Insights.</li>
+<li>Built a private JSON import and review workflow with DSPM relevance decisions, permission records, duplicate handling, and sanitized public exports.</li>
+<li>Kept Reddit user sentiment separate from review-platform star ratings and removed historical DLP scores from the public prototype.</li>
+</ul>
+<h4>Current status</h4><p>The public prototype and private review workflow are built. Live data collection and source licensing are not connected; the demo explicitly shows where evidence is missing.</p>
+<a class="pdf" href="/dspm/">Explore DSPM Recs</a>
+</div></details>
+</div></li>
 <li data-emp="cyberhaven" data-type="research">
 <div class="meta"><strong>Cyberhaven</strong>2026<br/>Co-authored whitepaper</div>
 <div>
@@ -831,7 +849,7 @@ nav.site a{white-space:nowrap}
 </main>
 <footer>
 <div class="wrap">
-<p>All work samples were created for and are owned by their respective employers. They’re shown here as examples of my work.</p>
+<p>Employer work samples are owned by their respective employers and shown as examples of my work. Independent projects are labeled separately.</p>
 </div>
 </footer>
 <button class="to-top" type="button" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
@@ -839,8 +857,8 @@ nav.site a{white-space:nowrap}
 (function(){
   var root=document.documentElement;
   var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var names={cyberhaven:"Cyberhaven",splunk:"Splunk",devo:"Devo",forcepoint:"Forcepoint",edgewater:"Edgewater Networks",att:"AT&T",provider:"the security service provider"};
-  var types={research:"research and thought leadership pieces",marketing:"product marketing pieces",stories:"customer and partner stories",docs:"technical docs",blog:"blog posts"};
+  var names={independent:"independent projects",cyberhaven:"Cyberhaven",splunk:"Splunk",devo:"Devo",forcepoint:"Forcepoint",edgewater:"Edgewater Networks",att:"AT&T",provider:"the security service provider"};
+  var types={project:"interactive projects",research:"research and thought leadership pieces",marketing:"product marketing pieces",stories:"customer and partner stories",docs:"technical docs",blog:"blog posts"};
   var state={emp:"all",type:"all"};
   var items=[].slice.call(document.querySelectorAll("[data-type][data-emp]"));
   var chips=[].slice.call(document.querySelectorAll(".chip"));
