@@ -302,6 +302,15 @@ footer{border-top-color:var(--rule)}
 .about-f .creds{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; margin:1.5rem 0; padding:0}
 .about-f .creds li{font-size:.85rem; padding:.3rem .7rem; border-radius:6px; background:var(--accent-soft); color:var(--ink)}
 @media (max-width:860px){ .about-f{grid-template-columns:1fr; gap:2rem} .about-f .roles li{grid-template-columns:1fr; gap:.2rem} }
+
+/* Back to Ares link in menu */
+nav.site .nav-home a{display:inline-flex; align-items:center; gap:.3rem; color:var(--ink); font-weight:500; padding-right:1rem; border-right:1px solid var(--rule)}
+nav.site .nav-home svg{width:.95em; height:.95em}
+nav.site .short{display:none}
+@media (max-width:640px){ nav.site .full{display:none} nav.site .short{display:inline} nav.site .nav-home a{padding-right:.6rem} nav.site ul{gap:.65rem} }
+@media (max-width:380px){ nav.site ul{font-size:.8rem; gap:.5rem} nav.site .nav-home a{padding-right:.45rem} header.site .wrap{padding:0 .75rem} }
+@media (max-width:340px){ nav.site .nav-contact{display:none} }
+.contact .mail{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -310,11 +319,12 @@ footer{border-top-color:var(--rule)}
 <a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgp" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8"/><stop offset=".4" stop-color="#3B82F6"/><stop offset=".7" stop-color="#6366F1"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lgp)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#0B0D2E" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>Fernando Jorge</a>
 <div class="hdr-right"><nav class="site" aria-label="Sections">
 <ul>
+<li class="nav-home"><a href="/" aria-label="Back to Ares Technical"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="full">Ares Technical</span><span class="short">Ares</span></a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#featured">Featured</a></li>
-<li><a href="#work">More work</a></li>
+<li><a href="#work"><span class="full">More work</span><span class="short">Work</span></a></li>
 <li><a href="#blog">Blog</a></li>
-<li><a href="#contact">Contact</a></li>
+<li class="nav-contact"><a href="#contact">Contact</a></li>
 </ul>
 </nav><button class="theme-btn" type="button" id="themeBtn" aria-label="Switch color theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button></div>
 </div>
