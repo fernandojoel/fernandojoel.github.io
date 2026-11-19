@@ -5,11 +5,11 @@
 <script>document.documentElement.classList.add("js");var t=null;try{t=localStorage.getItem("fj-theme")}catch(e){}document.documentElement.setAttribute("data-theme",t||"dark")</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<title>Fernando Jorge — Content Strategist and Technical Writer</title>
+<title>Fernando Jorge — Founder, Ares Technical</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="theme-color" content="#07081A"/>
 <link rel="canonical" href="https://arestechnical.com/fernando/"/>
-<meta content="Portfolio of Fernando Jorge: cybersecurity research, thought leadership, product marketing and technical documentation." name="description"/>
+<meta content="Fernando Jorge, founder of Ares Technical: background, credentials and a portfolio of cybersecurity research, product marketing and technical documentation." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -289,6 +289,19 @@ summary::before{border-color:var(--accent)}
 .to-top:hover{border-color:var(--accent); color:var(--accent)}
 .contact .mail{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none}
 footer{border-top-color:var(--rule)}
+
+/* About (founder) */
+.about-f{display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:start}
+.about-f p{max-width:36rem}
+.about-f .roles-h{font-family:var(--mono, ui-monospace, monospace); font-weight:500; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:.4rem 0 .6rem}
+.about-f .roles{list-style:none; margin:0; padding:0}
+.about-f .roles li{display:grid; grid-template-columns:10rem 1fr; gap:1rem; padding:.7rem 0; border-top:1px solid var(--rule); font-size:.94rem}
+.about-f .roles li:last-child{border-bottom:1px solid var(--rule)}
+.about-f .roles b{font-weight:600}
+.about-f .roles span{color:var(--muted)}
+.about-f .creds{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; margin:1.5rem 0; padding:0}
+.about-f .creds li{font-size:.85rem; padding:.3rem .7rem; border-radius:6px; background:var(--accent-soft); color:var(--ink)}
+@media (max-width:860px){ .about-f{grid-template-columns:1fr; gap:2rem} .about-f .roles li{grid-template-columns:1fr; gap:.2rem} }
 </style>
 </head>
 <body>
@@ -297,10 +310,10 @@ footer{border-top-color:var(--rule)}
 <a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgp" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8"/><stop offset=".4" stop-color="#3B82F6"/><stop offset=".7" stop-color="#6366F1"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lgp)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#0B0D2E" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>Fernando Jorge</a>
 <div class="hdr-right"><nav class="site" aria-label="Sections">
 <ul>
+<li><a href="#about">About</a></li>
 <li><a href="#featured">Featured</a></li>
 <li><a href="#work">More work</a></li>
 <li><a href="#blog">Blog</a></li>
-<li><a href="#engineering">Engineering</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav><button class="theme-btn" type="button" id="themeBtn" aria-label="Switch color theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button></div>
@@ -310,9 +323,9 @@ footer{border-top-color:var(--rule)}
 <section class="hero">
 <div class="wrap">
 <h1>Fernando Jorge</h1>
-<p class="lede">Cybersecurity content strategist and technical writer. I turn complex systems into content people can use.</p>
+<p class="lede">Founder of Ares Technical. Technical marketer, content strategist and writer. I turn complex systems into evidence and content people can use.</p>
 <p class="lede-2">I started as an engineer, writing provisioning guides and test plans for voice networks. I’ve spent the years since bringing that same precision to cybersecurity research, thought leadership, product marketing and documentation.</p>
-<p class="lede-2" style="font-family:var(--sans); font-size:.95rem; margin-top:.75rem">Founder of <a href="/">Ares Technical</a>, an independent practice for competitive evaluations and technical marketing.</p>
+<p class="lede-2" style="font-family:var(--sans); font-size:.95rem; margin-top:.75rem"><a href="/">Ares Technical</a> is my independent practice for competitive evaluations, technical marketing and AI adoption for small businesses.</p>
 <ul class="stats"><li><strong>40</strong><span>published samples</span></li><li><strong>7</strong><span>companies</span></li><li><strong>20+</strong><span>years of writing</span></li></ul>
 <div class="trace">
 <p class="trace-caption">More than twenty years, seven companies, one through-line: make the complicated clear.</p>
@@ -327,6 +340,29 @@ footer{border-top-color:var(--rule)}
 </ol>
 <div class="trace-legend"><span>Telecom engineering documentation</span><span class="s">Cybersecurity content</span></div>
 <p class="trace-hint">Select a company to see its work.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="about-h" class="block" id="about">
+<div class="wrap about-f">
+<div>
+<h2 id="about-h">About</h2>
+<p>I’ve spent more than twenty years between the lab and the field: testing vendor products and integrations at AT&amp;T, running a technical marketing lab at Edgewater Networks, then leading hands-on competitive work at Forcepoint, Devo, Splunk and Cyberhaven.</p>
+      <p>The pattern was always the same. Teams needed to know how products really behave, and they needed that evidence turned into something people could use. Ares Technical offers both, as a single owner, without adding headcount.</p>
+<ul class="creds"><li>MBA, Management</li><li>MS, Information Systems Security (in progress)</li><li>CompTIA Security+</li><li>CompTIA Network+</li></ul>
+<p class="about-links"><a href="/">Ares Technical</a> · <a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">LinkedIn</a></p>
+</div>
+<div>
+<h3 class="roles-h">Where the experience comes from</h3>
+      <ul class="roles">
+        <li><b>Cyberhaven</b><span>Hands-on competitive evaluations in data security, DSPM and Security for AI, including the test labs behind them.</span></li>
+        <li><b>Splunk</b><span>Product marketing for security analytics and UEBA: launches, positioning and technical content.</span></li>
+        <li><b>Devo</b><span>Competitive intelligence for a cloud SIEM, plus launch content, case studies and partner briefs.</span></li>
+        <li><b>A security reseller and service provider</b><span>Product marketing for the security services and partner products it sold.</span></li>
+        <li><b>Forcepoint</b><span>Competitive intelligence and technical marketing for data protection and insider risk.</span></li>
+        <li><b>Edgewater Networks</b><span>Built and ran the technical marketing lab, and wrote the manuals, knowledge base and test plans for session border controllers.</span></li>
+        <li><b>AT&amp;T</b><span>Network design and VoIP network engineering: carrier and enterprise voice networks, IP phone provisioning, lab testing and engineering documentation.</span></li>
+      </ul>
 </div>
 </div>
 </section>
@@ -913,7 +949,7 @@ footer{border-top-color:var(--rule)}
 <section aria-labelledby="contact-h" class="block contact" id="contact">
 <div class="wrap">
 <h2 id="contact-h">Let’s talk</h2>
-<p>I’m open to content strategy, technical writing and product marketing roles in cybersecurity and enterprise technology. The fastest way to reach me is by email.</p>
+<p>For consulting work, <a href="/#contact">start a project with Ares Technical</a> or see <a href="/ai/">AI help for small businesses</a>. For anything else, email is the fastest way to reach me.</p>
 <p><a class="mail" href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a></p>
 </div>
 </section>
@@ -957,7 +993,7 @@ footer{border-top-color:var(--rule)}
     else status.textContent="Showing "+shown+" "+(state.type==="all"?(shown===1?"sample":"samples"):(shown===1&&types[state.type+"1"]?types[state.type+"1"]:types[state.type]))+(state.emp!=="all"?" from "+names[state.emp]:"")+".";
     if(shown===0){
       none.hidden=false;
-      if(state.emp==="provider") none.textContent="As product marketing manager at a security reseller and service provider (2019–2022), my work was under NDA, so it isn’t published here. The company is named on my resume, and I’m happy to talk about the work in an interview.";
+      if(state.emp==="provider") none.textContent="As product marketing manager at a security reseller and service provider (2019–2022), my work was under NDA, so it isn’t published here. I’m happy to talk about the kind of work I did there.";
       else if(state.emp==="att") none.innerHTML="My AT&amp;T work was internal engineering documentation, so it isn’t published here. <a href=\"#engineering\">See how I describe it</a>.";
       else none.textContent="Nothing matches that combination. Try another type or company.";
     } else none.hidden=true;
