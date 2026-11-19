@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ares Technical — Competitive Evaluations and Technical Marketing</title>
-<meta name="description" content="Ares Technical builds the lab, runs hands-on competitive evaluations and turns the findings into reports, enablement and documentation your team can use. Security and B2B tech, remote-first.">
+<meta name="description" content="Ares Technical builds the lab, runs hands-on competitive evaluations and turns the findings into reports, enablement and documentation your team can use. Security, B2B tech and AI adoption for small businesses, remote-first.">
 <link rel="canonical" href="https://arestechnical.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -14,12 +14,12 @@
 <meta property="og:description" content="Hands-on competitive evaluations, lab build-out and technical marketing for security vendors, channel partners and B2B tech.">
 <meta property="og:url" content="https://arestechnical.com/">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#0B0D2E">
+<meta name="theme-color" content="#06071C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Ares Technical","url":"https://arestechnical.com/","email":"fernando.jorge@arestechnical.com","description":"Hands-on competitive evaluations, lab build-out and operations, product marketing, content, sales enablement and technical documentation.","areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"Round Rock","addressRegion":"TX","addressCountry":"US"},"founder":{"@type":"Person","name":"Fernando Jorge","url":"https://arestechnical.com/fernando/","sameAs":["https://www.linkedin.com/in/fernando-jorge"]}}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Ares Technical","url":"https://arestechnical.com/","email":"fernando.jorge@arestechnical.com","description":"Hands-on competitive evaluations, lab build-out and operations, product marketing, content, sales enablement, technical documentation, and AI adoption consulting for small businesses.","areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"Round Rock","addressRegion":"TX","addressCountry":"US"},"founder":{"@type":"Person","name":"Fernando Jorge","url":"https://arestechnical.com/fernando/","sameAs":["https://www.linkedin.com/in/fernando-jorge"]}}
 </script>
 <style>
 :root{
@@ -221,7 +221,8 @@ html.js .panel{animation:fade .35s ease}
 }
 
 /* Expertise */
-.exp{display:grid; grid-template-columns:repeat(3,1fr); gap:2.5rem}
+.exp{display:grid; grid-template-columns:repeat(4,1fr); gap:2.5rem}
+@media (max-width:1100px){ .exp{grid-template-columns:repeat(2,1fr)} }
 .exp h3{font-family:var(--mono); font-weight:500; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 1rem}
 .exp ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.5rem}
 .exp li{font-size:.92rem; padding:.4rem .8rem; border:1px solid var(--rule); border-radius:999px; background:var(--surface)}
@@ -289,10 +290,11 @@ html.js .rv.in{opacity:1; transform:none}
 
 /* ===== Color layer: indigo base + teal → violet → magenta → orange ===== */
 :root{
-  --c1:#14C3B4; --c2:#6E5BFF; --c3:#E83E8C; --c4:#FF9A3D;
+  --c1:#0A7F78; --c2:#3F2FB8; --c3:#9E1F5E; --c4:#B8531A;
   --grad:linear-gradient(100deg,var(--c1) 0%,var(--c2) 34%,var(--c3) 67%,var(--c4) 100%);
   --grad-warm:linear-gradient(100deg,var(--c3) 0%,var(--c4) 100%);
-  --night:#0B0D2E; --night-2:#141846; --night-ink:#F2F3FF; --night-muted:#B3B7DE; --night-rule:rgba(255,255,255,.14);
+  --grad-text:linear-gradient(100deg,#E0528F 0%,#F08A4B 100%);
+  --night:#06071C; --night-2:#0E1033; --night-ink:#F2F3FF; --night-muted:#B3B7DE; --night-rule:rgba(255,255,255,.14);
   --accent:#5B48F0; --accent-soft:#ECEAFE;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --accent:#9D90FF; --accent-soft:#221F4A; --bg:#090B22; --surface:#11143A; --rule:#262A5C; --muted:#A7ABD6 } }
@@ -310,23 +312,23 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 @media (max-width:880px){ header.site nav.site{background:var(--night); border-bottom-color:var(--night-rule)} header.site nav.site li a{color:var(--night-ink); border-bottom-color:var(--night-rule)} }
 
 /* Buttons */
-.btn-primary{background:var(--grad-warm); color:#fff; border:0; box-shadow:0 8px 24px -10px rgba(232,62,140,.7)}
+.btn-primary{background:var(--grad-warm); color:#fff; border:0; box-shadow:0 8px 24px -10px rgba(158,31,94,.75)}
 .btn-primary:hover{filter:brightness(1.07); transform:translateY(-1px)}
 .btn-ghost{border-color:var(--rule)}
 .btn-ghost:hover{border-color:var(--c2); color:var(--accent)}
 
 /* Hero: night with gradient glow */
 .hero{position:relative; overflow:hidden; color:var(--night-ink); background:
-  radial-gradient(60% 70% at 8% 0%, rgba(20,195,180,.38) 0%, transparent 60%),
-  radial-gradient(55% 65% at 55% 10%, rgba(110,91,255,.45) 0%, transparent 62%),
-  radial-gradient(50% 60% at 100% 35%, rgba(232,62,140,.42) 0%, transparent 60%),
-  radial-gradient(45% 55% at 85% 105%, rgba(255,154,61,.40) 0%, transparent 60%),
+  radial-gradient(60% 70% at 8% 0%, rgba(10,127,120,.42) 0%, transparent 60%),
+  radial-gradient(55% 65% at 55% 10%, rgba(63,47,184,.55) 0%, transparent 62%),
+  radial-gradient(50% 60% at 100% 35%, rgba(158,31,94,.50) 0%, transparent 60%),
+  radial-gradient(45% 55% at 85% 105%, rgba(184,83,26,.40) 0%, transparent 60%),
   var(--night)}
 .hero::after{content:""; position:absolute; inset:auto 0 0 0; height:4px; background:var(--grad)}
 .hero .wrap{position:relative}
 .hero .eyebrow{color:#9FF3EA}
 .hero h1{color:#fff}
-.hero h1 em{background:var(--grad-warm); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.06em}
+.hero h1 em{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.06em}
 .hero .lede{color:var(--night-ink)}
 .hero .hero-note{color:var(--night-muted)}
 .hero .btn-ghost{color:#fff; border-color:rgba(255,255,255,.35)}
@@ -355,7 +357,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .svc::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--grad); transform:scaleX(0); transform-origin:left; transition:transform .35s ease}
 .svc:hover{border-color:transparent; box-shadow:0 18px 40px -24px rgba(110,91,255,.55)}
 .svc:hover::before{transform:scaleX(1)}
-.svc .num{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:500; font-size:.9rem}
+.svc .num{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:500; font-size:.9rem}
 .bundle{border-left:0; position:relative; background:linear-gradient(100deg, color-mix(in srgb,var(--c2) 10%, var(--bg)), color-mix(in srgb,var(--c3) 9%, var(--bg)) 60%, color-mix(in srgb,var(--c4) 10%, var(--bg))); border-radius:12px}
 .bundle::before{content:""; position:absolute; inset:0 auto 0 0; width:4px; border-radius:12px 0 0 12px; background:var(--grad-warm)}
 
@@ -368,7 +370,9 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .process li:nth-child(4) .dot{background:var(--c4); border-color:var(--c4); box-shadow:0 0 0 5px color-mix(in srgb,var(--c4) 25%, transparent)}
 .process li:nth-child(1) .step{color:var(--c1)} .process li:nth-child(2) .step{color:var(--c2)} .process li:nth-child(3) .step{color:var(--c3)} .process li:nth-child(4) .step{color:var(--c4)}
 .process .out b{color:var(--accent)}
-.terms li::before{background:var(--grad-warm); -webkit-background-clip:text; background-clip:text; color:transparent}
+:root[data-theme="dark"] .process .step{filter:brightness(1.7)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .process .step{filter:brightness(1.7)} }
+.terms li::before{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent}
 
 /* Clients */
 .tab[aria-selected="true"]{position:relative; border-color:transparent; box-shadow:0 0 0 1px var(--rule)}
@@ -382,7 +386,8 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 /* Expertise chips: tinted per column */
 .exp > div:nth-child(1) li{border-color:color-mix(in srgb,var(--c2) 35%, var(--rule)); background:color-mix(in srgb,var(--c2) 7%, var(--surface))}
 .exp > div:nth-child(2) li{border-color:color-mix(in srgb,var(--c1) 40%, var(--rule)); background:color-mix(in srgb,var(--c1) 8%, var(--surface))}
-.exp > div:nth-child(3) li{border-color:color-mix(in srgb,var(--c4) 40%, var(--rule)); background:color-mix(in srgb,var(--c4) 8%, var(--surface))}
+.exp > div:nth-child(3) li{border-color:color-mix(in srgb,var(--c3) 35%, var(--rule)); background:color-mix(in srgb,var(--c3) 7%, var(--surface))}
+.exp > div:nth-child(4) li{border-color:color-mix(in srgb,var(--c4) 40%, var(--rule)); background:color-mix(in srgb,var(--c4) 8%, var(--surface))}
 
 /* Work cards */
 .work{position:relative; overflow:hidden}
@@ -390,6 +395,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .work:hover{border-color:transparent; box-shadow:0 18px 40px -24px rgba(232,62,140,.5)}
 .work:hover::before{transform:scaleX(1)}
 .work .go{color:var(--c3)}
+.deliv li::before{border-color:var(--c3)}
 :root[data-theme="dark"] .work .go{color:#FF7DB8}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .work .go{color:#FF7DB8} }
 
@@ -398,13 +404,13 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 
 /* Contact: night with glow */
 .contact.band{position:relative; overflow:hidden; background:
-  radial-gradient(55% 80% at 0% 100%, rgba(20,195,180,.30) 0%, transparent 60%),
-  radial-gradient(50% 70% at 40% 0%, rgba(110,91,255,.40) 0%, transparent 60%),
-  radial-gradient(50% 80% at 100% 60%, rgba(232,62,140,.38) 0%, transparent 60%),
+  radial-gradient(55% 80% at 0% 100%, rgba(10,127,120,.34) 0%, transparent 60%),
+  radial-gradient(50% 70% at 40% 0%, rgba(63,47,184,.50) 0%, transparent 60%),
+  radial-gradient(50% 80% at 100% 60%, rgba(158,31,94,.48) 0%, transparent 60%),
   var(--night)}
 .contact.band::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:var(--grad)}
 .contact h2{color:#fff}
-.contact h2 em{background:var(--grad-warm); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.06em}
+.contact h2 em{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.06em}
 .contact p{color:var(--night-muted)}
 .contact .btn-primary{background:var(--grad-warm); color:#fff}
 .contact .btn-ghost{color:#fff; border-color:rgba(255,255,255,.3)}
@@ -422,7 +428,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Ares Technical, home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#14C3B4"/><stop offset=".35" stop-color="#6E5BFF"/><stop offset=".7" stop-color="#E83E8C"/><stop offset="1" stop-color="#FF9A3D"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lg)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#0B0D2E" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0A7F78"/><stop offset=".35" stop-color="#3F2FB8"/><stop offset=".7" stop-color="#9E1F5E"/><stop offset="1" stop-color="#B8531A"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lg)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#0B0D2E" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>
       <span>Ares Technical</span>
     </a>
     <nav class="site" id="siteNav" aria-label="Main">
@@ -453,7 +459,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
         <a class="btn btn-primary" href="#contact">Start a project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-ghost" href="#services">See services</a>
       </div>
-      <p class="hero-note">For security vendors, channel partners, B2B tech and growing businesses. Remote-first, based in Texas.</p>
+      <p class="hero-note">For security vendors, channel partners, B2B tech, and small businesses adopting AI. Remote-first, based in Texas.</p>
     </div>
 
     <figure class="readout" id="readout" aria-label="Illustration of an evaluation readout comparing three products">
@@ -546,9 +552,9 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
       </li>
       <li class="svc">
         <span class="num">07</span>
-        <h3>Tool selection for growing businesses</h3>
-        <p>Choosing a security product without an in-house expert? I test your shortlist against your real needs and recommend one.</p>
-        <ul class="chips"><li>Shortlist testing</li><li>Proof of concept</li></ul>
+        <h3>AI adoption for small businesses</h3>
+        <p>Practical help putting AI to work: find where it saves real time, choose the right AI and security tools, keep customer data safe and train your team.</p>
+        <ul class="chips"><li>AI readiness</li><li>Tool selection</li><li>Safe-use policy</li><li>Training</li></ul>
       </li>
     </ul>
 
@@ -606,6 +612,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
     <div class="exp">
       <div><h3>Security categories</h3><ul><li>Data security and DLP</li><li>DSPM</li><li>Insider risk</li><li>Security for AI</li><li>SIEM and security analytics</li><li>UEBA</li><li>CASB</li><li>SOAR</li></ul></div>
       <div><h3>Lab and infrastructure</h3><ul><li>Microsoft 365 and SharePoint</li><li>AWS S3</li><li>Identity and access</li><li>Connectors and integrations</li><li>Realistic test datasets</li></ul></div>
+      <div><h3>AI adoption</h3><ul><li>AI readiness reviews</li><li>AI tool selection</li><li>Safe-use and data policies</li><li>Workflow pilots</li><li>Team training</li></ul></div>
       <div><h3>Networks and communications</h3><ul><li>Session border controllers</li><li>VoIP and SIP</li><li>Interoperability testing</li><li>Carrier and enterprise design</li></ul></div>
     </div>
   </div>
@@ -657,7 +664,8 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
       <details><summary>Whose licenses and environments do you test with?</summary><p>Only ones you’re authorized to provide, or that we set up together under the vendors’ terms. Lab licenses and cloud costs are provided by or billed to the client, so you own the environment and the evidence.</p></details>
       <details><summary>How do you handle confidentiality?</summary><p>Findings, test data and lab access stay under NDA and are shared only with the people you name. At the end, the lab is handed off to your team or cleaned up, whichever you prefer.</p></details>
       <details><summary>What do you need from my team?</summary><p>A point of contact, access to the products and accounts in scope, and about an hour a week for status updates and decisions. I handle the day-to-day lab work.</p></details>
-      <details><summary>Do you work with buyers, not just vendors?</summary><p>Yes. MSSPs, resellers and growing businesses hire me to test a shortlist of products against their real needs before they commit, and to recommend the one that fits.</p></details>
+      <details><summary>Do you help small businesses adopt AI?</summary><p>Yes. I start with a short readiness review of where AI can save your team time and where it creates risk, then help you choose tools, set simple rules for protecting customer and company data, and train your team. My background in data security and Security for AI means the risk side gets as much attention as the time savings.</p></details>
+      <details><summary>Do you work with buyers, not just vendors?</summary><p>Yes. MSSPs, resellers and small businesses hire me to test a shortlist of products against their real needs before they commit, and to recommend the one that fits.</p></details>
       <details><summary>How is pricing set?</summary><p>Evaluations and documentation sprints are fixed-fee projects. Fractional product marketing and lab operations are monthly retainers. Content and enablement assets can be priced per piece. You’ll know the full cost before we start.</p></details>
     </div>
   </div>
@@ -723,7 +731,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
     vend:{h:"Established security vendors",p:"Your internal teams are stretched, and specialist or overflow work keeps slipping behind the roadmap.",b:["Focused evaluations of a specific competitor or new category","Lab operations that retest rivals as they ship new versions","Research reports, ebooks and playbooks","Partner and field training"],f:"Most often starts with: a scoped evaluation or a lab operations retainer."},
     chan:{h:"MSSPs, resellers and channel partners",p:"You have to choose which vendors to carry, then make sure your team can sell and support them.",b:["Side-by-side evaluations of the vendors you’re considering","Findings framed around your customers’ use cases","Partner enablement, labs and bootcamp content","Technical videos and configuration guides"],f:"Most often starts with: a vendor shortlist evaluation."},
     b2b:{h:"B2B technology companies",p:"Your product is complex, and buyers struggle to understand what makes it different.",b:["Positioning and messaging grounded in how the product really works","Thought leadership and technical content","Installation, admin and configuration documentation","Competitive research outside security, especially networks and communications"],f:"Most often starts with: fractional product marketing or a documentation sprint."},
-    smb:{h:"Small and medium businesses",p:"You need a security tool, but you don’t have an in-house expert to separate real capability from sales claims.",b:["Testing your two or three shortlisted products against your real needs","A plain-language comparison and a clear recommendation","Setup guidance for the product you choose"],f:"Most often starts with: a fixed-price tool selection package."}
+    smb:{h:"Small and medium businesses",p:"You want to use AI and modern tools to work faster, but you don’t have an in-house expert to separate real value from hype and risk.",b:["An AI readiness review: where AI can save time in your business, and where it shouldn’t be used","Choosing AI and security tools, tested against your real needs","A simple safe-use policy so customer and company data stays protected","Hands-on training so your team uses the tools well"],f:"Most often starts with: a fixed-price AI readiness review."}
   };
   var tabs=[].slice.call(document.querySelectorAll(".tab")), panel=document.getElementById("p-seg");
   function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
