@@ -430,6 +430,15 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .brief ol{color:var(--night-ink)}
 .brief .mail{border-top-color:var(--night-rule); color:var(--night-muted)}
 .brief .mail a{color:#fff}
+
+.mail-alt{margin:1.1rem 0 0; font-size:.95rem; color:var(--night-muted)}
+.mail-alt a{color:#C7D2FE}
+.linkish{all:unset; cursor:pointer; color:#C7D2FE; text-decoration:underline; text-underline-offset:.18em}
+.linkish:hover{color:#fff}
+.linkish:focus-visible{outline:2px solid #A5B4FC; outline-offset:2px; border-radius:2px}
+.copy-mini{margin-left:.5rem; font-size:.85rem; padding:.1rem .5rem; border:1px solid var(--night-rule); border-radius:6px; text-decoration:none}
+.toast{position:fixed; left:50%; bottom:calc(1.5rem + env(safe-area-inset-bottom,0px)); transform:translate(-50%,12px); background:#11143A; color:#F1F3FF; border:1px solid rgba(165,180,252,.3); padding:.75rem 1.1rem; border-radius:10px; font-size:.95rem; box-shadow:0 14px 40px -12px rgba(0,0,0,.6); opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; z-index:30; max-width:calc(100vw - 2rem)}
+.toast.show{opacity:1; transform:translate(-50%,0)}
 </style>
 </head>
 <body>
@@ -690,6 +699,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
         <a class="btn btn-primary" id="mailBtn" href="mailto:fernando.jorge@arestechnical.com?subject=Project%20inquiry%20for%20Ares%20Technical&amp;body=What%20we%20need%20to%20evaluate%20or%20create%3A%0A%0AProducts%20or%20topics%20involved%3A%0A%0AIdeal%20timeline%3A%0A%0AHow%20we%20found%20Ares%20Technical%3A%0A">Email a project brief</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">Message on LinkedIn</a>
       </div>
+      <p class="mail-alt">Email app didn’t open? <button type="button" class="linkish" data-copy="fernando.jorge@arestechnical.com">Copy the address</button> or <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=fernando.jorge%40arestechnical.com&amp;su=Project%20inquiry%20for%20Ares%20Technical&amp;body=What%20we%20need%20to%20evaluate%20or%20create%3A%0A%0AProducts%20or%20topics%20involved%3A%0A%0AIdeal%20timeline%3A%0A%0AHow%20we%20found%20Ares%20Technical%3A%0A" target="_blank" rel="noopener">write it in Gmail</a>.</p>
     </div>
     <div class="brief">
       <h3>A helpful first message includes</h3>
@@ -699,11 +709,12 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
         <li>Your timeline and any key dates</li>
         <li>Who will use the results</li>
       </ol>
-      <span class="mail">Or write directly: <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a></span>
+      <span class="mail">Or write directly: <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a> <button type="button" class="linkish copy-mini" data-copy="fernando.jorge@arestechnical.com" aria-label="Copy email address">Copy</button></span>
     </div>
   </div>
 </section>
 </main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <footer class="site">
   <div class="wrap">
@@ -764,6 +775,19 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
     });
   });
   show(tabs[0]);
+
+
+  // email fallbacks: copy address
+  var toast=document.getElementById("toast"), tt;
+  function say(msg){toast.textContent=msg; toast.classList.add("show"); clearTimeout(tt); tt=setTimeout(function(){toast.classList.remove("show")},3200)}
+  function copy(text){
+    if(navigator.clipboard&&window.isSecureContext){return navigator.clipboard.writeText(text)}
+    return new Promise(function(res,rej){var ta=document.createElement("textarea"); ta.value=text; ta.setAttribute("readonly",""); ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select(); try{document.execCommand("copy")?res():rej()}catch(e){rej(e)} document.body.removeChild(ta)});
+  }
+  [].forEach.call(document.querySelectorAll("[data-copy]"),function(b){b.addEventListener("click",function(){
+    var a=b.getAttribute("data-copy");
+    copy(a).then(function(){say("Copied "+a)},function(){say("Email: "+a)});
+  })});
 
   // readout rows appear one by one
   var ro=document.getElementById("readout"), rows=ro.querySelectorAll("tbody tr");

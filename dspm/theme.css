@@ -1,0 +1,54 @@
+/* Ares Technical look for DSPM Recs: light and dark themes */
+:root{
+  --bg:#F5F7FF; --surface:#FFFFFF; --surface-2:#EEF0FB; --ink:#11132E; --muted:#555B85; --line:#DDE1F3;
+  --accent:#4F46E5; --soft:#EBEBFF;
+  --btn:linear-gradient(100deg,#3B82F6 0%,#6366F1 100%);
+  --grad:linear-gradient(100deg,#0284C7 0%,#2563EB 35%,#4F46E5 68%,#7C3AED 100%);
+  --grad-text:linear-gradient(100deg,#2563EB 0%,#6D28D9 100%);
+  --glow-a:rgba(59,130,246,.10); --glow-b:rgba(139,92,246,.10);
+  --danger:#B42318;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#090A1F; --surface:#10122C; --surface-2:#0D0F26; --ink:#EEF0FF; --muted:#A3A8CF; --line:#22264A;
+  --accent:#8B9CFF; --soft:#1B1E45;
+  --grad:linear-gradient(100deg,#38BDF8 0%,#60A5FA 35%,#818CF8 68%,#A78BFA 100%);
+  --grad-text:linear-gradient(100deg,#7DD3FC 0%,#A5B4FC 55%,#C4B5FD 100%);
+  --glow-a:rgba(59,130,246,.30); --glow-b:rgba(139,92,246,.32);
+  --danger:#FF8A8A;
+  color-scheme:dark;
+}
+body{font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  background:radial-gradient(45% 420px at 0% 0%, var(--glow-a), transparent 70%), radial-gradient(40% 460px at 100% 120px, var(--glow-b), transparent 70%), var(--bg);
+  background-repeat:no-repeat; background-color:var(--bg)}
+h1,h2,.hero-note h2,.method-grid b,.vendor-icon,.logo{font-family:"Newsreader",Georgia,serif}
+h1 em{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.05em}
+.logo{background:var(--btn); color:#fff}
+.dot{background:var(--accent)}
+.primary{background:var(--btn); border:0; color:#fff; box-shadow:0 10px 26px -14px rgba(79,70,229,.9)}
+.primary:hover{background:var(--btn); filter:brightness(1.1)}
+.hero-note{position:relative; overflow:hidden; background:var(--surface); border:1px solid var(--line); box-shadow:0 24px 60px -36px rgba(79,70,229,.55)}
+.hero-note::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--grad)}
+.source-card,.product,.compare-tray,.panel,.queue-card,.secondary,.close{background:var(--surface); color:var(--ink)}
+.search input,select,.panel input:not([type=checkbox]),.panel textarea,.queue-card textarea,.work-search input{background:var(--surface); color:var(--ink); border-color:var(--line)}
+.toolbar{background:var(--surface-2)}
+.status,.pill{border-color:color-mix(in srgb,var(--accent) 35%, var(--line)); background:var(--soft); color:var(--accent)}
+.metric-list>div{border-bottom-color:var(--line)}
+.product{transition:box-shadow .2s, border-color .2s}
+.product:hover{border-color:transparent; box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 45%, transparent), 0 20px 50px -30px rgba(99,102,241,.6)}
+.method-grid b{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent}
+.closing{position:relative; overflow:hidden; background:var(--soft)}
+.closing::before{content:""; position:absolute; inset:0 auto 0 0; width:4px; background:var(--btn)}
+.compare-tray{box-shadow:0 10px 40px rgba(0,0,0,.25)}
+dialog{background:var(--bg); color:var(--ink)}
+dialog::backdrop{background:rgba(7,8,26,.6)}
+.danger{background:var(--surface); color:var(--danger); border-color:var(--danger)}
+summary{color:var(--accent)}
+.queue-card pre{background:var(--surface-2)}
+.theme-btn{display:inline-grid; place-items:center; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--ink); padding:0}
+.theme-btn:hover{border-color:var(--accent); color:var(--accent)}
+.theme-btn svg{width:16px; height:16px}
+.theme-btn .moon{display:none}
+:root[data-theme="dark"] .theme-btn .sun{display:none}
+:root[data-theme="dark"] .theme-btn .moon{display:block}
+nav{align-items:center}
