@@ -243,13 +243,15 @@ html.js .panel{animation:fade .35s ease}
 .about{display:grid; grid-template-columns:1fr 1.4fr; gap:4rem; align-items:start}
 .about .sec-head{margin:0}
 .about-body p{margin:0 0 1.1rem; font-size:1.08rem}
-.about-body .roles{list-style:none; margin:1.5rem 0; padding:0}
-.about-body .roles li{display:grid; grid-template-columns:9rem 1fr; gap:1rem; padding:.7rem 0; border-top:1px solid var(--rule); font-size:.95rem}
+.about-body .roles-h{font-family:var(--mono); font-weight:500; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:2rem 0 .6rem}
+.about-body .roles{list-style:none; margin:0 0 1.5rem; padding:0}
+.about-body .roles li{display:grid; grid-template-columns:12rem 1fr; gap:1.25rem; padding:.75rem 0; border-top:1px solid var(--rule); font-size:.95rem}
 .about-body .roles li:last-child{border-bottom:1px solid var(--rule)}
-.about-body .roles span{font-family:var(--mono); color:var(--muted); font-size:.82rem}
+.about-body .roles b{font-weight:600}
+.about-body .roles span{color:var(--muted)}
 .creds{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; margin:0 0 1.5rem; padding:0}
 .creds li{font-size:.85rem; padding:.3rem .7rem; border-radius:6px; background:var(--accent-soft); color:var(--ink)}
-@media (max-width:860px){ .about{grid-template-columns:1fr; gap:2rem} .about-body .roles li{grid-template-columns:1fr; gap:.1rem} }
+@media (max-width:860px){ .about{grid-template-columns:1fr; gap:2rem} .about-body .roles li{grid-template-columns:1fr; gap:.2rem} }
 
 /* FAQ */
 .faq{max-width:52rem}
@@ -727,12 +729,15 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
     <div class="about-body">
       <p>I’ve spent more than twenty years between the lab and the field: testing vendor products and integrations at AT&amp;T, running a technical marketing lab at Edgewater Networks, then leading hands-on competitive work at Forcepoint, Devo, Splunk and Cyberhaven.</p>
       <p>The pattern was always the same. Teams needed to know how products really behave, and they needed that evidence turned into something people could use. Ares Technical offers both, as a single owner, without adding headcount.</p>
+      <h3 class="roles-h">Where the experience comes from</h3>
       <ul class="roles">
-        <li><span>2025–2026</span>Cyberhaven · Sr Technical Marketing Engineer, Competitive Intelligence</li>
-        <li><span>2023–2025</span>Splunk · Sr Product Marketing Manager, Security</li>
-        <li><span>2022–2023</span>Devo · Sr Technical Marketing Engineer, Competitive Intelligence</li>
-        <li><span>2017–2019</span>Forcepoint · Technical Marketing Engineer, Competitive Intelligence</li>
-        <li><span>2013–2017</span>Edgewater Networks · Technical Marketing Engineer and lab owner</li>
+        <li><b>Cyberhaven</b><span>Hands-on competitive evaluations in data security, DSPM and Security for AI, including the test labs behind them.</span></li>
+        <li><b>Splunk</b><span>Product marketing for security analytics and UEBA: launches, positioning and technical content.</span></li>
+        <li><b>Devo</b><span>Competitive intelligence for a cloud SIEM, plus launch content, case studies and partner briefs.</span></li>
+        <li><b>A security reseller and service provider</b><span>Product marketing for the security services and partner products it sold.</span></li>
+        <li><b>Forcepoint</b><span>Competitive intelligence and technical marketing for data protection and insider risk.</span></li>
+        <li><b>Edgewater Networks</b><span>Built and ran the technical marketing lab, and wrote the manuals, knowledge base and test plans for session border controllers.</span></li>
+        <li><b>AT&amp;T</b><span>Switch design team: lab-tested IP phone provisioning and the engineering documentation that went with it.</span></li>
       </ul>
       <ul class="creds"><li>MBA, Management</li><li>MS, Information Systems Security (in progress)</li><li>CompTIA Security+</li><li>CompTIA Network+</li><li>Spanish and English</li></ul>
       <p><a href="/fernando/">Full portfolio</a> · <a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">LinkedIn</a></p>
