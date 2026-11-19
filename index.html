@@ -439,6 +439,47 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .copy-mini{margin-left:.5rem; font-size:.85rem; padding:.1rem .5rem; border:1px solid var(--night-rule); border-radius:6px; text-decoration:none}
 .toast{position:fixed; left:50%; bottom:calc(1.5rem + env(safe-area-inset-bottom,0px)); transform:translate(-50%,12px); background:#11143A; color:#F1F3FF; border:1px solid rgba(165,180,252,.3); padding:.75rem 1.1rem; border-radius:10px; font-size:.95rem; box-shadow:0 14px 40px -12px rgba(0,0,0,.6); opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; z-index:30; max-width:calc(100vw - 2rem)}
 .toast.show{opacity:1; transform:translate(-50%,0)}
+
+/* Contact form */
+.contact .wrap{grid-template-columns:1fr 1.1fr}
+.tips{margin:0 0 1.5rem}
+.tips h3{font-family:var(--mono); font-weight:500; font-size:.76rem; text-transform:uppercase; letter-spacing:.08em; color:#93C5FD; margin:0 0 .6rem}
+.tips ol{margin:0; padding-left:1.2rem; color:var(--night-ink); font-size:.98rem}
+.tips li{margin:.35rem 0}
+.contact .mail-alt{margin:0}
+.form-card{position:relative; background:rgba(255,255,255,.045); border:1px solid rgba(165,180,252,.22); border-radius:16px; padding:1.75rem; backdrop-filter:blur(6px); box-shadow:0 30px 80px -40px rgba(99,102,241,.6)}
+.form-card::before{content:""; position:absolute; inset:-1px -1px auto -1px; height:2px; border-radius:16px 16px 0 0; background:var(--ondark-text)}
+.f-row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+.field{display:flex; flex-direction:column; margin:0 0 1rem}
+.field label{font-size:.88rem; font-weight:500; color:var(--night-ink); margin:0 0 .4rem}
+.field .opt{font-weight:400; color:var(--night-muted)}
+.field input,.field select,.field textarea{font:inherit; font-size:1rem; color:#fff; background:rgba(7,8,26,.55); border:1px solid rgba(165,180,252,.25); border-radius:9px; padding:.7rem .8rem; width:100%; transition:border-color .15s, box-shadow .15s}
+.field select{appearance:none; -webkit-appearance:none; padding-right:2.2rem; background-image:linear-gradient(45deg,transparent 50%,#A9AED6 50%),linear-gradient(135deg,#A9AED6 50%,transparent 50%); background-position:calc(100% - 1.1rem) 52%, calc(100% - .8rem) 52%; background-size:.3rem .3rem; background-repeat:no-repeat}
+.field select option{background:#11143A; color:#fff}
+.field textarea{resize:vertical; min-height:7.5rem}
+.field input::placeholder,.field textarea::placeholder{color:#7C82B0}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:#818CF8; box-shadow:0 0 0 3px rgba(129,140,248,.3)}
+.field [aria-invalid="true"]{border-color:#F87171; box-shadow:0 0 0 3px rgba(248,113,113,.18)}
+.f-err{font-size:.85rem; color:#FCA5A5; margin:.35rem 0 0; min-height:0}
+.f-err:empty{display:none}
+.f-form-err{margin:0 0 1rem}
+.f-submit{width:100%; justify-content:center; padding:.95rem 1.15rem; font-size:1rem}
+.f-submit[disabled]{opacity:.7; cursor:progress}
+.f-note{margin:.8rem 0 0; font-size:.82rem; color:var(--night-muted); text-align:center}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+.f-success{text-align:center; padding:2rem 1rem}
+.f-success svg{width:3rem; height:3rem; color:#7DD3FC; margin:0 auto 1rem; display:block}
+.f-success h3{font-family:var(--serif); font-weight:500; font-size:1.8rem; color:#fff; margin:0 0 .6rem}
+.f-success p{color:var(--night-muted); margin:0 auto; max-width:24rem}
+.f-success a{color:#C7D2FE}
+.f-success:focus{outline:none}
+.contact .f-note{margin:.8rem 0 0; font-size:.82rem; max-width:none}
+.contact .f-form-err{margin:0 0 1rem; font-size:.9rem; max-width:none; color:#FCA5A5}
+.contact .f-success p{font-size:1rem; margin:0 auto; max-width:24rem}
+.contact .mail-alt{font-size:.95rem; max-width:30rem; line-height:1.9}
+.contact .copy-mini{margin:0 .15rem 0 .35rem}
+@media (max-width:860px){ .contact .wrap{grid-template-columns:1fr} }
+@media (max-width:560px){ .f-row{grid-template-columns:1fr; gap:0} .form-card{padding:1.25rem} }
 </style>
 </head>
 <body>
@@ -692,24 +733,79 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 
 <section class="band contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <div>
+    <div class="contact-intro">
       <h2 id="contact-h">Have something to <em>evaluate?</em></h2>
       <p>Tell me what you’re trying to learn. I’ll reply within two business days with questions or a short proposal.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" id="mailBtn" href="mailto:fernando.jorge@arestechnical.com?subject=Project%20inquiry%20for%20Ares%20Technical&amp;body=What%20we%20need%20to%20evaluate%20or%20create%3A%0A%0AProducts%20or%20topics%20involved%3A%0A%0AIdeal%20timeline%3A%0A%0AHow%20we%20found%20Ares%20Technical%3A%0A">Email a project brief</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">Message on LinkedIn</a>
+      <div class="tips">
+        <h3>A helpful first message includes</h3>
+        <ol>
+          <li>What you need to learn, prove or produce</li>
+          <li>The products, competitors or topics involved</li>
+          <li>Your timeline and any key dates</li>
+          <li>Who will use the results</li>
+        </ol>
       </div>
-      <p class="mail-alt">Email app didn’t open? <button type="button" class="linkish" data-copy="fernando.jorge@arestechnical.com">Copy the address</button> or <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=fernando.jorge%40arestechnical.com&amp;su=Project%20inquiry%20for%20Ares%20Technical&amp;body=What%20we%20need%20to%20evaluate%20or%20create%3A%0A%0AProducts%20or%20topics%20involved%3A%0A%0AIdeal%20timeline%3A%0A%0AHow%20we%20found%20Ares%20Technical%3A%0A" target="_blank" rel="noopener">write it in Gmail</a>.</p>
+      <p class="mail-alt">Prefer email? Write to <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a> <button type="button" class="linkish copy-mini" data-copy="fernando.jorge@arestechnical.com" aria-label="Copy email address">Copy</button> or <a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">message me on LinkedIn</a>.</p>
     </div>
-    <div class="brief">
-      <h3>A helpful first message includes</h3>
-      <ol>
-        <li>What you need to learn, prove or produce</li>
-        <li>The products, competitors or topics involved</li>
-        <li>Your timeline and any key dates</li>
-        <li>Who will use the results</li>
-      </ol>
-      <span class="mail">Or write directly: <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a> <button type="button" class="linkish copy-mini" data-copy="fernando.jorge@arestechnical.com" aria-label="Copy email address">Copy</button></span>
+
+    <div class="form-card">
+      <form id="contactForm" action="https://formspree.io/f/xrpqlvkw" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New project inquiry: Ares Technical">
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <div class="f-row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+            <span class="f-err" id="e-name"></span>
+          </div>
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+            <span class="f-err" id="e-email"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-company">Company <span class="opt">(optional)</span></label>
+          <input id="f-company" name="company" type="text" autocomplete="organization">
+        </div>
+        <div class="f-row">
+          <div class="field">
+            <label for="f-service">I’m interested in</label>
+            <select id="f-service" name="service">
+              <option>Competitive evaluation project</option>
+              <option>Lab build-out and operations</option>
+              <option>Product marketing and competitive intelligence</option>
+              <option>Sales enablement</option>
+              <option>Content and thought leadership</option>
+              <option>Technical documentation</option>
+              <option>AI adoption for my small business</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-timeline">Timeline</label>
+            <select id="f-timeline" name="timeline">
+              <option>As soon as possible</option>
+              <option>Within 1 to 3 months</option>
+              <option>Later than 3 months</option>
+              <option>Just exploring</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-message">What do you need?</label>
+          <textarea id="f-message" name="message" rows="5" required aria-describedby="e-message" placeholder="What you need to learn or produce, the products or topics involved, and any key dates."></textarea>
+          <span class="f-err" id="e-message"></span>
+        </div>
+        <p class="f-err f-form-err" id="e-form" role="alert"></p>
+        <button class="btn btn-primary f-submit" type="submit">Send project brief <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="f-note">Your details are used only to reply to you.</p>
+      </form>
+      <div class="f-success" id="formSuccess" tabindex="-1" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>
+        <h3>Thanks, your brief is on its way.</h3>
+        <p>I’ll reply within two business days. If it’s urgent, email <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -788,6 +884,43 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
     var a=b.getAttribute("data-copy");
     copy(a).then(function(){say("Copied "+a)},function(){say("Email: "+a)});
   })});
+
+
+  // contact form → Formspree (AJAX, with normal POST as the no-JS fallback)
+  var form=document.getElementById("contactForm");
+  if(form && window.fetch){
+    var ok=document.getElementById("formSuccess"), formErr=document.getElementById("e-form"), btn=form.querySelector(".f-submit"), btnHTML=btn.innerHTML;
+    var msgs={name:"Please add your name.",email:"Please enter a valid email address.",message:"Please tell me a little about what you need."};
+    function setErr(name,msg){
+      var el=form.elements[name], out=document.getElementById("e-"+name);
+      if(el)el.setAttribute("aria-invalid",msg?"true":"false");
+      if(out)out.textContent=msg||"";
+    }
+    function check(){
+      var first=null;
+      ["name","email","message"].forEach(function(n){
+        var el=form.elements[n], bad=!el.value.trim()||(n==="email"&&!el.checkValidity());
+        setErr(n,bad?msgs[n]:""); if(bad&&!first)first=el;
+      });
+      return first;
+    }
+    ["name","email","message"].forEach(function(n){form.elements[n].addEventListener("input",function(){if(this.getAttribute("aria-invalid")==="true")setErr(n,"")})});
+    form.addEventListener("submit",function(e){
+      e.preventDefault(); formErr.textContent="";
+      var bad=check(); if(bad){bad.focus(); return}
+      btn.disabled=true; btn.textContent="Sending…";
+      fetch(form.action,{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}})
+        .then(function(r){return r.json().catch(function(){return{}}).then(function(d){return{ok:r.ok,d:d}})})
+        .then(function(res){
+          if(res.ok){form.hidden=true; ok.hidden=false; ok.focus(); form.reset(); return}
+          var errs=(res.d&&res.d.errors)||[], shown=false;
+          errs.forEach(function(x){ if(x.field&&document.getElementById("e-"+x.field)){setErr(x.field,x.message);shown=true} });
+          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your brief. Please try again, or email fernando.jorge@arestechnical.com.");
+        })
+        .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email fernando.jorge@arestechnical.com."})
+        .then(function(){btn.disabled=false; btn.innerHTML=btnHTML});
+    });
+  }
 
   // readout rows appear one by one
   var ro=document.getElementById("readout"), rows=ro.querySelectorAll("tbody tr");
