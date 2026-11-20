@@ -52,3 +52,31 @@ summary{color:var(--accent)}
 :root[data-theme="dark"] .theme-btn .sun{display:none}
 :root[data-theme="dark"] .theme-btn .moon{display:block}
 nav{align-items:center}
+
+/* ===== Site header: identical to the other Ares pages ===== */
+header.site{position:sticky; top:0; z-index:20; max-width:none; height:auto; margin:0; padding:0; display:block;
+  background:color-mix(in srgb, #09080A 88%, transparent); backdrop-filter:saturate(1.4) blur(8px); -webkit-backdrop-filter:saturate(1.4) blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.12); font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif; line-height:1.5}
+header.site .wrap{max-width:72rem; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:4rem}
+header.site .brand{display:inline-flex; align-items:center; gap:.6rem; color:#F6F2EE; text-decoration:none; font-weight:600; font-size:1.05rem; letter-spacing:.01em; white-space:nowrap}
+header.site .brand svg{width:1.9rem; height:1.9rem; flex:none}
+header.site .hdr-right{display:flex; align-items:center; gap:1.5rem}
+header.site nav.site{display:block; font-size:inherit; gap:0}
+header.site nav.site ul{display:flex; align-items:center; gap:1.6rem; list-style:none; margin:0; padding:0; font-size:.95rem}
+header.site nav.site a{display:inline-flex; align-items:center; line-height:1.5; color:#ADA5A1; text-decoration:none; white-space:nowrap}
+header.site nav.site a:hover{color:#fff}
+header.site nav.site .nav-home a{display:inline-flex; align-items:center; gap:.3rem; color:#F6F2EE; font-weight:500; padding-right:1rem; border-right:1px solid rgba(255,255,255,.12)}
+header.site nav.site .nav-home svg{width:.95em; height:.95em}
+header.site nav.site .short{display:none}
+header.site .theme-btn{width:2.4rem; height:2.4rem; color:#F6F2EE; border-color:rgba(255,255,255,.12); cursor:pointer; flex:none}
+header.site .theme-btn:hover{color:#fff; border-color:#fff}
+header.site .theme-btn svg{width:1.05rem; height:1.05rem}
+@media (max-width:640px){
+  header.site .brand{display:none}
+  header.site .wrap{justify-content:center}
+  header.site .hdr-right{gap:.6rem; width:100%; justify-content:space-between}
+  header.site nav.site ul{gap:.65rem; font-size:.8rem}
+  header.site nav.site .full{display:none} header.site nav.site .short{display:inline}
+  header.site nav.site .nav-home a{padding-right:.6rem}
+}
+@media (max-width:380px){ header.site nav.site ul{gap:.5rem} header.site .wrap{padding:0 .75rem} }
