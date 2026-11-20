@@ -580,11 +580,22 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 .res-card:hover .res-go svg{transform:translateX(3px)}
 .res-sub{margin:3rem 0 1rem; font-family:var(--serif); font-weight:500; font-size:1.5rem}
 @media (max-width:900px){ .res-grid{grid-template-columns:1fr} }
+
+/* Calculator promo bar */
+.promo{background:linear-gradient(90deg,#3A120C,#2B1608 50%,#2A1F07); border-bottom:1px solid rgba(251,146,60,.25)}
+.promo a{display:flex; align-items:center; justify-content:center; gap:.7rem; padding:.55rem 1rem; color:#F6F2EE; text-decoration:none; font-size:.9rem; text-align:center}
+.promo-tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; padding:.12rem .5rem; border-radius:999px; background:linear-gradient(100deg,#DC2626,#EA580C); color:#fff; flex:none}
+.promo-go{font-weight:600; color:#FDBA74; white-space:nowrap}
+.promo a:hover .promo-go{text-decoration:underline; text-underline-offset:.2em}
+.promo-short{display:none}
+@media (max-width:760px){ .promo-long{display:none} .promo-short{display:inline} }
+@media print{ .promo{display:none} }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="promo"><a href="/ai/calculator/"><span class="promo-tag">New</span><span class="promo-long">Free AI readiness calculator for Williamson County and Austin businesses: hours saved and a readiness score in 5 minutes</span><span class="promo-short">Free 5-minute AI readiness calculator</span><span class="promo-go">Try it →</span></a></div>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Ares Technical, home">

@@ -572,11 +572,22 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 .faq-jump a{display:inline-block; padding:.45rem .9rem; border-radius:999px; border:1px solid rgba(255,255,255,.3); color:#fff; text-decoration:none; font-size:.92rem}
 .faq-jump a:hover{border-color:#fff; background:rgba(255,255,255,.06)}
 section.block{scroll-margin-top:4.5rem}
+
+/* Calculator promo bar */
+.promo{background:linear-gradient(90deg,#3A120C,#2B1608 50%,#2A1F07); border-bottom:1px solid rgba(251,146,60,.25)}
+.promo a{display:flex; align-items:center; justify-content:center; gap:.7rem; padding:.55rem 1rem; color:#F6F2EE; text-decoration:none; font-size:.9rem; text-align:center}
+.promo-tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; padding:.12rem .5rem; border-radius:999px; background:linear-gradient(100deg,#DC2626,#EA580C); color:#fff; flex:none}
+.promo-go{font-weight:600; color:#FDBA74; white-space:nowrap}
+.promo a:hover .promo-go{text-decoration:underline; text-underline-offset:.2em}
+.promo-short{display:none}
+@media (max-width:760px){ .promo-long{display:none} .promo-short{display:inline} }
+@media print{ .promo{display:none} }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="promo"><a href="/ai/calculator/"><span class="promo-tag">New</span><span class="promo-long">Free AI readiness calculator for Williamson County and Austin businesses: hours saved and a readiness score in 5 minutes</span><span class="promo-short">Free 5-minute AI readiness calculator</span><span class="promo-go">Try it →</span></a></div>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Ares Technical, home">
@@ -618,6 +629,7 @@ section.block{scroll-margin-top:4.5rem}
       <details><summary>Do I need to be technical?</summary><p>No. Everything is explained in plain language, and the written plan and policy are meant to be read by anyone on your team.</p></details>
       <details><summary>How big does my business need to be?</summary><p>There’s no minimum. The packages work well for teams of roughly 2 to 100 people. If you’re larger, we can scope something that fits.</p></details>
       <details><summary>Where do I start?</summary><p>With a free 30-minute call, or on your own with the <a href="/ai/calculator/">AI readiness calculator</a> and the <a href="/ai/checklist/">AI safe-use checklist</a>. If it’s a fit, the next step is the readiness review.</p></details>
+      <details><summary>What does the free AI readiness calculator tell me?</summary><p>In about five minutes it estimates the hours AI could give back to your business each month, priced at Austin-area wages, gives you a readiness score across tools, policy, security and people, lists the rules that apply to your industry, and suggests three workflows to start with. No sign-up needed. <a href="/ai/calculator/">Try the calculator</a>.</p></details>
       <details><summary>Is it safe to put customer information into AI tools?</summary><p>Sometimes, with the right tool and settings, and sometimes not at all. Sorting that out is a core part of the readiness review and the safe-use policy.</p></details>
       <details><summary>Do you work with Microsoft Copilot or Google Gemini?</summary><p>Yes. Both can search the files a person has access to, so the most important step happens before you turn them on: making sure sensitive files aren’t shared more widely than they should be. I help with that, then with setup and training.</p></details>
       <details><summary>Will you sell me software?</summary><p>No. I don’t resell AI tools or take commissions, so recommendations are based on what fits your business. Often that means making better use of tools you already pay for.</p></details>

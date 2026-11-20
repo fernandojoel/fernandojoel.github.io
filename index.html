@@ -566,11 +566,59 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 @media (max-width:760px){ .why{grid-template-columns:1fr} }
 
 .faq-more{margin:1.25rem 0 0; font-weight:500}
+
+/* Calculator promo bar */
+.promo{background:linear-gradient(90deg,#3A120C,#2B1608 50%,#2A1F07); border-bottom:1px solid rgba(251,146,60,.25)}
+.promo a{display:flex; align-items:center; justify-content:center; gap:.7rem; padding:.55rem 1rem; color:#F6F2EE; text-decoration:none; font-size:.9rem; text-align:center}
+.promo-tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; padding:.12rem .5rem; border-radius:999px; background:linear-gradient(100deg,#DC2626,#EA580C); color:#fff; flex:none}
+.promo-go{font-weight:600; color:#FDBA74; white-space:nowrap}
+.promo a:hover .promo-go{text-decoration:underline; text-underline-offset:.2em}
+.promo-short{display:none}
+@media (max-width:760px){ .promo-long{display:none} .promo-short{display:inline} }
+@media print{ .promo{display:none} }
+
+/* Calculator feature */
+.calc-feature{background:radial-gradient(60rem 30rem at 85% 40%, color-mix(in srgb,#EA580C 16%, transparent), transparent 70%), var(--bg)}
+.calc-feature .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:3.5rem; align-items:center}
+.cf-eyebrow{font-family:var(--mono); font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:0 0 .9rem}
+.calc-feature h2{font-family:var(--serif); font-weight:500; font-size:clamp(2rem,3.6vw,2.9rem); line-height:1.08; margin:0 0 1rem}
+.calc-feature h2 em{font-style:italic; background:var(--grad-text, linear-gradient(100deg,#F2643F,#FBBF24)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.cf-lede{color:var(--muted); font-size:1.05rem; margin:0 0 1.4rem; max-width:36rem}
+.cf-points{list-style:none; margin:0 0 1.8rem; padding:0; display:grid; gap:.7rem}
+.cf-points li{position:relative; padding-left:1.7rem; font-size:.98rem}
+.cf-points li::before{content:""; position:absolute; left:0; top:.42rem; width:.8rem; height:.8rem; border-radius:3px; background:var(--grad)}
+.cf-points b{font-weight:600}
+.btn-lg{padding:.95rem 1.4rem; font-size:1.02rem}
+.btn svg{width:1.05em; height:1.05em}
+.cf-note{margin:1rem 0 0; font-size:.85rem; color:var(--muted)}
+.cf-card{display:block; text-decoration:none; color:#F6F2EE; background:#121014; border:1px solid rgba(251,146,60,.28); border-radius:18px; padding:1.5rem 1.6rem; box-shadow:0 30px 80px -40px rgba(234,88,12,.7); transition:transform .2s, box-shadow .2s; position:relative; overflow:hidden}
+.cf-card::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,#F2643F,#FB923C 45%,#FBBF24 80%,#FDE047)}
+.cf-card:hover{transform:translateY(-3px); box-shadow:0 36px 90px -40px rgba(234,88,12,.85)}
+.cf-head{display:flex; justify-content:space-between; gap:1rem; font-family:var(--mono); font-size:.74rem; color:#ADA5A1; margin-bottom:1rem}
+.cf-head i{display:inline-block; width:.5rem; height:.5rem; border-radius:50%; background:#FB923C; margin-right:.45rem; box-shadow:0 0 0 3px rgba(251,146,60,.2)}
+.cf-big{font-size:3.2rem; font-weight:600; line-height:1; letter-spacing:-.02em; background:linear-gradient(100deg,#F2643F,#FBBF24); -webkit-background-clip:text; background-clip:text; color:transparent}
+.cf-big small{font-size:1.1rem; font-weight:500; -webkit-text-fill-color:#ADA5A1}
+.cf-sub{margin:.4rem 0 1.1rem; color:#ADA5A1; font-size:.9rem}
+.cf-kv{display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:1.2rem}
+.cf-kv div{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:.7rem .85rem}
+.cf-kv small{display:block; color:#ADA5A1; font-size:.78rem}
+.cf-kv b{font-size:1.3rem; font-weight:600}
+.cf-mh{display:flex; justify-content:space-between; align-items:baseline; font-size:.9rem; margin-bottom:.45rem}
+.cf-mh b{font-size:1.2rem} .cf-mh small{color:#ADA5A1; font-weight:400}
+.cf-bar{height:.55rem; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden}
+.cf-bar i{display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#F2643F,#FBBF24)}
+.cf-pillars{list-style:none; margin:1rem 0 0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:.4rem; font-size:.84rem; color:#E7E1DC}
+.cf-pillars li{display:flex; align-items:center; gap:.4rem}
+.cf-foot{margin:1.1rem 0 0; font-family:var(--mono); font-size:.72rem; color:#8F8682}
+@media (max-width:960px){ .calc-feature .wrap{grid-template-columns:1fr; gap:2.5rem} }
+@media (max-width:420px){ .cf-pillars{grid-template-columns:repeat(2,1fr)} .cf-big{font-size:2.6rem} }
+.contact .calc-nudge{font-size:.95rem; color:var(--night-muted)} .contact .calc-nudge a{color:#FDBA74}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="promo"><a href="/ai/calculator/"><span class="promo-tag">New</span><span class="promo-long">Free AI readiness calculator for Williamson County and Austin businesses: hours saved and a readiness score in 5 minutes</span><span class="promo-short">Free 5-minute AI readiness calculator</span><span class="promo-go">Try it →</span></a></div>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Ares Technical, home">
@@ -602,9 +650,9 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
       <p class="lede">Your team is already curious about AI, and some are probably using it. I help you find where it actually saves time, pick the right tools, set simple rules that protect customer data, and get everyone comfortable using it.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contact">Book a readiness review <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="#packages">See how I help</a>
+        <a class="btn btn-ghost" href="/ai/calculator/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M8 6.5h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18.5h.01M12 18.5h4"/></svg>Try the free AI calculator</a>
       </div>
-      <p class="hero-note">Plain language, no jargon. On-site across Williamson County, remote everywhere else.<br>Not ready to talk yet? <a href="/ai/calculator/">Try the 5-minute AI readiness calculator →</a> or <a href="/ai/checklist/">get the free safe-use checklist</a>.</p>
+      <p class="hero-note">Plain language, no jargon. On-site across Williamson County, remote everywhere else.<br>Not ready to talk yet? Get the <a href="/ai/checklist/">free AI safe-use checklist</a>.</p>
     </div>
 
     <figure class="readout snap" id="readout" aria-label="Illustration of an AI readiness snapshot for a small business">
@@ -641,19 +689,35 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   </div>
 </section>
 
-<section class="block" id="calculator" aria-labelledby="calc-h">
+<section class="block calc-feature" id="calculator" aria-labelledby="calc-h">
   <div class="wrap">
-    <div class="sec-head rv">
-      <h2 id="calc-h">Not sure where you stand? Find out in five minutes.</h2>
-      <p>Most owners can't say how many hours AI could save them, or whether customer data is already going into free tools. The free AI readiness calculator answers both, for businesses like yours in Williamson County and Austin.</p>
+    <div class="cf-text">
+      <p class="cf-eyebrow">Free · 5 minutes · no sign-up</p>
+      <h2 id="calc-h">What could AI give back to <em>your</em> business?</h2>
+      <p class="cf-lede">Most owners can’t say how many hours AI could save them, or whether customer data is already going into free tools. The AI readiness calculator answers both, for businesses like yours in Williamson County and Austin.</p>
+      <ul class="cf-points">
+        <li><b>Hours and dollars, priced locally.</b> Cautious estimates at Austin-area wages, not hype.</li>
+        <li><b>A readiness score.</b> Where you’re solid and where the gaps are: tools, policy, security and people.</li>
+        <li><b>The rules for your industry.</b> From a WISP for tax firms to a BAA for medical and dental practices.</li>
+        <li><b>Where to start.</b> Three workflows to set up first and the red flags to fix.</li>
+      </ul>
+      <div class="cta-row"><a class="btn btn-primary btn-lg" href="/ai/calculator/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M8 6.5h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18.5h.01M12 18.5h4"/></svg>Start the free calculator <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <p class="cf-note">30 local industries · Austin-area wage data · results on screen right away</p>
     </div>
-    <ul class="why">
-      <li class="rv"><h3>Hours and dollars, priced locally</h3><p>An estimate of the hours AI could give back each month, priced at Austin-area wages for the people who do the work. It uses cautious numbers, not hype.</p></li>
-      <li class="rv"><h3>A readiness score</h3><p>See where you're solid and where the gaps are across tools, policy, security and training.</p></li>
-      <li class="rv"><h3>The rules for your industry</h3><p>See what applies to how you use AI, whether that's a WISP for tax and accounting firms, a BAA for medical and dental practices, or client consent for law firms.</p></li>
-      <li class="rv"><h3>Where to start</h3><p>Get three workflows worth setting up first and the red flags to fix before you roll anything out. You don't need to sign up to see your results.</p></li>
-    </ul>
-    <p class="rv" style="margin-top:28px"><a class="btn btn-primary" href="/ai/calculator/">Start the free calculator <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+    <a class="cf-card" href="/ai/calculator/" aria-label="Open the AI readiness calculator. Sample result shown.">
+      <div class="cf-head"><span><i></i>Sample result</span><span>Accounting firm · 8 people</span></div>
+      <div class="cf-big">26<small> hrs/mo</small></div>
+      <p class="cf-sub">Hours a month AI could give back once it’s set up</p>
+      <div class="cf-kv"><div><small>Value per month</small><b>$1,450</b></div><div><small>Value per year</small><b>$17,400</b></div></div>
+      <div class="cf-meter"><div class="cf-mh"><span>AI readiness</span><b>58<small>/100</small></b></div><div class="cf-bar"><i style="width:58%"></i></div></div>
+      <ul class="cf-pillars">
+        <li><span class="mark m-ok"><i></i></span>Tools</li>
+        <li><span class="mark m-gap"><i></i></span>Policy</li>
+        <li><span class="mark m-part"><i></i></span>Security</li>
+        <li><span class="mark m-part"><i></i></span>People</li>
+      </ul>
+      <p class="cf-foot">Illustrative example · your numbers depend on your answers</p>
+    </a>
   </div>
 </section>
 
@@ -772,6 +836,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
     <div class="contact-intro">
       <h2 id="contact-h">Ready to <em>get started?</em></h2>
       <p>Tell me a little about your business. I’ll reply within two business days to set up a short call.</p>
+      <p class="calc-nudge">Not ready to talk? <a href="/ai/calculator/">See your numbers first with the free AI readiness calculator →</a></p>
       <div class="tips">
         <h3>Helpful to mention</h3>
         <ol>
@@ -933,7 +998,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   // reveal on scroll
   if("IntersectionObserver" in window && !reduce){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px"});
-    [].forEach.call(document.querySelectorAll(".sec-head, .pain li, .uses > li, .svc, .process li, .why li, .faq details, .mid-cta"),function(el){
+    [].forEach.call(document.querySelectorAll(".sec-head, .pain li, .cf-card, .uses > li, .svc, .process li, .why li, .faq details, .mid-cta"),function(el){
       if(el.getBoundingClientRect().top>innerHeight){el.classList.add("rv"); io.observe(el)}
     });
   }
