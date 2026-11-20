@@ -4,14 +4,14 @@
 <script>document.documentElement.classList.add("js");var t=null;try{t=localStorage.getItem("fj-theme")}catch(e){}document.documentElement.setAttribute("data-theme",t||"dark")</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ares Technical — Competitive Evaluations and Technical Marketing</title>
-<meta name="description" content="Ares Technical builds the lab, runs hands-on competitive evaluations and turns the findings into reports, enablement and documentation your team can use. Security, B2B tech and AI adoption for small businesses, remote-first.">
+<title>Ares Technical — Safe, Practical AI for Small Businesses</title>
+<meta name="description" content="Practical, security-first help for small businesses adopting AI: a readiness review, tool selection and setup, a simple safe-use policy, and team training. Remote-first, based in Texas.">
 <link rel="canonical" href="https://arestechnical.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ares Technical">
-<meta property="og:title" content="Ares Technical — Evidence, not claims">
-<meta property="og:description" content="Hands-on competitive evaluations, lab build-out and technical marketing for security vendors, channel partners and B2B tech.">
+<meta property="og:title" content="Ares Technical — Put AI to work. Keep your data safe.">
+<meta property="og:description" content="Put AI to work. Keep your data safe. Plain-language AI adoption help for small businesses.">
 <meta property="og:url" content="https://arestechnical.com/">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#09080A">
@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Ares Technical","url":"https://arestechnical.com/","email":"fernando.jorge@arestechnical.com","description":"Hands-on competitive evaluations, lab build-out and operations, product marketing, content, sales enablement, technical documentation, and AI adoption consulting for small businesses.","areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"Round Rock","addressRegion":"TX","addressCountry":"US"},"founder":{"@type":"Person","name":"Fernando Jorge","url":"https://arestechnical.com/fernando/","sameAs":["https://www.linkedin.com/in/fernando-jorge"]}}
+{"@context":"https://schema.org","@type":"Service","name":"AI adoption for small businesses","serviceType":"AI adoption consulting","url":"https://arestechnical.com/","areaServed":["Williamson County, Texas","US"],"provider":{"@type":"ProfessionalService","name":"Ares Technical","url":"https://arestechnical.com/","email":"fernando.jorge@arestechnical.com"}}
 </script>
 <style>
 :root{
@@ -243,15 +243,13 @@ html.js .panel{animation:fade .35s ease}
 .about{display:grid; grid-template-columns:1fr 1.4fr; gap:4rem; align-items:start}
 .about .sec-head{margin:0}
 .about-body p{margin:0 0 1.1rem; font-size:1.08rem}
-.about-body .roles-h{font-family:var(--mono); font-weight:500; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:2rem 0 .6rem}
-.about-body .roles{list-style:none; margin:0 0 1.5rem; padding:0}
-.about-body .roles li{display:grid; grid-template-columns:12rem 1fr; gap:1.25rem; padding:.75rem 0; border-top:1px solid var(--rule); font-size:.95rem}
+.about-body .roles{list-style:none; margin:1.5rem 0; padding:0}
+.about-body .roles li{display:grid; grid-template-columns:9rem 1fr; gap:1rem; padding:.7rem 0; border-top:1px solid var(--rule); font-size:.95rem}
 .about-body .roles li:last-child{border-bottom:1px solid var(--rule)}
-.about-body .roles b{font-weight:600}
-.about-body .roles span{color:var(--muted)}
+.about-body .roles span{font-family:var(--mono); color:var(--muted); font-size:.82rem}
 .creds{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; margin:0 0 1.5rem; padding:0}
 .creds li{font-size:.85rem; padding:.3rem .7rem; border-radius:6px; background:var(--accent-soft); color:var(--ink)}
-@media (max-width:860px){ .about{grid-template-columns:1fr; gap:2rem} .about-body .roles li{grid-template-columns:1fr; gap:.2rem} }
+@media (max-width:860px){ .about{grid-template-columns:1fr; gap:2rem} .about-body .roles li{grid-template-columns:1fr; gap:.1rem} }
 
 /* FAQ */
 .faq{max-width:52rem}
@@ -520,6 +518,31 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .about-exp{margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--rule)}
 .exp-title{font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:0 0 1.5rem}
 .hero-note a{color:#FED7AA}
+
+/* AI page */
+nav.site a[aria-current="page"]{color:#fff}
+.readout.snap col.cap{width:62%}
+.readout.snap td:last-child, .readout.snap th:last-child{white-space:nowrap}
+.pain{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem}
+.pain li{background:var(--surface); border:1px solid var(--rule); border-radius:14px; padding:1.4rem 1.5rem 1.4rem 3.4rem; position:relative}
+.pain li::before{content:"?"; position:absolute; left:1.2rem; top:1.25rem; width:1.5rem; height:1.5rem; border-radius:50%; display:grid; place-items:center; font:600 .85rem/1 var(--sans); color:#fff; background:var(--btn)}
+.pain b{display:block; margin-bottom:.25rem}
+.pain p{margin:0; color:var(--muted); font-size:.98rem}
+.pain-note{margin:2rem 0 0; font-size:1.1rem; max-width:44rem}
+@media (max-width:760px){ .pain{grid-template-columns:1fr} }
+.svc .tag{display:inline-block; margin-left:.5rem; font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; padding:.15rem .5rem; border-radius:999px; color:#fff; background:var(--btn); vertical-align:middle}
+.svc .gets{list-style:none; margin:0 0 1rem; padding:0; font-size:.94rem}
+.svc .gets li{padding:.3rem 0 .3rem 1.4rem; position:relative; border-top:1px dashed var(--rule)}
+.svc .gets li::before{content:""; position:absolute; left:.1rem; top:.75rem; width:.55rem; height:.55rem; border-radius:2px; background:var(--grad)}
+.svc-grid.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:620px){ .svc-grid.two{grid-template-columns:1fr} }
+.svc.start{background:linear-gradient(140deg, color-mix(in srgb,var(--c2) 12%, var(--surface)), color-mix(in srgb,var(--c4) 14%, var(--surface)))}
+.why{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:2rem}
+.why h3{font-family:var(--serif); font-weight:500; font-size:1.45rem; margin:0 0 .5rem}
+.why p{margin:0; color:var(--muted)}
+.why li{border-top:2px solid; border-image:var(--grad) 1; padding-top:1.1rem}
+@media (max-width:860px){ .why{grid-template-columns:1fr} }
+.back-tech{margin:2.5rem 0 0; font-size:.95rem; color:var(--muted)}
 nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 
 /* Calendly booking */
@@ -528,6 +551,21 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 .contact .btn-book{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.45)}
 .contact .btn-book:hover{border-color:#fff; background:rgba(255,255,255,.06)}
 .book-call span{font-size:.92rem; color:var(--night-muted)}
+
+/* Use cases */
+.uses{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem}
+.uses > li{background:var(--surface); border:1px solid var(--rule); border-radius:14px; padding:1.5rem 1.6rem; position:relative; overflow:hidden}
+.uses > li::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--grad)}
+.uses h3{font-size:1.1rem; font-weight:600; margin:0 0 .2rem}
+.uses > li > p{margin:0 0 .8rem; color:var(--muted); font-size:.92rem}
+.uses ul{margin:0; padding-left:1.1rem; font-size:.97rem}
+.uses ul li{margin:.25rem 0}
+.uses ul li::marker{color:var(--accent)}
+@media (max-width:760px){ .uses{grid-template-columns:1fr} }
+.why{grid-template-columns:repeat(2,1fr)}
+@media (max-width:760px){ .why{grid-template-columns:1fr} }
+
+.faq-more{margin:1.25rem 0 0; font-weight:500}
 </style>
 </head>
 <body>
@@ -535,21 +573,20 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Ares Technical, home">
+    <a class="brand" href="/" aria-label="Ares Technical, home">
       <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F2643F"/><stop offset=".4" stop-color="#DC2626"/><stop offset=".7" stop-color="#EA580C"/><stop offset="1" stop-color="#FBBF24"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lg)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#1A0D12" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>
       <span>Ares Technical</span>
     </a>
     <nav class="site" id="siteNav" aria-label="Main">
       <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#process">How it works</a></li>
-        <li><a href="/ai/">AI for small business</a></li>
+        <li><a href="/" aria-current="page">Small Business</a></li>
+        <li><a href="/tech/">Tech Companies</a></li>
+        <li><a href="/resources/">Resources</a></li>
         <li><a href="/fernando/">About</a></li>
-        <li><a href="/dspm/">DSPM Recs</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="/faq/">FAQ</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary hdr-cta" href="#contact">Start a project</a>
+    <a class="btn btn-primary hdr-cta" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener">Book a free call</a>
     <button class="icon-btn theme-btn" type="button" id="themeBtn" aria-label="Switch color theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
     <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
@@ -560,169 +597,160 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 <section class="hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Competitive evaluations · Technical marketing</p>
-      <h1>Evidence, <em>not claims.</em></h1>
-      <p class="lede">Ares Technical builds the lab, runs hands-on competitive evaluations and turns the findings into reports, enablement and documentation your team can use, without pulling your engineers off the roadmap.</p>
+      <p class="eyebrow">AI adoption for small businesses</p>
+      <h1>Put AI to work. <em>Keep your data safe.</em></h1>
+      <p class="lede">Your team is already curious about AI, and some are probably using it. I help you find where it actually saves time, pick the right tools, set simple rules that protect customer data, and get everyone comfortable using it.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">Start a project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="#services">See services</a>
+        <a class="btn btn-primary" href="#contact">Book a readiness review <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#packages">See how I help</a>
       </div>
-      <p class="hero-note">For security vendors, channel partners and B2B tech teams. Remote-first, based in Texas.<br>Running a small business? <a href="/ai/">See how I help teams adopt AI safely →</a></p>
+      <p class="hero-note">Plain language, no jargon. On-site across Williamson County, remote everywhere else.<br>Not ready to talk yet? <a href="/ai/calculator/">Try the 5-minute AI readiness calculator →</a> or <a href="/ai/checklist/">get the free safe-use checklist</a>.</p>
     </div>
 
-    <figure class="readout" id="readout" aria-label="Illustration of an evaluation readout comparing three products">
-      <div class="readout-head"><span><b>Evaluation readout</b> · sample</span><span class="lamp">Week 3 of 6</span></div>
+    <figure class="readout snap" id="readout" aria-label="Illustration of an AI readiness snapshot for a small business">
+      <div class="readout-head"><span><b>AI readiness snapshot</b> · sample</span><span class="lamp">Week 1</span></div>
       <table>
-        <colgroup><col class="cap"><col><col><col></colgroup>
-        <thead><tr><th scope="col">Test</th><th scope="col"><span class="pre">Product </span>A</th><th scope="col"><span class="pre">Product </span>B</th><th scope="col"><span class="pre">Product </span>C</th></tr></thead>
+        <colgroup><col class="cap"><col></colgroup>
+        <thead><tr><th scope="col">Task</th><th scope="col">Verdict</th></tr></thead>
         <tbody>
-          <tr><td>Discovery across cloud storage</td><td><span class="mark m-ok"><i></i><b>Observed</b></span></td><td><span class="mark m-part"><i></i><b>Partial</b></span></td><td><span class="mark m-ok"><i></i><b>Observed</b></span></td></tr>
-          <tr><td>Policy on copy to AI tools</td><td><span class="mark m-ok"><i></i><b>Observed</b></span></td><td><span class="mark m-gap"><i></i><b>Gap</b></span></td><td><span class="mark m-part"><i></i><b>Partial</b></span></td></tr>
-          <tr><td>Access change detection</td><td><span class="mark m-part"><i></i><b>Partial</b></span></td><td><span class="mark m-ok"><i></i><b>Observed</b></span></td><td><span class="mark m-gap"><i></i><b>Gap</b></span></td></tr>
-          <tr><td>Scan time, 1,000 files</td><td>14 min</td><td>41 min</td><td>22 min</td></tr>
-          <tr><td>Reproducible in clean run</td><td><span class="mark m-ok"><i></i><b>Yes</b></span></td><td><span class="mark m-ok"><i></i><b>Yes</b></span></td><td><span class="mark m-part"><i></i><b>Retest</b></span></td></tr>
+          <tr><td>Drafting emails and quotes</td><td><span class="mark m-ok"><i></i><b>Good fit</b></span></td></tr>
+          <tr><td>Summarizing meeting notes</td><td><span class="mark m-ok"><i></i><b>Good fit</b></span></td></tr>
+          <tr><td>Replying to online reviews</td><td><span class="mark m-part"><i></i><b>Use with care</b></span></td></tr>
+          <tr><td>Questions about customer records</td><td><span class="mark m-part"><i></i><b>Use with care</b></span></td></tr>
+          <tr><td>Final pricing and legal decisions</td><td><span class="mark m-gap"><i></i><b>Keep human</b></span></td></tr>
         </tbody>
       </table>
-      <figcaption class="readout-foot"><span>Illustrative data · every finding keeps its configuration and evidence</span><span class="legend"><span class="mark m-ok"><i></i>Observed</span> <span class="mark m-part"><i></i>Partial</span> <span class="mark m-gap"><i></i>Gap</span></span></figcaption>
+      <figcaption class="readout-foot"><span>Illustrative example · every business gets its own</span><span class="legend"><span class="mark m-ok"><i></i>Good fit</span> <span class="mark m-part"><i></i>Use with care</span> <span class="mark m-gap"><i></i>Keep human</span></span></figcaption>
     </figure>
   </div>
 </section>
 
-<section class="band proof" aria-label="Experience">
+<section class="block" aria-labelledby="pain-h">
   <div class="wrap">
-    <div class="proof-lede"><a class="founder" href="/fernando/"><span class="mono" aria-hidden="true">FJ</span><span><b>Fernando Jorge</b>Founder · About me →</span></a><p><strong>Competitive and technical marketing experience from</strong>Cyberhaven, Splunk, Devo, Forcepoint, Edgewater Networks and AT&amp;T</p></div>
-    <ul class="stats">
-      <li><strong>20+</strong><span>years in technology and security</span></li>
-      <li><strong>60</strong><span>test identities in a recent evaluation lab</span></li>
-      <li><strong>1,000+</strong><span>SharePoint documents seeded for realistic tests</span></li>
-      <li><strong>201</strong><span>partner-facing technical videos produced</span></li>
+    <div class="sec-head">
+      <h2 id="pain-h">Sound familiar?</h2>
+      <p>Most small businesses I talk to are in the same spot.</p>
+    </div>
+    <ul class="pain">
+      <li><b>“Everyone says we should use AI.”</b><p>But nobody has said where it fits in your business, or what it should replace.</p></li>
+      <li><b>“There are too many tools.”</b><p>ChatGPT, Copilot, Gemini, AI built into the apps you already pay for. It’s hard to tell which is worth it.</p></li>
+      <li><b>“I don’t know what my team pastes into it.”</b><p>Customer details, pricing or contracts may already be going into free tools with no rules in place.</p></li>
+      <li><b>“We tried it and it didn’t stick.”</b><p>A few people experimented, results were mixed, and things went back to the old way.</p></li>
+    </ul>
+    <p class="pain-note">None of this needs a big IT project. It needs a clear plan, a few good habits and someone who understands both the tools and the risks.</p>
+  </div>
+</section>
+
+<section class="block" id="calculator" aria-labelledby="calc-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 id="calc-h">Not sure where you stand? Find out in five minutes.</h2>
+      <p>Most owners can't say how many hours AI could save them, or whether customer data is already going into free tools. The free AI readiness calculator answers both, for businesses like yours in Williamson County and Austin.</p>
+    </div>
+    <ul class="why">
+      <li class="rv"><h3>Hours and dollars, priced locally</h3><p>An estimate of the hours AI could give back each month, priced at Austin-area wages for the people who do the work. It uses cautious numbers, not hype.</p></li>
+      <li class="rv"><h3>A readiness score</h3><p>See where you're solid and where the gaps are across tools, policy, security and training.</p></li>
+      <li class="rv"><h3>The rules for your industry</h3><p>See what applies to how you use AI, whether that's a WISP for tax and accounting firms, a BAA for medical and dental practices, or client consent for law firms.</p></li>
+      <li class="rv"><h3>Where to start</h3><p>Get three workflows worth setting up first and the red flags to fix before you roll anything out. You don't need to sign up to see your results.</p></li>
+    </ul>
+    <p class="rv" style="margin-top:28px"><a class="btn btn-primary" href="/ai/calculator/">Start the free calculator <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+  </div>
+</section>
+
+<section class="block" id="examples" aria-labelledby="uses-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="uses-h">Where AI helps first</h2>
+      <p>A few common starting points. Your readiness review finds the ones that fit your business.</p>
+    </div>
+    <ul class="uses">
+      <li><h3>Professional services</h3><p>Accounting, legal, real estate, agencies</p><ul><li>First drafts of client emails and proposals</li><li>Meeting and document summaries</li><li>Checklists and templates for repeat work</li></ul></li>
+      <li><h3>Home services and trades</h3><p>Contractors, HVAC, cleaning, landscaping</p><ul><li>Faster replies to new leads</li><li>Quotes and job summaries written up quickly</li><li>Follow-up reminders that don’t slip</li></ul></li>
+      <li><h3>Retail and restaurants</h3><p>Shops, cafés, salons, local brands</p><ul><li>Replies to online reviews</li><li>Social posts and product descriptions</li><li>Menus, signs and messages in more than one language</li></ul></li>
+      <li><h3>Medical, dental and wellness</h3><p>Clinics and practices, with extra care</p><ul><li>Appointment reminders and patient FAQs</li><li>Summaries of non-clinical paperwork</li><li>Patient information only in tools approved for it</li></ul></li>
     </ul>
   </div>
 </section>
 
-<section class="paths" aria-label="Choose your path">
-  <div class="wrap">
-    <a class="path" href="#services">
-      <span class="path-tag">For technology companies</span>
-      <h2>Know where you win, and prove it.</h2>
-      <p>Security vendors, channel partners and B2B tech teams: competitive evaluations, test labs, product marketing, enablement, content and documentation.</p>
-      <span class="path-go">See services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    </a>
-    <a class="path" href="/ai/">
-      <span class="path-tag">For small businesses</span>
-      <h2>Put AI to work, and keep your data safe.</h2>
-      <p>Plain-language help choosing AI tools, setting simple rules that protect customer data, and training your team.</p>
-      <span class="path-go">AI for small business <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    </a>
-  </div>
-</section>
-
-<section class="block" id="services" aria-labelledby="svc-h">
+<section class="block" id="packages" aria-labelledby="pkg-h">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="svc-h">Services for technology companies</h2>
-      <p>One owner from the lab to the deliverable. Start with an evaluation, or bring me in for the piece you need.</p>
+      <h2 id="pkg-h">How I help</h2>
+      <p>Start with the readiness review. Add the rest only if you need it. Each package has a fixed price, agreed before we start, and the support plan is month to month.</p>
     </div>
-
-    <article class="lead-svc">
-      <div>
-        <p class="tag">Lead offer</p>
-        <h3>Competitive evaluation projects</h3>
-        <p>You need reliable evidence about how products actually behave, not what their datasheets say. I scope the evaluation, build and run the lab, and deliver findings your team can defend in front of buyers, executives and engineers.</p>
-        <p class="fine">Fixed scope and fee, typically 4 to 10 weeks. Lab licenses and cloud costs are provided by or billed to the client.</p>
-      </div>
-      <div class="deliv">
-        <h4>What you get</h4>
-        <ul>
-          <li>Scope with business questions, products, versions and success criteria</li>
-          <li>An authorized lab with representative users, data and connectors</li>
-          <li>Comparison matrix with expected versus observed behavior</li>
-          <li>Technical findings with configuration context and evidence</li>
-          <li>Executive summary and practical recommendations</li>
-          <li>Working demo or walkthrough, plus a clean handoff</li>
-        </ul>
-      </div>
-    </article>
-
-    <ul class="svc-grid">
+    <ul class="svc-grid two">
+      <li class="svc start">
+        <span class="num">01</span><span class="tag">Start here</span>
+        <h3>AI readiness review</h3>
+        <p>A short, fixed-price look at how your business runs today, where AI can save real time, and where it could put customer or company data at risk.</p>
+        <ul class="gets"><li>Conversations with you and key staff</li><li>A list of tasks ranked by time saved and risk</li><li>A short written plan with clear next steps</li></ul>
+      </li>
       <li class="svc">
         <span class="num">02</span>
-        <h3>Lab build-out and operations</h3>
-        <p>An enterprise-style test environment you can keep using, with recurring test runs as products ship new versions.</p>
-        <ul class="chips"><li>Microsoft 365</li><li>AWS</li><li>Test data</li><li>Connectors</li></ul>
+        <h3>Tool selection and setup</h3>
+        <p>Help choosing the right AI tools for your needs and budget, often starting with what you already pay for, then setting them up with sensible privacy settings.</p>
+        <ul class="gets"><li>A side-by-side shortlist in plain language</li><li>Accounts and settings configured</li><li>A simple pilot on one or two real tasks</li></ul>
       </li>
       <li class="svc">
         <span class="num">03</span>
-        <h3>Product marketing and competitive intelligence</h3>
-        <p>Fractional help with positioning, messaging, launches and ongoing competitor tracking.</p>
-        <ul class="chips"><li>Positioning</li><li>Messaging</li><li>Launches</li></ul>
+        <h3>Safe-use policy</h3>
+        <p>A one-to-two page set of rules your team can actually follow: which tools are approved, what information never goes in, and when a person must check the output.</p>
+        <ul class="gets"><li>A written AI use policy</li><li>A quick-reference sheet for staff</li><li>Guidance for handling customer data</li></ul>
       </li>
       <li class="svc">
         <span class="num">04</span>
-        <h3>Sales enablement</h3>
-        <p>Battlecards, solution briefs, datasheets, case studies, demo videos and partner training grounded in tested behavior.</p>
-        <ul class="chips"><li>Battlecards</li><li>Briefs</li><li>Training</li></ul>
+        <h3>Team training</h3>
+        <p>Hands-on sessions built around your own work, so people learn to write good prompts, check results and know when not to use AI.</p>
+        <ul class="gets"><li>On-site in Williamson County, or live online</li><li>Examples from your own tasks</li><li>Follow-up questions answered</li></ul>
       </li>
       <li class="svc">
         <span class="num">05</span>
-        <h3>Content and thought leadership</h3>
-        <p>Ebooks, whitepapers, research reports, playbooks and blog posts for technical and executive buyers.</p>
-        <ul class="chips"><li>Ebooks</li><li>Reports</li><li>Playbooks</li></ul>
+        <h3>Copilot and Gemini readiness</h3>
+        <p>AI assistants like Microsoft Copilot and Google Gemini can search everything a person has access to. Before you switch them on, I check who can see which files, so a payroll sheet or client contract shared too widely doesn’t show up in someone’s AI answer.</p>
+        <ul class="gets"><li>A review of file sharing and permissions</li><li>Fixes for overshared folders and links</li><li>A safe rollout plan for your team</li></ul>
       </li>
       <li class="svc">
         <span class="num">06</span>
-        <h3>Technical documentation</h3>
-        <p>Installation guides, admin and configuration docs, and knowledge base articles, validated step by step.</p>
-        <ul class="chips"><li>Install guides</li><li>Admin docs</li><li>Knowledge base</li></ul>
-      </li>
-      <li class="svc bundle-tile">
-        <span class="num">+</span>
-        <h3>Evaluation + Enablement</h3>
-        <p>The evidence from an evaluation becomes battlecards, briefs and training in the same engagement, so findings reach the field without a second project.</p>
-        <a class="tile-go" href="#contact">Ask about the bundle →</a>
-      </li><li>Tool selection</li><li>Safe-use policy</li><li>Training</li></ul>
+        <h3>Ongoing AI support plan</h3>
+        <p>AI tools change every month. A light monthly plan keeps your setup safe and useful without hiring anyone.</p>
+        <ul class="gets"><li>A monthly check-in call</li><li>New tools reviewed before your team uses them</li><li>Policy and settings updated as tools change</li></ul>
       </li>
     </ul>
-
-  </div>
-</section>
-
-<section class="block" id="expertise" aria-labelledby="exp-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="exp-h">Where I go deep</h2>
-      <p>The categories and environments I know from years of hands-on work, not just research.</p>
-    </div>
-    <div class="exp">
-      <div><h3>Security categories</h3><ul><li>Data security and DLP</li><li>DSPM</li><li>Insider risk</li><li>Security for AI</li><li>SIEM and security analytics</li><li>UEBA</li><li>CASB</li><li>SOAR</li></ul></div>
-      <div><h3>Lab and infrastructure</h3><ul><li>Microsoft 365 and SharePoint</li><li>AWS S3</li><li>Identity and access</li><li>Connectors and integrations</li><li>Realistic test datasets</li></ul></div>
-      <div><h3>Networks and communications</h3><ul><li>Session border controllers</li><li>VoIP and SIP</li><li>Interoperability testing</li><li>Carrier and enterprise design</li></ul></div>
-    </div>
   </div>
 </section>
 
 <section class="block process" id="process" aria-labelledby="proc-h">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="proc-h">How an evaluation works</h2>
-      <p>A defined scope, regular status updates and evidence for every finding. No surprises at the end.</p>
+      <h2 id="proc-h">How it works</h2>
+      <p>Clear steps, a fixed price for each, and no long contracts.</p>
     </div>
     <ol>
-      <li><span class="dot"></span><span class="step">01</span><h3>Plan</h3><p>Agree on the business questions, products and versions, evaluation criteria, schedule and required access.</p><p class="out"><b>You get</b>Scope and test plan</p></li>
-      <li><span class="dot"></span><span class="step">02</span><h3>Build</h3><p>Deploy and configure an authorized assessment environment with representative users and test content.</p><p class="out"><b>You get</b>A working lab</p></li>
-      <li><span class="dot"></span><span class="step">03</span><h3>Test</h3><p>Run realistic workflows, track observations and blockers, and send periodic status updates.</p><p class="out"><b>You get</b>Status updates and an issue log</p></li>
-      <li><span class="dot"></span><span class="step">04</span><h3>Report</h3><p>Package the evidence, findings and recommendations, then hand off or clean up the lab.</p><p class="out"><b>You get</b>Matrix, findings, summary and demo</p></li>
+      <li><span class="dot"></span><span class="step">01</span><h3>Talk</h3><p>A free call about your business, your team and what you hope AI can do.</p><p class="out"><b>You get</b>A clear yes or no on fit</p></li>
+      <li><span class="dot"></span><span class="step">02</span><h3>Review</h3><p>I look at how work gets done today and where AI helps or adds risk.</p><p class="out"><b>You get</b>Your readiness snapshot and plan</p></li>
+      <li><span class="dot"></span><span class="step">03</span><h3>Set up</h3><p>We choose tools, configure them and put simple rules in writing.</p><p class="out"><b>You get</b>Working tools and a policy</p></li>
+      <li><span class="dot"></span><span class="step">04</span><h3>Train</h3><p>Your team learns on real tasks. An optional monthly plan keeps things on track.</p><p class="out"><b>You get</b>A team that uses AI with confidence</p></li>
     </ol>
-    <ul class="terms">
-      <li>Defined scope and deliverables</li>
-      <li>Remote-first delivery</li>
-      <li>Customer-authorized testing only</li>
-      <li>NDA and confidentiality controls</li>
-    </ul>
     <div class="mid-cta">
-      <p><strong>Not sure where to start?</strong> A short scoping call is enough to tell whether an evaluation fits, and what it would take.</p>
-      <div class="mid-cta-btns"><a class="btn btn-primary" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a 30-minute call</a><a class="btn btn-ghost" href="#contact">Send a brief</a></div>
+      <p><strong>Not sure you’re ready?</strong> That’s what the free first call is for. No preparation needed. Or start with the <a href="/ai/checklist/">free AI safe-use checklist</a>.</p>
+      <div class="mid-cta-btns"><a class="btn btn-primary" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a free 30-minute call</a><a class="btn btn-ghost" href="#contact">Send a message</a></div>
     </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="why-h">Why Ares Technical</h2>
+      <p>Lots of people can show you an AI tool. Fewer can tell you what happens to your data once you use it.</p>
+    </div>
+    <ul class="why">
+      <li><h3>Security comes first</h3><p>I’ve spent years in data protection and security, including how companies keep sensitive information out of AI tools. That shapes every recommendation.</p></li>
+      <li><h3>Practical, not hype</h3><p>The goal is hours saved on real work. If AI isn’t a good fit for a task, I’ll say so.</p></li>
+      <li><h3>Vendor-neutral</h3><p>I don’t resell software or take commissions. Recommendations are about what fits, and often that means getting more from tools you already pay for.</p></li>
+      <li><h3>Explained simply</h3><p>Two decades of turning technical topics into training and documentation means you get clear answers, not jargon.</p></li>
+    </ul>
+    <p class="back-tech">Ares Technical also runs competitive evaluations and technical marketing for technology companies. <a href="/tech/">See Tech Companies</a>, or <a href="/fernando/">meet Fernando Jorge</a>.</p>
   </div>
 </section>
 
@@ -730,38 +758,37 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   <div class="wrap">
     <div class="sec-head"><h2 id="faq-h">Questions</h2></div>
     <div class="faq">
-      <details><summary>How does an engagement start?</summary><p>With a short call about what you need to learn and why (<a href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener">book one here</a>). If it’s a fit, I send a one-page proposal with scope, deliverables, timeline and a fixed fee. We sign an NDA before any detailed scoping.</p></details>
-      <details><summary>Whose licenses and environments do you test with?</summary><p>Only ones you’re authorized to provide, or that we set up together under the vendors’ terms. Lab licenses and cloud costs are provided by or billed to the client, so you own the environment and the evidence.</p></details>
-      <details><summary>How do you handle confidentiality?</summary><p>Findings, test data and lab access stay under NDA and are shared only with the people you name. At the end, the lab is handed off to your team or cleaned up, whichever you prefer.</p></details>
-      <details><summary>What do you need from my team?</summary><p>A point of contact, access to the products and accounts in scope, and about an hour a week for status updates and decisions. I handle the day-to-day lab work.</p></details>
-      <details><summary>Do you help small businesses adopt AI?</summary><p>Yes. It starts with a short readiness review of where AI can save your team time and where it creates risk. <a href="/ai/">See how AI adoption works for small businesses</a>.</p></details>
-      <details><summary>Do you work with buyers, not just vendors?</summary><p>Yes. MSSPs, resellers and other buyers hire me to test a shortlist of products against their real needs before they commit, and to recommend the one that fits.</p></details>
-      <details><summary>How is pricing set?</summary><p>Evaluations and documentation sprints are fixed-fee projects. Fractional product marketing and lab operations are monthly retainers. Content and enablement assets can be priced per piece. You’ll know the full cost before we start.</p></details>
+      <details><summary>Do I need to be technical?</summary><p>No. Everything is explained in plain language, and the written plan and policy are meant to be read by anyone on your team.</p></details>
+      <details><summary>Is it safe to put customer information into AI tools?</summary><p>Sometimes, with the right tool and settings, and sometimes not at all. Sorting that out is a core part of the readiness review and the safe-use policy.</p></details>
+      <details><summary>How much does it cost?</summary><p>Each package has a fixed price, agreed before any work starts. The readiness review is the smallest commitment and tells you whether the rest is worth doing.</p></details>
+      <details><summary>Do you work in person or remotely?</summary><p>Both. I visit businesses and run on-site training across Williamson County, including Round Rock, Georgetown, Cedar Park, Leander, Hutto, Taylor and Liberty Hill. Anywhere else, everything works over video calls.</p></details>
     </div>
+      <p class="faq-more"><a href="/faq/#small-business">See all questions →</a></p>
   </div>
 </section>
 
 <section class="band contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
     <div class="contact-intro">
-      <h2 id="contact-h">Have something to <em>evaluate?</em></h2>
-      <p>Tell me what you’re trying to learn. I’ll reply within two business days with questions or a short proposal.</p>
+      <h2 id="contact-h">Ready to <em>get started?</em></h2>
+      <p>Tell me a little about your business. I’ll reply within two business days to set up a short call.</p>
       <div class="tips">
-        <h3>A helpful first message includes</h3>
+        <h3>Helpful to mention</h3>
         <ol>
-          <li>What you need to learn, prove or produce</li>
-          <li>The products, competitors or topics involved</li>
-          <li>Your timeline and any key dates</li>
-          <li>Who will use the results</li>
+          <li>What your business does</li>
+          <li>How your team uses AI today, if at all</li>
+          <li>The tasks that eat up the most time</li>
+          <li>Anything you’re worried about</li>
         </ol>
       </div>
-      <div class="book-call"><a class="btn btn-book" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a 30-minute call</a><span>Prefer to talk first? Pick a time that works for you.</span></div>
+      <div class="book-call"><a class="btn btn-book" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a 30-minute call</a><span>Rather talk it through? Pick a time for a free call.</span></div>
       <p class="mail-alt">Prefer email? Write to <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a> <button type="button" class="linkish copy-mini" data-copy="fernando.jorge@arestechnical.com" aria-label="Copy email address">Copy</button> or <a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">message me on LinkedIn</a>.</p>
     </div>
 
     <div class="form-card">
       <form id="contactForm" action="https://formspree.io/f/xrpqlvkw" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="New project inquiry: Ares Technical">
+        <input type="hidden" name="_subject" value="New AI readiness inquiry: Ares Technical">
+        <input type="hidden" name="service" value="AI adoption for my small business">
         <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
         <div class="f-row">
           <div class="field">
@@ -770,51 +797,39 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
             <span class="f-err" id="e-name"></span>
           </div>
           <div class="field">
-            <label for="f-email">Work email</label>
+            <label for="f-email">Email</label>
             <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
             <span class="f-err" id="e-email"></span>
           </div>
         </div>
-        <div class="field">
-          <label for="f-company">Company <span class="opt">(optional)</span></label>
-          <input id="f-company" name="company" type="text" autocomplete="organization">
-        </div>
         <div class="f-row">
           <div class="field">
-            <label for="f-service">I’m interested in</label>
-            <select id="f-service" name="service">
-              <option>Competitive evaluation project</option>
-              <option>Lab build-out and operations</option>
-              <option>Product marketing and competitive intelligence</option>
-              <option>Sales enablement</option>
-              <option>Content and thought leadership</option>
-              <option>Technical documentation</option>
-              <option>AI adoption for my small business</option>
-              <option>Something else</option>
-            </select>
+            <label for="f-company">Business name <span class="opt">(optional)</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization">
           </div>
           <div class="field">
-            <label for="f-timeline">Timeline</label>
-            <select id="f-timeline" name="timeline">
-              <option>As soon as possible</option>
-              <option>Within 1 to 3 months</option>
-              <option>Later than 3 months</option>
-              <option>Just exploring</option>
+            <label for="f-size">Team size</label>
+            <select id="f-size" name="team_size">
+              <option>Just me</option>
+              <option>2 to 10 people</option>
+              <option selected>11 to 50 people</option>
+              <option>51 to 100 people</option>
+              <option>More than 100</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label for="f-message">What do you need?</label>
-          <textarea id="f-message" name="message" rows="5" required aria-describedby="e-message" placeholder="What you need to learn or produce, the products or topics involved, and any key dates."></textarea>
+          <label for="f-message">Tell me about your business</label>
+          <textarea id="f-message" name="message" rows="5" required aria-describedby="e-message" placeholder="What you do, how your team uses AI today, and what you’d like help with."></textarea>
           <span class="f-err" id="e-message"></span>
         </div>
         <p class="f-err f-form-err" id="e-form" role="alert"></p>
-        <button class="btn btn-primary f-submit" type="submit">Send project brief <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="btn btn-primary f-submit" type="submit">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="f-note">Your details are used only to reply to you.</p>
       </form>
       <div class="f-success" id="formSuccess" tabindex="-1" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>
-        <h3>Thanks, your brief is on its way.</h3>
+        <h3>Thanks, your message is on its way.</h3>
         <p>I’ll reply within two business days. If it’s urgent, email <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a>.</p>
       </div>
     </div>
@@ -827,8 +842,11 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   <div class="wrap">
     <span>© <span id="yr">2026</span> Ares Technical · Round Rock, Texas · Remote-first</span>
     <ul>
-      <li><a href="/ai/">AI for small business</a></li>
-      <li><a href="/fernando/">Fernando Jorge portfolio</a></li>
+      <li><a href="/">Small Business</a></li>
+      <li><a href="/tech/">Tech Companies</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/fernando/">About</a></li>
       <li><a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="mailto:fernando.jorge@arestechnical.com">Email</a></li>
     </ul>
@@ -875,7 +893,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   var form=document.getElementById("contactForm");
   if(form && window.fetch){
     var ok=document.getElementById("formSuccess"), formErr=document.getElementById("e-form"), btn=form.querySelector(".f-submit"), btnHTML=btn.innerHTML;
-    var msgs={name:"Please add your name.",email:"Please enter a valid email address.",message:"Please tell me a little about what you need."};
+    var msgs={name:"Please add your name.",email:"Please enter a valid email address.",message:"Please tell me a little about your business."};
     function setErr(name,msg){
       var el=form.elements[name], out=document.getElementById("e-"+name);
       if(el)el.setAttribute("aria-invalid",msg?"true":"false");
@@ -900,7 +918,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
           if(res.ok){form.hidden=true; ok.hidden=false; ok.focus(); form.reset(); return}
           var errs=(res.d&&res.d.errors)||[], shown=false;
           errs.forEach(function(x){ if(x.field&&document.getElementById("e-"+x.field)){setErr(x.field,x.message);shown=true} });
-          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your brief. Please try again, or email fernando.jorge@arestechnical.com.");
+          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your message. Please try again, or email fernando.jorge@arestechnical.com.");
         })
         .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email fernando.jorge@arestechnical.com."})
         .then(function(){btn.disabled=false; btn.innerHTML=btnHTML});
@@ -915,7 +933,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   // reveal on scroll
   if("IntersectionObserver" in window && !reduce){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px"});
-    [].forEach.call(document.querySelectorAll(".sec-head, .lead-svc, .svc, .process li, .path, .exp > div, .work, .about-body, .faq details, .mid-cta"),function(el){
+    [].forEach.call(document.querySelectorAll(".sec-head, .pain li, .uses > li, .svc, .process li, .why li, .faq details, .mid-cta"),function(el){
       if(el.getBoundingClientRect().top>innerHeight){el.classList.add("rv"); io.observe(el)}
     });
   }
