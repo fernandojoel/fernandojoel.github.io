@@ -2,19 +2,19 @@
 :root{
   --bg:#FBF8F5; --surface:#FFFFFF; --surface-2:#F7EFEA; --ink:#1A1418; --muted:#665A5E; --line:#EDE3DC;
   --accent:#C2410C; --soft:#FDECE4;
-  --btn:linear-gradient(100deg,#DB2777 0%,#EA580C 100%);
-  --grad:linear-gradient(100deg,#DB2777 0%,#E11D48 35%,#C2410C 68%,#D97706 100%);
-  --grad-text:linear-gradient(100deg,#E11D48 0%,#C2410C 100%);
-  --glow-a:rgba(236, 72, 153,.10); --glow-b:rgba(249, 115, 22,.10);
+  --btn:linear-gradient(100deg,#DC2626 0%,#EA580C 100%);
+  --grad:linear-gradient(100deg,#DC2626 0%,#EA580C 35%,#C2410C 68%,#D97706 100%);
+  --grad-text:linear-gradient(100deg,#EA580C 0%,#C2410C 100%);
+  --glow-a:rgba(220, 38, 38,.10); --glow-b:rgba(249, 115, 22,.10);
   --danger:#B42318;
   color-scheme:light;
 }
 :root[data-theme="dark"]{
   --bg:#0B0A0C; --surface:#151317; --surface-2:#100E11; --ink:#F5F1EE; --muted:#ABA3A0; --line:#2B2629;
   --accent:#FB923C; --soft:#2A1A18;
-  --grad:linear-gradient(100deg,#F472B6 0%,#FB7185 35%,#FB923C 68%,#FBBF24 100%);
-  --grad-text:linear-gradient(100deg,#F472B6 0%,#FB923C 55%,#FBBF24 100%);
-  --glow-a:rgba(236, 72, 153,.30); --glow-b:rgba(249, 115, 22,.32);
+  --grad:linear-gradient(100deg,#F2643F 0%,#FB923C 35%,#FBBF24 68%,#FDE047 100%);
+  --grad-text:linear-gradient(100deg,#F2643F 0%,#FB923C 55%,#FBBF24 100%);
+  --glow-a:rgba(220, 38, 38,.30); --glow-b:rgba(249, 115, 22,.32);
   --danger:#FF8A8A;
   color-scheme:dark;
 }
@@ -25,9 +25,9 @@ h1,h2,.hero-note h2,.method-grid b,.vendor-icon,.logo{font-family:"Newsreader",G
 h1 em{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.05em}
 .logo{background:var(--btn); color:#fff}
 .dot{background:var(--accent)}
-.primary{background:var(--btn); border:0; color:#fff; box-shadow:0 10px 26px -14px rgba(225, 29, 72,.9)}
+.primary{background:var(--btn); border:0; color:#fff; box-shadow:0 10px 26px -14px rgba(220, 38, 38,.9)}
 .primary:hover{background:var(--btn); filter:brightness(1.1)}
-.hero-note{position:relative; overflow:hidden; background:var(--surface); border:1px solid var(--line); box-shadow:0 24px 60px -36px rgba(225, 29, 72,.55)}
+.hero-note{position:relative; overflow:hidden; background:var(--surface); border:1px solid var(--line); box-shadow:0 24px 60px -36px rgba(220, 38, 38,.55)}
 .hero-note::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--grad)}
 .source-card,.product,.compare-tray,.panel,.queue-card,.secondary,.close{background:var(--surface); color:var(--ink)}
 .search input,select,.panel input:not([type=checkbox]),.panel textarea,.queue-card textarea,.work-search input{background:var(--surface); color:var(--ink); border-color:var(--line)}
@@ -35,7 +35,7 @@ h1 em{background:var(--grad-text); -webkit-background-clip:text; background-clip
 .status,.pill{border-color:color-mix(in srgb,var(--accent) 35%, var(--line)); background:var(--soft); color:var(--accent)}
 .metric-list>div{border-bottom-color:var(--line)}
 .product{transition:box-shadow .2s, border-color .2s}
-.product:hover{border-color:transparent; box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 45%, transparent), 0 20px 50px -30px rgba(244, 63, 94,.6)}
+.product:hover{border-color:transparent; box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 45%, transparent), 0 20px 50px -30px rgba(234, 88, 12,.6)}
 .method-grid b{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent}
 .closing{position:relative; overflow:hidden; background:var(--soft)}
 .closing::before{content:""; position:absolute; inset:0 auto 0 0; width:4px; background:var(--btn)}

@@ -227,9 +227,9 @@ nav.site a{white-space:nowrap}
 :root{
   --bg:#FBF8F5; --surface:#FFFFFF; --ink:#1A1418; --muted:#665A5E; --rule:#EDE3DC;
   --accent:#C2410C; --accent-soft:#FDECE4; --node:#D97706;
-  --grad:linear-gradient(100deg,#DB2777 0%,#E11D48 35%,#C2410C 68%,#D97706 100%);
-  --btn:linear-gradient(100deg,#DB2777 0%,#EA580C 100%);
-  --ondark-text:linear-gradient(100deg,#F472B6 0%,#FB923C 55%,#FBBF24 100%);
+  --grad:linear-gradient(100deg,#DC2626 0%,#EA580C 35%,#C2410C 68%,#D97706 100%);
+  --btn:linear-gradient(100deg,#DC2626 0%,#EA580C 100%);
+  --ondark-text:linear-gradient(100deg,#F2643F 0%,#FB923C 55%,#FBBF24 100%);
   --night:#09080A; --night-ink:#F6F2EE; --night-muted:#ADA5A1; --night-rule:rgba(255,255,255,.12);
   --sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
   color-scheme:light;
@@ -237,13 +237,13 @@ nav.site a{white-space:nowrap}
 :root[data-theme="dark"]{
   --bg:#0B0A0C; --surface:#151317; --ink:#F5F1EE; --muted:#ABA3A0; --rule:#2B2629;
   --accent:#FB923C; --accent-soft:#2A1A18; --node:#FBBF24;
-  --grad:linear-gradient(100deg,#F472B6 0%,#FB7185 35%,#FB923C 68%,#FBBF24 100%);
+  --grad:linear-gradient(100deg,#F2643F 0%,#FB923C 35%,#FBBF24 68%,#FDE047 100%);
   color-scheme:dark;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0B0A0C; --surface:#151317; --ink:#F5F1EE; --muted:#ABA3A0; --rule:#2B2629;
   --accent:#FB923C; --accent-soft:#2A1A18; --node:#FBBF24;
-  --grad:linear-gradient(100deg,#F472B6 0%,#FB7185 35%,#FB923C 68%,#FBBF24 100%);
+  --grad:linear-gradient(100deg,#F2643F 0%,#FB923C 35%,#FBBF24 68%,#FDE047 100%);
   color-scheme:dark;
 }}
 body::before{background:var(--night)}
@@ -260,23 +260,23 @@ header.site .theme-btn:hover{color:#fff; border-color:#fff}
 
 /* Hero: midnight with glows; tokens re-scoped so the timeline stays legible */
 .hero{position:relative; overflow:hidden;
-  --ink:var(--night-ink); --muted:var(--night-muted); --rule:var(--night-rule); --accent:#FB923C; --accent-soft:rgba(244, 63, 94,.28); --bg:var(--night); --node:#FBBF24;
+  --ink:var(--night-ink); --muted:var(--night-muted); --rule:var(--night-rule); --accent:#FB923C; --accent-soft:rgba(234, 88, 12,.28); --bg:var(--night); --node:#FBBF24;
   color:var(--ink); background:
-  radial-gradient(38% 60% at -4% 18%, rgba(236, 72, 153,.40) 0%, transparent 70%),
+  radial-gradient(38% 60% at -4% 18%, rgba(220, 38, 38,.40) 0%, transparent 70%),
   radial-gradient(32% 55% at 104% 70%, rgba(249, 115, 22,.42) 0%, transparent 70%),
-  radial-gradient(45% 45% at 60% -10%, rgba(244, 63, 94,.26) 0%, transparent 70%),
+  radial-gradient(45% 45% at 60% -10%, rgba(234, 88, 12,.26) 0%, transparent 70%),
   var(--night)}
-.hero::after{content:""; position:absolute; inset:auto 0 0 0; height:1px; background:linear-gradient(90deg,transparent,#FB7185,#FBBF24,transparent)}
+.hero::after{content:""; position:absolute; inset:auto 0 0 0; height:1px; background:linear-gradient(90deg,transparent,#FB923C,#FBBF24,transparent)}
 .hero .wrap{position:relative}
 .hero h1{color:#fff}
 .hero .stats strong{background:var(--ondark-text); -webkit-background-clip:text; background-clip:text; color:transparent}
 .hero a{color:#FED7AA}
-.trace ol::before{background:linear-gradient(90deg,#F472B6 0%,#FB7185 35%,#FB923C 70%,#FBBF24 100%); opacity:1}
-@media (max-width:760px){ .trace ol::before{background:linear-gradient(180deg,#F472B6,#FB7185,#FB923C,#FBBF24)} }
-.trace li .dot{border-color:#FB7185}
+.trace ol::before{background:linear-gradient(90deg,#F2643F 0%,#FB923C 35%,#FBBF24 70%,#FDE047 100%); opacity:1}
+@media (max-width:760px){ .trace ol::before{background:linear-gradient(180deg,#F2643F,#FB923C,#FBBF24,#FDE047)} }
+.trace li .dot{border-color:#FB923C}
 .trace li.sec .dot{border-color:#FB923C}
 .trace .node[aria-pressed="true"] .dot{background:#FB923C; border-color:#FB923C}
-.trace-legend span::before{background:#FB7185}
+.trace-legend span::before{background:#FB923C}
 .trace-legend span.s::before{background:#FBBF24}
 
 /* Accents */
@@ -316,7 +316,7 @@ nav.site .short{display:none}
 <body>
 <header class="site">
 <div class="wrap">
-<a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgp" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F472B6"/><stop offset=".4" stop-color="#DB2777"/><stop offset=".7" stop-color="#EA580C"/><stop offset="1" stop-color="#FBBF24"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lgp)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#1A0D12" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>Fernando Jorge</a>
+<a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgp" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F2643F"/><stop offset=".4" stop-color="#DC2626"/><stop offset=".7" stop-color="#EA580C"/><stop offset="1" stop-color="#FBBF24"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lgp)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#1A0D12" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>Fernando Jorge</a>
 <div class="hdr-right"><nav class="site" aria-label="Sections">
 <ul>
 <li class="nav-home"><a href="/" aria-label="Back to Ares Technical"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="full">Ares Technical</span><span class="short">Ares</span></a></li>
