@@ -1,20 +1,20 @@
 /* Ares Technical look for DSPM Recs: light and dark themes */
 :root{
-  --bg:#F5F7FF; --surface:#FFFFFF; --surface-2:#EEF0FB; --ink:#11132E; --muted:#555B85; --line:#DDE1F3;
-  --accent:#4F46E5; --soft:#EBEBFF;
-  --btn:linear-gradient(100deg,#3B82F6 0%,#6366F1 100%);
-  --grad:linear-gradient(100deg,#0284C7 0%,#2563EB 35%,#4F46E5 68%,#7C3AED 100%);
-  --grad-text:linear-gradient(100deg,#2563EB 0%,#6D28D9 100%);
-  --glow-a:rgba(59,130,246,.10); --glow-b:rgba(139,92,246,.10);
+  --bg:#FBF8F5; --surface:#FFFFFF; --surface-2:#F7EFEA; --ink:#1A1418; --muted:#665A5E; --line:#EDE3DC;
+  --accent:#C2410C; --soft:#FDECE4;
+  --btn:linear-gradient(100deg,#DB2777 0%,#EA580C 100%);
+  --grad:linear-gradient(100deg,#DB2777 0%,#E11D48 35%,#C2410C 68%,#D97706 100%);
+  --grad-text:linear-gradient(100deg,#E11D48 0%,#C2410C 100%);
+  --glow-a:rgba(236, 72, 153,.10); --glow-b:rgba(249, 115, 22,.10);
   --danger:#B42318;
   color-scheme:light;
 }
 :root[data-theme="dark"]{
-  --bg:#090A1F; --surface:#10122C; --surface-2:#0D0F26; --ink:#EEF0FF; --muted:#A3A8CF; --line:#22264A;
-  --accent:#8B9CFF; --soft:#1B1E45;
-  --grad:linear-gradient(100deg,#38BDF8 0%,#60A5FA 35%,#818CF8 68%,#A78BFA 100%);
-  --grad-text:linear-gradient(100deg,#7DD3FC 0%,#A5B4FC 55%,#C4B5FD 100%);
-  --glow-a:rgba(59,130,246,.30); --glow-b:rgba(139,92,246,.32);
+  --bg:#0B0A0C; --surface:#151317; --surface-2:#100E11; --ink:#F5F1EE; --muted:#ABA3A0; --line:#2B2629;
+  --accent:#FB923C; --soft:#2A1A18;
+  --grad:linear-gradient(100deg,#F472B6 0%,#FB7185 35%,#FB923C 68%,#FBBF24 100%);
+  --grad-text:linear-gradient(100deg,#F472B6 0%,#FB923C 55%,#FBBF24 100%);
+  --glow-a:rgba(236, 72, 153,.30); --glow-b:rgba(249, 115, 22,.32);
   --danger:#FF8A8A;
   color-scheme:dark;
 }
@@ -25,9 +25,9 @@ h1,h2,.hero-note h2,.method-grid b,.vendor-icon,.logo{font-family:"Newsreader",G
 h1 em{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.05em}
 .logo{background:var(--btn); color:#fff}
 .dot{background:var(--accent)}
-.primary{background:var(--btn); border:0; color:#fff; box-shadow:0 10px 26px -14px rgba(79,70,229,.9)}
+.primary{background:var(--btn); border:0; color:#fff; box-shadow:0 10px 26px -14px rgba(225, 29, 72,.9)}
 .primary:hover{background:var(--btn); filter:brightness(1.1)}
-.hero-note{position:relative; overflow:hidden; background:var(--surface); border:1px solid var(--line); box-shadow:0 24px 60px -36px rgba(79,70,229,.55)}
+.hero-note{position:relative; overflow:hidden; background:var(--surface); border:1px solid var(--line); box-shadow:0 24px 60px -36px rgba(225, 29, 72,.55)}
 .hero-note::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--grad)}
 .source-card,.product,.compare-tray,.panel,.queue-card,.secondary,.close{background:var(--surface); color:var(--ink)}
 .search input,select,.panel input:not([type=checkbox]),.panel textarea,.queue-card textarea,.work-search input{background:var(--surface); color:var(--ink); border-color:var(--line)}
@@ -35,13 +35,13 @@ h1 em{background:var(--grad-text); -webkit-background-clip:text; background-clip
 .status,.pill{border-color:color-mix(in srgb,var(--accent) 35%, var(--line)); background:var(--soft); color:var(--accent)}
 .metric-list>div{border-bottom-color:var(--line)}
 .product{transition:box-shadow .2s, border-color .2s}
-.product:hover{border-color:transparent; box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 45%, transparent), 0 20px 50px -30px rgba(99,102,241,.6)}
+.product:hover{border-color:transparent; box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 45%, transparent), 0 20px 50px -30px rgba(244, 63, 94,.6)}
 .method-grid b{background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent}
 .closing{position:relative; overflow:hidden; background:var(--soft)}
 .closing::before{content:""; position:absolute; inset:0 auto 0 0; width:4px; background:var(--btn)}
 .compare-tray{box-shadow:0 10px 40px rgba(0,0,0,.25)}
 dialog{background:var(--bg); color:var(--ink)}
-dialog::backdrop{background:rgba(7,8,26,.6)}
+dialog::backdrop{background:rgba(9, 8, 10,.6)}
 .danger{background:var(--surface); color:var(--danger); border-color:var(--danger)}
 summary{color:var(--accent)}
 .queue-card pre{background:var(--surface-2)}

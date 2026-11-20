@@ -7,7 +7,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Fernando Jorge — Founder, Ares Technical</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-<meta name="theme-color" content="#07081A"/>
+<meta name="theme-color" content="#09080A"/>
 <link rel="canonical" href="https://arestechnical.com/fernando/"/>
 <meta content="Fernando Jorge, founder of Ares Technical: background, credentials and a portfolio of cybersecurity research, product marketing and technical documentation." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -225,25 +225,25 @@ nav.site a{white-space:nowrap}
 
 /* ===== Ares Technical look: midnight navy + sky/blue/indigo/violet ===== */
 :root{
-  --bg:#F5F7FF; --surface:#FFFFFF; --ink:#11132E; --muted:#555B85; --rule:#DDE1F3;
-  --accent:#4F46E5; --accent-soft:#EBEBFF; --node:#7C3AED;
-  --grad:linear-gradient(100deg,#0284C7 0%,#2563EB 35%,#4F46E5 68%,#7C3AED 100%);
-  --btn:linear-gradient(100deg,#3B82F6 0%,#6366F1 100%);
-  --ondark-text:linear-gradient(100deg,#7DD3FC 0%,#A5B4FC 55%,#C4B5FD 100%);
-  --night:#07081A; --night-ink:#F1F3FF; --night-muted:#A9AED6; --night-rule:rgba(255,255,255,.12);
+  --bg:#FBF8F5; --surface:#FFFFFF; --ink:#1A1418; --muted:#665A5E; --rule:#EDE3DC;
+  --accent:#C2410C; --accent-soft:#FDECE4; --node:#D97706;
+  --grad:linear-gradient(100deg,#DB2777 0%,#E11D48 35%,#C2410C 68%,#D97706 100%);
+  --btn:linear-gradient(100deg,#DB2777 0%,#EA580C 100%);
+  --ondark-text:linear-gradient(100deg,#F472B6 0%,#FB923C 55%,#FBBF24 100%);
+  --night:#09080A; --night-ink:#F6F2EE; --night-muted:#ADA5A1; --night-rule:rgba(255,255,255,.12);
   --sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
   color-scheme:light;
 }
 :root[data-theme="dark"]{
-  --bg:#090A1F; --surface:#10122C; --ink:#EEF0FF; --muted:#A3A8CF; --rule:#22264A;
-  --accent:#8B9CFF; --accent-soft:#1B1E45; --node:#A78BFA;
-  --grad:linear-gradient(100deg,#38BDF8 0%,#60A5FA 35%,#818CF8 68%,#A78BFA 100%);
+  --bg:#0B0A0C; --surface:#151317; --ink:#F5F1EE; --muted:#ABA3A0; --rule:#2B2629;
+  --accent:#FB923C; --accent-soft:#2A1A18; --node:#FBBF24;
+  --grad:linear-gradient(100deg,#F472B6 0%,#FB7185 35%,#FB923C 68%,#FBBF24 100%);
   color-scheme:dark;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#090A1F; --surface:#10122C; --ink:#EEF0FF; --muted:#A3A8CF; --rule:#22264A;
-  --accent:#8B9CFF; --accent-soft:#1B1E45; --node:#A78BFA;
-  --grad:linear-gradient(100deg,#38BDF8 0%,#60A5FA 35%,#818CF8 68%,#A78BFA 100%);
+  --bg:#0B0A0C; --surface:#151317; --ink:#F5F1EE; --muted:#ABA3A0; --rule:#2B2629;
+  --accent:#FB923C; --accent-soft:#2A1A18; --node:#FBBF24;
+  --grad:linear-gradient(100deg,#F472B6 0%,#FB7185 35%,#FB923C 68%,#FBBF24 100%);
   color-scheme:dark;
 }}
 body::before{background:var(--night)}
@@ -260,24 +260,24 @@ header.site .theme-btn:hover{color:#fff; border-color:#fff}
 
 /* Hero: midnight with glows; tokens re-scoped so the timeline stays legible */
 .hero{position:relative; overflow:hidden;
-  --ink:var(--night-ink); --muted:var(--night-muted); --rule:var(--night-rule); --accent:#A5B4FC; --accent-soft:rgba(99,102,241,.28); --bg:var(--night); --node:#A78BFA;
+  --ink:var(--night-ink); --muted:var(--night-muted); --rule:var(--night-rule); --accent:#FB923C; --accent-soft:rgba(244, 63, 94,.28); --bg:var(--night); --node:#FBBF24;
   color:var(--ink); background:
-  radial-gradient(38% 60% at -4% 18%, rgba(59,130,246,.40) 0%, transparent 70%),
-  radial-gradient(32% 55% at 104% 70%, rgba(139,92,246,.42) 0%, transparent 70%),
-  radial-gradient(45% 45% at 60% -10%, rgba(99,102,241,.26) 0%, transparent 70%),
+  radial-gradient(38% 60% at -4% 18%, rgba(236, 72, 153,.40) 0%, transparent 70%),
+  radial-gradient(32% 55% at 104% 70%, rgba(249, 115, 22,.42) 0%, transparent 70%),
+  radial-gradient(45% 45% at 60% -10%, rgba(244, 63, 94,.26) 0%, transparent 70%),
   var(--night)}
-.hero::after{content:""; position:absolute; inset:auto 0 0 0; height:1px; background:linear-gradient(90deg,transparent,#60A5FA,#A78BFA,transparent)}
+.hero::after{content:""; position:absolute; inset:auto 0 0 0; height:1px; background:linear-gradient(90deg,transparent,#FB7185,#FBBF24,transparent)}
 .hero .wrap{position:relative}
 .hero h1{color:#fff}
 .hero .stats strong{background:var(--ondark-text); -webkit-background-clip:text; background-clip:text; color:transparent}
-.hero a{color:#C7D2FE}
-.trace ol::before{background:linear-gradient(90deg,#38BDF8 0%,#60A5FA 35%,#818CF8 70%,#A78BFA 100%); opacity:1}
-@media (max-width:760px){ .trace ol::before{background:linear-gradient(180deg,#38BDF8,#60A5FA,#818CF8,#A78BFA)} }
-.trace li .dot{border-color:#60A5FA}
-.trace li.sec .dot{border-color:#818CF8}
-.trace .node[aria-pressed="true"] .dot{background:#818CF8; border-color:#818CF8}
-.trace-legend span::before{background:#60A5FA}
-.trace-legend span.s::before{background:#A78BFA}
+.hero a{color:#FED7AA}
+.trace ol::before{background:linear-gradient(90deg,#F472B6 0%,#FB7185 35%,#FB923C 70%,#FBBF24 100%); opacity:1}
+@media (max-width:760px){ .trace ol::before{background:linear-gradient(180deg,#F472B6,#FB7185,#FB923C,#FBBF24)} }
+.trace li .dot{border-color:#FB7185}
+.trace li.sec .dot{border-color:#FB923C}
+.trace .node[aria-pressed="true"] .dot{background:#FB923C; border-color:#FB923C}
+.trace-legend span::before{background:#FB7185}
+.trace-legend span.s::before{background:#FBBF24}
 
 /* Accents */
 section.block h2::after, .explore h2::after{content:""; display:block; width:3.5rem; height:3px; border-radius:2px; background:var(--grad); margin-top:.9rem}
@@ -316,7 +316,7 @@ nav.site .short{display:none}
 <body>
 <header class="site">
 <div class="wrap">
-<a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgp" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8"/><stop offset=".4" stop-color="#3B82F6"/><stop offset=".7" stop-color="#6366F1"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lgp)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#0B0D2E" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>Fernando Jorge</a>
+<a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgp" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F472B6"/><stop offset=".4" stop-color="#DB2777"/><stop offset=".7" stop-color="#EA580C"/><stop offset="1" stop-color="#FBBF24"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lgp)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#1A0D12" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>Fernando Jorge</a>
 <div class="hdr-right"><nav class="site" aria-label="Sections">
 <ul>
 <li class="nav-home"><a href="/" aria-label="Back to Ares Technical"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="full">Ares Technical</span><span class="short">Ares</span></a></li>
