@@ -551,6 +551,19 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 .contact .btn-book{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.45)}
 .contact .btn-book:hover{border-color:#fff; background:rgba(255,255,255,.06)}
 .book-call span{font-size:.92rem; color:var(--night-muted)}
+
+/* Use cases */
+.uses{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem}
+.uses > li{background:var(--surface); border:1px solid var(--rule); border-radius:14px; padding:1.5rem 1.6rem; position:relative; overflow:hidden}
+.uses > li::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--grad)}
+.uses h3{font-size:1.1rem; font-weight:600; margin:0 0 .2rem}
+.uses > li > p{margin:0 0 .8rem; color:var(--muted); font-size:.92rem}
+.uses ul{margin:0; padding-left:1.1rem; font-size:.97rem}
+.uses ul li{margin:.25rem 0}
+.uses ul li::marker{color:var(--accent)}
+@media (max-width:760px){ .uses{grid-template-columns:1fr} }
+.why{grid-template-columns:repeat(2,1fr)}
+@media (max-width:760px){ .why{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -590,7 +603,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
         <a class="btn btn-primary" href="#contact">Book a readiness review <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-ghost" href="#packages">See how I help</a>
       </div>
-      <p class="hero-note">Plain language, no jargon. Remote-first, based in Texas.</p>
+      <p class="hero-note">Plain language, no jargon. Remote-first, based in Round Rock, Texas.<br>Not ready to talk yet? <a href="/ai/checklist/">Get the free AI safe-use checklist →</a></p>
     </div>
 
     <figure class="readout snap" id="readout" aria-label="Illustration of an AI readiness snapshot for a small business">
@@ -627,11 +640,26 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   </div>
 </section>
 
+<section class="block" id="examples" aria-labelledby="uses-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="uses-h">Where AI helps first</h2>
+      <p>A few common starting points. Your readiness review finds the ones that fit your business.</p>
+    </div>
+    <ul class="uses">
+      <li><h3>Professional services</h3><p>Accounting, legal, real estate, agencies</p><ul><li>First drafts of client emails and proposals</li><li>Meeting and document summaries</li><li>Checklists and templates for repeat work</li></ul></li>
+      <li><h3>Home services and trades</h3><p>Contractors, HVAC, cleaning, landscaping</p><ul><li>Faster replies to new leads</li><li>Quotes and job summaries written up quickly</li><li>Follow-up reminders that don’t slip</li></ul></li>
+      <li><h3>Retail and restaurants</h3><p>Shops, cafés, salons, local brands</p><ul><li>Replies to online reviews</li><li>Social posts and product descriptions</li><li>Menus, signs and messages in more than one language</li></ul></li>
+      <li><h3>Medical, dental and wellness</h3><p>Clinics and practices, with extra care</p><ul><li>Appointment reminders and patient FAQs</li><li>Summaries of non-clinical paperwork</li><li>Patient information only in tools approved for it</li></ul></li>
+    </ul>
+  </div>
+</section>
+
 <section class="block" id="packages" aria-labelledby="pkg-h">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="pkg-h">How I help</h2>
-      <p>Start with the readiness review. Add the rest only if you need it. Each package has a fixed price, agreed before we start.</p>
+      <p>Start with the readiness review. Add the rest only if you need it. Each package has a fixed price, agreed before we start, and the support plan is month to month.</p>
     </div>
     <ul class="svc-grid two">
       <li class="svc start">
@@ -658,6 +686,18 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
         <p>Hands-on sessions built around your own work, so people learn to write good prompts, check results and know when not to use AI.</p>
         <ul class="gets"><li>Live sessions, remote or recorded</li><li>Examples from your own tasks</li><li>Follow-up questions answered</li></ul>
       </li>
+      <li class="svc">
+        <span class="num">05</span>
+        <h3>Copilot and Gemini readiness</h3>
+        <p>AI assistants like Microsoft Copilot and Google Gemini can search everything a person has access to. Before you switch them on, I check who can see which files, so a payroll sheet or client contract shared too widely doesn’t show up in someone’s AI answer.</p>
+        <ul class="gets"><li>A review of file sharing and permissions</li><li>Fixes for overshared folders and links</li><li>A safe rollout plan for your team</li></ul>
+      </li>
+      <li class="svc">
+        <span class="num">06</span>
+        <h3>Ongoing AI support plan</h3>
+        <p>AI tools change every month. A light monthly plan keeps your setup safe and useful without hiring anyone.</p>
+        <ul class="gets"><li>A monthly check-in call</li><li>New tools reviewed before your team uses them</li><li>Policy and settings updated as tools change</li></ul>
+      </li>
     </ul>
   </div>
 </section>
@@ -672,10 +712,10 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
       <li><span class="dot"></span><span class="step">01</span><h3>Talk</h3><p>A free call about your business, your team and what you hope AI can do.</p><p class="out"><b>You get</b>A clear yes or no on fit</p></li>
       <li><span class="dot"></span><span class="step">02</span><h3>Review</h3><p>I look at how work gets done today and where AI helps or adds risk.</p><p class="out"><b>You get</b>Your readiness snapshot and plan</p></li>
       <li><span class="dot"></span><span class="step">03</span><h3>Set up</h3><p>We choose tools, configure them and put simple rules in writing.</p><p class="out"><b>You get</b>Working tools and a policy</p></li>
-      <li><span class="dot"></span><span class="step">04</span><h3>Train</h3><p>Your team learns on real tasks, and I check in once things are running.</p><p class="out"><b>You get</b>A team that uses AI with confidence</p></li>
+      <li><span class="dot"></span><span class="step">04</span><h3>Train</h3><p>Your team learns on real tasks. An optional monthly plan keeps things on track.</p><p class="out"><b>You get</b>A team that uses AI with confidence</p></li>
     </ol>
     <div class="mid-cta">
-      <p><strong>Not sure you’re ready?</strong> That’s what the first call is for. No preparation needed.</p>
+      <p><strong>Not sure you’re ready?</strong> That’s what the free first call is for. No preparation needed. Or start with the <a href="/ai/checklist/">free AI safe-use checklist</a>.</p>
       <div class="mid-cta-btns"><a class="btn btn-primary" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a free 30-minute call</a><a class="btn btn-ghost" href="#contact">Send a message</a></div>
     </div>
   </div>
@@ -690,6 +730,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
     <ul class="why">
       <li><h3>Security comes first</h3><p>I’ve spent years in data protection and security, including how companies keep sensitive information out of AI tools. That shapes every recommendation.</p></li>
       <li><h3>Practical, not hype</h3><p>The goal is hours saved on real work. If AI isn’t a good fit for a task, I’ll say so.</p></li>
+      <li><h3>Vendor-neutral</h3><p>I don’t resell software or take commissions. Recommendations are about what fits, and often that means getting more from tools you already pay for.</p></li>
       <li><h3>Explained simply</h3><p>Two decades of turning technical topics into training and documentation means you get clear answers, not jargon.</p></li>
     </ul>
     <p class="back-tech">Ares Technical also runs competitive evaluations and technical marketing for technology companies. <a href="/">See the main site</a> or <a href="/fernando/">Fernando Jorge’s portfolio</a>.</p>
@@ -704,6 +745,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
       <details><summary>How big does my business need to be?</summary><p>There’s no minimum. The packages work well for teams of roughly 2 to 100 people. If you’re larger, we can scope something that fits.</p></details>
       <details><summary>Will you sell me software?</summary><p>No. I don’t resell AI tools or take commissions, so recommendations are based on what fits your business. Often that means making better use of tools you already pay for.</p></details>
       <details><summary>Is it safe to put customer information into AI tools?</summary><p>Sometimes, with the right tool and settings, and sometimes not at all. Sorting that out is a core part of the readiness review and the safe-use policy.</p></details>
+      <details><summary>Do you work with Microsoft Copilot or Google Gemini?</summary><p>Yes. Both can search the files a person has access to, so the most important step happens before you turn them on: making sure sensitive files aren’t shared more widely than they should be. I help with that, then with setup and training.</p></details>
       <details><summary>How much does it cost?</summary><p>Each package has a fixed price, agreed before any work starts. The readiness review is the smallest commitment and tells you whether the rest is worth doing.</p></details>
       <details><summary>Do you work remotely?</summary><p>Yes. Everything can be done over video calls, so location doesn’t matter.</p></details>
     </div>
@@ -873,7 +915,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   // reveal on scroll
   if("IntersectionObserver" in window && !reduce){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px"});
-    [].forEach.call(document.querySelectorAll(".sec-head, .pain li, .svc, .process li, .why li, .faq details, .mid-cta"),function(el){
+    [].forEach.call(document.querySelectorAll(".sec-head, .pain li, .uses > li, .svc, .process li, .why li, .faq details, .mid-cta"),function(el){
       if(el.getBoundingClientRect().top>innerHeight){el.classList.add("rv"); io.observe(el)}
     });
   }
