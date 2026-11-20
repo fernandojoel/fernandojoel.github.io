@@ -81,7 +81,7 @@ nav.site a:hover{color:var(--ink)}
 :root[data-theme="dark"] .theme-btn .moon{display:block}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .theme-btn .sun{display:none} :root:not([data-theme="light"]) .theme-btn .moon{display:block}}
 .menu-btn{display:none}
-@media (max-width:880px){
+@media (max-width:1180px){
   .menu-btn{display:inline-grid}
   .hdr-cta{display:none}
   nav.site{position:absolute; left:0; right:0; top:100%; background:var(--bg); border-bottom:1px solid var(--rule); display:none}
@@ -322,7 +322,7 @@ header.site nav.site a{color:var(--night-muted)}
 header.site nav.site a:hover{color:#fff}
 header.site .icon-btn{color:var(--night-ink); border-color:var(--night-rule)}
 header.site .icon-btn:hover{color:#fff; border-color:#fff}
-@media (max-width:880px){ header.site nav.site{background:var(--night); border-bottom-color:var(--night-rule)} header.site nav.site li a{color:var(--night-ink); border-bottom-color:var(--night-rule)} }
+@media (max-width:1180px){ header.site nav.site{background:var(--night); border-bottom-color:var(--night-rule)} header.site nav.site li a{color:var(--night-ink); border-bottom-color:var(--night-rule)} }
 
 /* Buttons */
 .btn-primary{background:var(--btn); color:#fff; border:0; box-shadow:0 10px 28px -12px rgba(220, 38, 38,.85)}
@@ -520,6 +520,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .about-exp{margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--rule)}
 .exp-title{font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:0 0 1.5rem}
 .hero-note a{color:#FED7AA}
+nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -537,6 +538,7 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
         <li><a href="#process">How it works</a></li>
         <li><a href="/ai/">AI for small business</a></li>
         <li><a href="/fernando/">About</a></li>
+        <li><a href="/dspm/">DSPM Recs</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
