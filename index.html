@@ -521,6 +521,13 @@ header.site .icon-btn:hover{color:#fff; border-color:#fff}
 .exp-title{font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:0 0 1.5rem}
 .hero-note a{color:#FED7AA}
 nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
+
+/* Calendly booking */
+.mid-cta-btns{display:flex; gap:.6rem; flex-wrap:wrap; flex:none}
+.book-call{display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin:1.5rem 0 1.25rem}
+.contact .btn-book{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.45)}
+.contact .btn-book:hover{border-color:#fff; background:rgba(255,255,255,.06)}
+.book-call span{font-size:.92rem; color:var(--night-muted)}
 </style>
 </head>
 <body>
@@ -714,7 +721,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
     </ul>
     <div class="mid-cta">
       <p><strong>Not sure where to start?</strong> A short scoping call is enough to tell whether an evaluation fits, and what it would take.</p>
-      <a class="btn btn-primary" href="#contact">Start with a scoping call</a>
+      <div class="mid-cta-btns"><a class="btn btn-primary" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a 30-minute call</a><a class="btn btn-ghost" href="#contact">Send a brief</a></div>
     </div>
   </div>
 </section>
@@ -723,7 +730,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
   <div class="wrap">
     <div class="sec-head"><h2 id="faq-h">Questions</h2></div>
     <div class="faq">
-      <details><summary>How does an engagement start?</summary><p>With a short call about what you need to learn and why. If it’s a fit, I send a one-page proposal with scope, deliverables, timeline and a fixed fee. We sign an NDA before any detailed scoping.</p></details>
+      <details><summary>How does an engagement start?</summary><p>With a short call about what you need to learn and why (<a href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener">book one here</a>). If it’s a fit, I send a one-page proposal with scope, deliverables, timeline and a fixed fee. We sign an NDA before any detailed scoping.</p></details>
       <details><summary>Whose licenses and environments do you test with?</summary><p>Only ones you’re authorized to provide, or that we set up together under the vendors’ terms. Lab licenses and cloud costs are provided by or billed to the client, so you own the environment and the evidence.</p></details>
       <details><summary>How do you handle confidentiality?</summary><p>Findings, test data and lab access stay under NDA and are shared only with the people you name. At the end, the lab is handed off to your team or cleaned up, whichever you prefer.</p></details>
       <details><summary>What do you need from my team?</summary><p>A point of contact, access to the products and accounts in scope, and about an hour a week for status updates and decisions. I handle the day-to-day lab work.</p></details>
@@ -748,6 +755,7 @@ nav.site a, header.site .brand, .hdr-cta{white-space:nowrap}
           <li>Who will use the results</li>
         </ol>
       </div>
+      <div class="book-call"><a class="btn btn-book" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a 30-minute call</a><span>Prefer to talk first? Pick a time that works for you.</span></div>
       <p class="mail-alt">Prefer email? Write to <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a> <button type="button" class="linkish copy-mini" data-copy="fernando.jorge@arestechnical.com" aria-label="Copy email address">Copy</button> or <a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">message me on LinkedIn</a>.</p>
     </div>
 
