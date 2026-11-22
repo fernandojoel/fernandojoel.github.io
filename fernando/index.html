@@ -299,6 +299,10 @@ header.site .theme-btn{width:2.4rem; height:2.4rem}
 header.site .theme-btn svg{width:1.05rem; height:1.05rem}
 header.site nav.site .nav-home a{color:var(--night-ink); border-right-color:var(--night-rule)}
 header.site nav.site .nav-home a:hover{color:#fff}
+.who{display:flex; align-items:center; gap:1.5rem; margin:0 0 1.25rem}
+.who h1{margin:0}
+.who img{flex:none; width:clamp(5.5rem,11vw,8.5rem); height:auto; aspect-ratio:1; border-radius:50%; object-fit:cover; box-shadow:0 0 0 3px #09080A, 0 0 0 5px rgba(251,146,60,.65)}
+@media (max-width:520px){ .who{gap:1rem} }
 </style>
 </head>
 <body>
@@ -321,7 +325,7 @@ header.site nav.site .nav-home a:hover{color:#fff}
 <main id="top">
 <section class="hero">
 <div class="wrap">
-<h1>Fernando Jorge</h1>
+<div class="who"><img src="/assets/team/fernando.jpg" alt="Fernando Jorge" width="480" height="480" decoding="async"><h1>Fernando Jorge</h1></div>
 <p class="lede">Founder of Ares Technical. Technical marketer, content strategist and writer. I turn complex systems into evidence and content people can use.</p>
 <p class="lede-2">I started as an engineer, writing provisioning guides and test plans for voice networks. I’ve spent the years since bringing that same precision to cybersecurity research, thought leadership, product marketing and documentation.</p>
 <p class="lede-2" style="font-family:var(--sans); font-size:.95rem; margin-top:.75rem">Through Ares Technical I help <a href="/">small businesses put AI to work safely</a> and help <a href="/tech/">technology companies prove how their products perform</a>.</p>
