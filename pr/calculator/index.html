@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de preparación para IA · Puerto Rico · Ares Technical</title>
+<meta name="description" content="Estime las horas que la IA podría devolverle a su negocio en Puerto Rico y verifique si los datos de sus clientes están seguros.">
+<link rel="canonical" href="https://arestechnical.com/pr/calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Calculadora gratis de IA para pequeños negocios en Puerto Rico">
+<meta property="og:description" content="Horas que la IA podría devolverle, valoradas a salarios de Puerto Rico, y una puntuación de preparación para los datos de sus clientes. Cinco minutos, sin registro.">
+<meta property="og:url" content="https://arestechnical.com/pr/calculator/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PR">
+<link rel="alternate" hreflang="es-PR" href="https://arestechnical.com/pr/calculator/">
+<link rel="alternate" hreflang="en" href="https://arestechnical.com/pr/calculator/?lang=en">
+<script>try{var t=localStorage.getItem("fj-theme");document.documentElement.setAttribute("data-theme",t||"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: plain-spoken adviser, Ares "evidence, not claims"
+   IDEA: a lab test readout: inputs on the bench, live findings on the instrument panel
+   PICTURE: the live readout (hours, value, readiness meter, Observed/Partial/Gap rows)
+   COLOUR and TYPE: Ares warm near-black, red-orange to amber gradient; Newsreader + IBM Plex Sans (site fonts)
+   LAYOUT: dark header band; bench (steps) left, sticky readout right; full report below */
+:root{color-scheme:light dark;
+--bg:light-dark(#FBF8F5,#0B0A0C);--panel:light-dark(#FFFFFF,#151316);--panel2:light-dark(#F4EEE8,#1C191C);
+--line:light-dark(#E6DDD4,#2C272B);--ink:light-dark(#1A1614,#F5F1EC);--muted:light-dark(#6B625B,#A79F98);
+--a1:light-dark(#DC2626,#F2643F);--a2:light-dark(#EA580C,#FB923C);--a3:light-dark(#C2410C,#FBBF24);
+--ok:light-dark(#15803D,#4ADE80);--part:light-dark(#B45309,#FBBF24);--gap:light-dark(#DC2626,#F2643F);
+--grad:linear-gradient(90deg,#F2643F,#FB923C 45%,#FBBF24 80%,#FDE047)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:500;}
+.num{font-family:"IBM Plex Sans",system-ui,sans-serif;letter-spacing:-.01em}
+a{color:var(--a2)}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+header{background:#0B0A0C;color:#F5F1EC;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--grad)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;color:#F5F1EC;text-decoration:none;margin-bottom:28px}
+.brand svg{width:30px;height:30px}
+header h1{font-size:clamp(36px,5vw,58px);line-height:1.04;margin:0 0 14px;text-wrap:balance;max-width:17ch}
+header p{color:#C9C0B8;max-width:62ch;margin:0;font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px;color:#C9C0B8;font-size:14px}
+.facts b{color:#FBBF24;font-weight:600}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:end}
+.local{margin:0;background:#151316;border:1px solid #2C272B;border-radius:16px;padding:20px 22px}
+.local figcaption{font:600 17px "IBM Plex Sans",system-ui,sans-serif;margin-bottom:12px}
+.local figcaption small,.local .src{display:block;font:13px "IBM Plex Sans",system-ui,sans-serif;color:#A79F98;margin-top:2px}
+.lb{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;font-size:14px;margin-bottom:9px;color:#E7E0D9}
+.lb b{font-weight:600;font-variant-numeric:tabular-nums}
+.lb i{grid-column:1/-1;height:6px;border-radius:9px;background:#2C272B;overflow:hidden}
+.lb i::before{content:"";display:block;height:100%;width:var(--w);background:var(--grad)}
+@media(max-width:900px){.hgrid{grid-template-columns:minmax(0,1fr)}}
+main .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,30px)}
+.tabs{display:flex;gap:6px;margin-bottom:22px;flex-wrap:wrap}
+.tab{flex:1 1 0;min-width:110px;min-height:44px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);border-radius:10px;font:600 14px "IBM Plex Sans",system-ui,sans-serif;cursor:pointer;padding:8px 10px;text-align:left}
+.tab span{display:block;font-weight:500;font-size:13px}
+.tab[aria-selected=true]{color:var(--ink);border-color:var(--a2);box-shadow:inset 0 -3px 0 var(--a2)}
+.tab.done span::after{content:" ✓";color:var(--ok)}
+.step{display:none}.step.on{display:block}
+.step h2{font-size:clamp(24px,2.6vw,32px);line-height:1.1;margin:0 0 6px}
+.lede{color:var(--muted);margin:0 0 20px}
+label.f{display:block;font-weight:600;font-size:15px;margin:18px 0 6px}
+select,input[type=text],input[type=email],input[type=number]{width:100%;min-height:46px;font:16px "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+select:focus-visible,input:focus-visible,button:focus-visible,.tab:focus-visible,a:focus-visible{outline:3px solid var(--a2);outline-offset:2px}
+.hint{font-size:14px;color:var(--muted);margin-top:6px}
+.hint b{color:var(--ink)}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 16px}
+.slider{padding:14px 0;border-top:1px solid var(--line)}
+.slider:first-of-type{border-top:0}
+.sh{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.sh b{font-weight:600}
+.sh output{font:600 18px "IBM Plex Sans",system-ui,sans-serif;white-space:nowrap}
+.sh output small{font:13px "IBM Plex Sans",system-ui,sans-serif;color:var(--muted)}
+.slider p{margin:2px 0 8px;font-size:14px;color:var(--muted)}
+input[type=range]{width:100%;height:44px;accent-color:#FB923C;margin:0}
+.desk{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel2);border-radius:10px;padding:10px 14px;font-size:15px;margin-bottom:8px}
+.desk input{width:84px;min-height:40px}
+fieldset{border:0;padding:0;margin:18px 0 0}
+legend{font-weight:600;font-size:15px;margin-bottom:8px;padding:0}
+.opts{display:grid;gap:8px}
+.opts.two{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 12px;cursor:pointer;min-height:44px;font-size:15px;background:var(--panel)}
+.opt input{margin:3px 0 0;accent-color:#EA580C;width:18px;height:18px;flex:none}
+.opt:has(input:checked){border-color:var(--a2);background:var(--panel2)}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+.btn{min-height:46px;border:0;border-radius:999px;padding:12px 22px;font:600 15px "IBM Plex Sans",system-ui,sans-serif;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.go{background:linear-gradient(90deg,#DC2626,#EA580C 55%,#F97316);color:#fff}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+/* readout */
+.readout{position:sticky;top:16px;background:#0F0D10;color:#F5F1EC;border-radius:18px;padding:clamp(20px,2.4vw,28px);border:1px solid #2C272B;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
+.readout .top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#A79F98;margin-bottom:6px}
+.live{display:inline-flex;align-items:center;gap:6px}
+.live i{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}}
+.big{font:700 clamp(44px,6vw,68px)/1 "IBM Plex Sans",system-ui,sans-serif;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:8px 0 2px;white-space:nowrap}
+.big small{font-size:.38em;color:#C9C0B8;-webkit-text-fill-color:#C9C0B8}
+.sub{color:#C9C0B8;font-size:15px;margin:0}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.kv div{background:#1A171B;border-radius:12px;padding:12px}
+.kv small{display:block;color:#A79F98;font-size:13px}
+.kv b{font:600 22px "IBM Plex Sans",system-ui,sans-serif;white-space:nowrap}
+.meter{margin-top:6px}
+.mh{display:flex;justify-content:space-between;align-items:baseline}
+.mh b{font:600 30px "IBM Plex Sans",system-ui,sans-serif}
+.bar{height:10px;border-radius:99px;background:#2C272B;overflow:hidden;margin:8px 0 14px}
+.bar i{display:block;height:100%;background:var(--grad);width:0;transition:width .5s}
+.pillars{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.pillars li{display:grid;grid-template-columns:1fr auto;gap:8px;font-size:15px;padding:8px 0;border-top:1px solid #2C272B}
+.tag{font-size:13px;font-weight:600;border-radius:99px;padding:3px 10px;white-space:nowrap;align-self:center}
+.t-ok{background:rgba(74,222,128,.14);color:#4ADE80}.t-part{background:rgba(251,191,36,.14);color:#FBBF24}.t-gap{background:rgba(242,100,63,.16);color:#F2643F}.t-na{background:#2C272B;color:#A79F98}
+.sens{margin-top:12px;font-size:14px;color:#C9C0B8}
+.sens b{color:#F5F1EC}
+/* report */
+.report h2{font-size:clamp(28px,3.4vw,42px);line-height:1.05;margin:0 0 8px;text-wrap:balance}
+.report h3{font-size:22px;margin:0 0 12px}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:26px}
+.reco{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.reco:first-of-type{border-top:0}
+.reco .n{font:700 26px "IBM Plex Sans",system-ui,sans-serif;color:var(--a2)}
+.reco b{display:block}
+.reco p{margin:4px 0 0;font-size:15px;color:var(--muted)}
+.reco em{display:block;font-style:normal;font-size:14px;color:var(--a3);margin-top:6px}
+.rules{list-style:none;padding:0;margin:0}
+.rules li{padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.rules li:first-child{border-top:0}
+.rules b{display:block}
+.flag{border-left:3px solid var(--gap);padding:8px 12px;margin:0 0 10px;background:var(--panel2);border-radius:0 10px 10px 0;font-size:15px}
+.pk{padding:12px 0;border-top:1px solid var(--line)}
+.pk:first-of-type{border-top:0}
+.pk b{display:block}.pk span{font-size:15px;color:var(--muted)}
+.cta{background:#0B0A0C;color:#F5F1EC;border-radius:18px;margin-top:26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding:clamp(22px,3vw,40px)}
+.cta h3{font-size:clamp(24px,2.6vw,32px);line-height:1.1;margin:0 0 10px}
+.cta p{color:#C9C0B8}
+.cta input{background:#1A171B;border-color:#2C272B;color:#F5F1EC}
+.cta label.f{color:#F5F1EC;margin-top:12px}
+.msg{font-size:15px;margin-top:12px;color:#FBBF24;min-height:1.5em}
+details{margin-top:26px;border-top:1px solid var(--line);padding-top:16px}
+summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}
+.method{font-size:15px;color:var(--muted)}
+.method table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.method td,.method th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+.method td.r{text-align:right;white-space:nowrap}
+footer{color:var(--muted);font-size:14px}
+.mbar{display:none}
+@media(max-width:900px){main .grid{grid-template-columns:minmax(0,1fr)}.readout{position:static}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:5;background:#0F0D10;color:#F5F1EC;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;border-top:3px solid #FB923C;font-size:14px}
+ .mbar b{font:600 18px "IBM Plex Sans",system-ui,sans-serif}
+ body{padding-bottom:64px}}
+@media(max-width:600px){.cta{grid-template-columns:minmax(0,1fr)}.kv b{font-size:19px}.tab{min-width:calc(50% - 3px)}}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}
+.hrow .brand{margin-bottom:0}
+.langbtn{min-height:40px;border:1px solid #3a3438;background:transparent;color:#F5F1EC;border-radius:999px;padding:8px 16px;font:600 14px "IBM Plex Sans",system-ui,sans-serif;cursor:pointer}
+.langbtn:hover{border-color:#FB923C}
+</style>
+</head>
+<body>
+<header class="band">
+ <div class="wrap hgrid">
+  <div>
+  <div class="hrow">
+   <a class="brand" href="/pr/" aria-label="Ares Technical">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F2643F"/><stop offset=".4" stop-color="#DC2626"/><stop offset=".7" stop-color="#EA580C"/><stop offset="1" stop-color="#FBBF24"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lg)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#1A0D12" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>
+    Ares Technical
+   </a>
+   <button class="langbtn" id="langBtn" type="button"></button>
+  </div>
+  <h1 data-t="h1"></h1>
+  <p data-t="hp"></p>
+  <div class="facts" id="facts"></div>
+  </div>
+  <figure class="local">
+   <figcaption><span data-t="figT"></span> <small data-t="figS"></small></figcaption>
+   <div id="localBars"></div>
+   <small class="src" data-t="figSrc"></small>
+  </figure>
+ </div>
+</header>
+
+<main class="band">
+ <div class="wrap grid">
+  <section class="card" id="calcCard">
+   <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tb1" aria-selected="true" data-s="1">1<span data-t="tab1"></span></button>
+    <button class="tab" role="tab" id="tb2" aria-selected="false" data-s="2">2<span data-t="tab2"></span></button>
+    <button class="tab" role="tab" id="tb3" aria-selected="false" data-s="3">3<span data-t="tab3"></span></button>
+    <button class="tab" role="tab" id="tb4" aria-selected="false" data-s="4">4<span data-t="tab4"></span></button>
+   </div>
+
+   <div class="step on" id="s1" role="tabpanel">
+    <h2 data-t="s1h"></h2>
+    <p class="lede" data-t="s1p"></p>
+    <label class="f" for="ind" data-t="indL"></label>
+    <select id="ind"></select>
+    <p class="hint" id="indHint"></p>
+    <div class="row2">
+     <div><label class="f" for="size" data-t="sizeL"></label>
+      <select id="size"></select></div>
+     <div><label class="f" for="city" data-t="cityL"></label>
+      <select id="city"></select></div>
+    </div>
+    <p class="hint" id="cityHint"></p>
+    <div class="nav"><span></span><button class="btn go" data-next="2" data-t="n2"></button></div>
+   </div>
+
+   <div class="step" id="s2" role="tabpanel">
+    <h2 data-t="s2h"></h2>
+    <p class="lede" data-t="s2p"></p>
+    <div class="desk"><label for="deskN" data-t="deskL"></label><input type="number" id="deskN" min="1" max="200" step="1"><span class="hint" style="margin:0" data-t="deskH"></span></div>
+    <div id="sliders"></div>
+    <div class="nav"><button class="btn ghost" data-next="1" data-t="back"></button><button class="btn go" data-next="3" data-t="n3"></button></div>
+   </div>
+
+   <div class="step" id="s3" role="tabpanel">
+    <h2 data-t="s3h"></h2>
+    <p class="lede" data-t="s3p"></p>
+    <fieldset><legend data-t="dataL"></legend><div class="opts two" id="dataOpts"></div></fieldset>
+    <div class="nav"><button class="btn ghost" data-next="2" data-t="back"></button><button class="btn go" data-next="4" data-t="n4"></button></div>
+   </div>
+
+   <div class="step" id="s4" role="tabpanel">
+    <h2 data-t="s4h"></h2>
+    <p class="lede" data-t="s4p"></p>
+    <div id="qs"></div>
+    <div class="nav"><button class="btn ghost" data-next="3" data-t="back"></button><a class="btn go" href="#plan" id="seePlan" data-t="seePlan"></a></div>
+   </div>
+  </section>
+
+  <aside class="readout" aria-live="polite" id="readout">
+   <div class="top"><span class="live"><i></i> <span data-t="live"></span></span><span id="roInd"></span></div>
+   <div class="big num" id="roHours">0</div>
+   <p class="sub" id="roHoursSub"></p>
+   <div class="kv">
+    <div><small data-t="perMonth"></small><b id="roMonth">$0</b></div>
+    <div><small data-t="perYear"></small><b id="roYear">$0</b></div>
+   </div>
+   <p class="sub" id="roShare"></p>
+   <div class="meter" style="margin-top:18px">
+    <div class="mh"><span data-t="readiness"></span><b id="roScore">–</b></div>
+    <div class="bar"><i id="roBar"></i></div>
+    <ul class="pillars" id="roPillars"></ul>
+    <p class="sens" id="roSens"></p>
+   </div>
+  </aside>
+ </div>
+
+ <section class="wrap report" id="plan" style="margin-top:clamp(36px,5vw,64px)">
+  <h2 id="planTitle"></h2>
+  <p class="lede" id="planLede"></p>
+  <div id="flags"></div>
+  <div class="rgrid">
+   <div class="card"><h3 data-t="c1"></h3><div id="recos"></div></div>
+   <div class="card"><h3 data-t="c2"></h3><ul class="rules" id="rules"></ul><p class="hint" data-t="notLegal"></p></div>
+   <div class="card"><h3 data-t="c3"></h3><div id="pkgs"></div></div>
+  </div>
+
+  <div class="cta">
+   <div>
+    <h3 data-t="ctaH"></h3>
+    <p data-t="ctaP"></p>
+    <p><a class="btn go" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener" data-t="ctaB"></a></p>
+    <p style="font-size:14px" data-t="ctaE"></p>
+   </div>
+   <form id="lead" novalidate>
+    <h3 style="font-size:20px" data-t="fH"></h3>
+    <label class="f" for="ln" data-t="fN"></label><input type="text" id="ln" autocomplete="given-name" required>
+    <label class="f" for="le" data-t="fE"></label><input type="email" id="le" autocomplete="email" required>
+    <label class="f" for="lc" data-t="fC"></label><input type="text" id="lc" autocomplete="organization">
+    <input type="text" id="gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button class="btn go" type="submit" data-t="fSend"></button><button class="btn ghost" type="button" id="copyBtn" style="color:#F5F1EC;border-color:#3a3438" data-t="fCopy"></button></div>
+    <p class="msg" id="leadMsg" role="status"></p>
+   </form>
+  </div>
+
+  <details>
+   <summary data-t="mSum"></summary>
+   <div class="method" id="method"></div>
+  </details>
+ </section>
+</main>
+
+<footer class="band"><div class="wrap" id="foot"></div></footer>
+
+<div class="mbar" aria-hidden="true"><span><b id="mbH">0</b> <span data-t="hrsmo"></span> · <b id="mbV">$0</b><span data-t="peryr"></span></span><span><span data-t="readiness"></span> <b id="mbS">–</b></span></div>
+
+<script>
+{
+// ---------- data: Puerto Rico ----------
+// Wages: BLS OEWS, Puerto Rico (statewide), May 2025, mean hourly
+const W={admin:15.67,mkt:21.86,owner:45.43};
+const ALL=18.68; // all occupations, Puerto Rico
+const G={fin:["Finanzas, seguros y servicios legales","Finance, insurance and legal"],hl:["Salud","Health care"],re:["Bienes raíces y propiedades","Real estate and property"],pro:["Servicios profesionales y técnicos","Professional and technical services"],tr:["Construcción y servicios al hogar","Construction and home services"],con:["Restaurantes, comercio y servicios personales","Restaurants, retail and personal services"],oth:["Otros","Other"]};
+// id, [es,en], group, profile, pro wage (PR), PR employer establishments 2023 (CBP), default data, rules
+const IND=[
+["acct",["Contabilidad, contribuciones y teneduría de libros","Accounting, tax and bookkeeping"],"fin","fin",25.95,950,["fin","id","basic"],["glba","irs"]],
+["ins",["Agencia o corredor de seguros","Insurance agency or brokerage"],"fin","fin",ALL,521,["fin","id","health","basic"],["glbaIns"]],
+["lend",["Hipotecas, préstamos o títulos","Mortgage, lending or title"],"fin","fin",25.95,324,["fin","id","basic"],["glba"]],
+["wealth",["Planificación financiera e inversiones","Financial planning and investments"],"fin","fin",25.95,235,["fin","id","basic"],["glbaIns"]],
+["law",["Bufete o práctica legal","Law firm"],"fin","legal",45.43,1284,["legal","id","fin","basic"],["rcp"]],
+["med",["Oficina médica","Medical practice"],"hl","health",25.06,3724,["health","id","card","basic"],["hipaa"]],
+["dent",["Oficina dental","Dental practice"],"hl","health",25.06,885,["health","id","card","basic"],["hipaa"]],
+["ther",["Terapia, quiropráctica u otros profesionales de la salud","Therapy, chiropractic or other practitioners"],"hl","health",25.06,975,["health","id","card","basic"],["hipaa"]],
+["home",["Cuidado en el hogar o de personas mayores","Home health or senior care"],"hl","health",13.37,124,["health","id","hr","basic"],["hipaa"]],
+["vet",["Clínica veterinaria","Veterinary clinic"],"hl","vet",25.06,151,["card","basic"],[]],
+["re",["Corredores o agentes de bienes raíces","Real estate brokerage or agents"],"re","re",14.41,335,["fin","id","basic"],[]],
+["pm",["Administración o arrendamiento de propiedades","Property management or leasing"],"re","re",ALL,279,["fin","id","card","basic"],[]],
+["consult",["Consultoría o servicios a empresas","Consulting or business services"],"pro","pro",25.95,1543,["basic"],[]],
+["it",["Servicios de IT o MSP","IT services or MSP"],"pro","pro",26.94,460,["basic"],[]],
+["mkt",["Agencia de mercadeo, relaciones públicas o diseño","Marketing, PR or design agency"],"pro","pro",21.86,485,["basic"],[]],
+["ae",["Arquitectura o ingeniería","Architecture or engineering"],"pro","pro",32.56,829,["basic"],[]],
+["staff",["Empleos o reclutamiento","Staffing or recruiting"],"pro","pro",25.95,216,["hr","id","basic"],[]],
+["mep",["Electricidad, plomería o aire acondicionado","Electrical, plumbing or air conditioning"],"tr","tr",16.36,751,["card","basic"],[]],
+["build",["Construcción o remodelación de viviendas","Home builder or remodeler"],"tr","tr",14.95,782,["basic"],[]],
+["spec",["Techos, estructuras, terminaciones u otros oficios","Roofing, structure, finishing or other trades"],"tr","tr",14.95,372,["basic"],[]],
+["clean",["Limpieza, jardinería o control de plagas","Cleaning, landscaping or pest control"],"tr","tr",12.20,538,["card","basic"],[]],
+["auto",["Taller de mecánica o servicio automotriz","Auto repair or service"],"tr","tr",16.36,915,["card","basic"],[]],
+["food",["Restaurante, cafetería o barra","Restaurant, café or bar"],"con","con",12.44,5598,["card","hr"],[]],
+["retail",["Tienda o comercio electrónico","Retail shop or e-commerce"],"con","con",14.41,10025,["card","basic"],[]],
+["salon",["Salón, spa o cuidado personal","Salon, spa or personal care"],"con","con",12.42,478,["card","basic"],[]],
+["fit",["Gimnasio, estudio o recreación","Gym, studio or recreation"],"con","con",12.42,197,["card","basic"],[]],
+["kids",["Cuido de niños, tutorías o escuela","Child care, tutoring or school"],"con","con",24.94,480,["kids","card","basic"],["coppa"]],
+["np",["Organización sin fines de lucro, iglesia o asociación","Nonprofit, church or association"],"oth","oth",ALL,1273,["fin","basic"],[]],
+["mfg",["Manufactura o venta al por mayor","Manufacturing or wholesale"],"oth","oth",ALL,4176,["basic"],[]],
+["logi",["Transporte de carga o logística","Trucking or logistics"],"oth","oth",ALL,522,["hr","basic"],[]],
+["other",["Otro","Something else"],"oth","oth",ALL,0,["basic"],[]]
+].map(a=>({id:a[0],l:a[1],g:a[2],p:a[3],w:a[4],pr:a[5],data:a[6],rules:a[7]}));
+
+// Municipios: employer establishments 2023 (CBP)
+const TOWNS=[["San Juan",12333],["Bayamón",3119],["Ponce",2506],["Caguas",2473],["Guaynabo",2472],["Carolina",2038],["Mayagüez",1616],["Arecibo",1162],["Aguadilla",981],["Toa Baja",832],["Humacao",816],["Dorado",748],["Cabo Rojo",645],["Manatí",644],["Trujillo Alto",600],["Hatillo",545],["Cayey",528],["Fajardo",517],["Vega Baja",457]];
+const PR_TOTAL=50332;
+
+const T={
+email:{l:["Correos y mensajes a clientes","Email and client messages"],n:["Redactar respuestas, seguimientos y recordatorios.","Drafting replies, follow-ups and reminders."],r:"admin",lo:.20,hi:.35},
+docs:{l:["Documentos, cartas y propuestas","Documents, letters and proposals"],n:["Primeros borradores, plantillas y revisiones.","First drafts, templates and rewrites."],r:"pro",lo:.20,hi:.35},
+notes:{l:["Notas de reuniones y llamadas","Meeting and call notes"],n:["Resúmenes, tareas pendientes y correos de seguimiento.","Summaries, action items and follow-up emails."],r:"pro",lo:.25,hi:.45},
+admin:{l:["Citas, entrada de datos y actualizaciones","Scheduling, data entry and updates"],n:["Calendarios, CRM, formularios y copiar datos entre sistemas.","Calendars, CRM, forms and copying between systems."],r:"admin",lo:.10,hi:.25},
+mkt:{l:["Mercadeo, redes sociales y reseñas","Marketing, social and reviews"],n:["Publicaciones, boletines, textos del sitio web y respuestas a reseñas.","Posts, newsletters, website text and review replies."],r:"mkt",lo:.25,hi:.45},
+research:{l:["Investigación y búsqueda de información","Research and looking things up"],n:["Reglas, productos, suplidores y prospectos.","Rules, products, suppliers and prospects."],r:"pro",lo:.15,hi:.30},
+quotes:{l:["Cotizaciones, estimados y facturas","Quotes, estimates and invoices"],n:["Precios, alcances de trabajo y cobros.","Pricing, scopes of work and billing follow-up."],r:"admin",lo:.10,hi:.25},
+faq:{l:["Preguntas de clientes","Customer questions"],n:["Llamadas, chats y correos que preguntan lo mismo.","Calls, chats and emails that ask the same things."],r:"admin",lo:.10,hi:.20},
+train:{l:["Reclutamiento, adiestramiento y manuales","Hiring, onboarding and how-to guides"],n:["Anuncios de empleo, listas de cotejo y guías de trabajo.","Job posts, checklists and training docs."],r:"owner",lo:.15,hi:.30},
+sheets:{l:["Hojas de cálculo e informes","Spreadsheets and reports"],n:["Fórmulas, conciliaciones y números del mes.","Formulas, reconciliations and monthly numbers."],r:"pro",lo:.10,hi:.25},
+intake:{l:["Recibo de documentos de clientes","Client document intake"],n:["Organizar lo que envían los clientes y pedir lo que falta.","Sorting what clients send and chasing what's missing."],r:"admin",lo:.15,hi:.30}
+};
+const P={
+fin:{desk:1,t:[["email",5],["intake",3],["docs",2,{l:["Cartas a clientes, acuerdos y propuestas","Client letters, engagement and proposals"]}],["sheets",4,{l:["Papeles de trabajo, conciliaciones e informes","Workpapers, reconciliations and reports"]}],["notes",2],["research",2,{n:["Reglas de Hacienda y del IRS, aseguradoras, tasas y reglamentos.","Hacienda and IRS rules, carriers, rates and regulations."]}]]},
+legal:{desk:1,t:[["email",5],["docs",6,{l:["Redacción y primera revisión de documentos","Drafting and first-pass document review"],lo:.15,hi:.30}],["research",3,{l:["Investigación legal","Legal research"],lo:.10,hi:.25,n:["Buscar fuentes y resumirlas. Un abogado verifica cada cita.","Finding sources and summarizing them. A lawyer verifies every citation."]}],["notes",2,{l:["Notas de reuniones y llamadas con clientes","Client meeting and call notes"]}],["admin",2],["quotes",1,{l:["Registro de horas y facturación","Time entry and billing"]}]]},
+health:{desk:.6,t:[["notes",4,{l:["Notas de visitas y documentación","Visit notes and documentation"],lo:.20,hi:.40,n:["Récords y cartas. Solo en herramientas con un BAA firmado.","Charting and letters. Only in tools with a signed BAA."]}],["faq",4,{l:["Llamadas, formularios y recordatorios de pacientes","Patient calls, forms and reminders"]}],["admin",3,{l:["Citas, planes médicos y entrada de datos","Scheduling, health plans and data entry"]}],["email",2],["mkt",1],["train",1]]},
+vet:{desk:.6,t:[["notes",4,{l:["Notas de visitas y expedientes","Visit notes and records"],lo:.20,hi:.40}],["faq",4,{l:["Llamadas y recordatorios a clientes","Client calls and reminders"]}],["admin",3],["email",2],["mkt",1],["train",1]]},
+re:{desk:1,t:[["email",5],["mkt",4,{l:["Listados, redes sociales y mercadeo","Listings, social and marketing"]}],["docs",3,{l:["Actualizaciones a clientes y resúmenes de ofertas","Client updates and offer summaries"],n:["Resúmenes en lenguaje sencillo, no documentos legales.","Plain-language summaries and status updates, not legal documents."]}],["admin",3,{l:["Coordinación de transacciones y CRM","Transaction coordination and CRM"]}],["faq",2],["research",1,{l:["Investigación de mercado y propiedades","Market and property research"]}]]},
+pro:{desk:1,t:[["email",5],["docs",4,{l:["Propuestas, informes y entregables","Proposals, reports and deliverables"]}],["notes",3],["research",3],["mkt",2],["admin",2]]},
+tr:{desk:.35,t:[["quotes",4],["faq",3,{l:["Llamadas de clientes y solicitudes de citas","Customer calls and booking requests"]}],["admin",3,{l:["Citas, despacho y actualizaciones de trabajos","Scheduling, dispatch and job updates"]}],["email",2],["mkt",1,{n:["Reseñas en Google, fotos de trabajos y publicaciones.","Google reviews, job photos and posts."]}],["train",1]]},
+con:{desk:.3,t:[["faq",3],["mkt",3],["admin",3,{l:["Horarios, pedidos e inventario","Scheduling, ordering and inventory"]}],["email",2],["train",1],["sheets",1]]},
+oth:{desk:.6,t:[["email",4],["docs",3],["admin",3],["sheets",2],["mkt",2],["notes",2]]}
+};
+const DATA=[["fin",["Planillas, récords bancarios o financieros","Tax, bank or financial records"]],["health",["Información de salud o médica","Health or medical information"]],["legal",["Expedientes de casos legales","Legal matter files"]],["id",["Seguro Social, licencia de conducir o números de identificación","Social Security, driver's license or ID numbers"]],["card",["Números de tarjetas de pago","Payment card numbers"]],["hr",["Expedientes de empleados y recursos humanos","Employee and HR records"]],["kids",["Información sobre niños","Information about children"]],["basic",["Nombres, correos electrónicos y teléfonos","Names, emails and phone numbers"]]];
+const HIGH=["fin","health","legal","id","kids"];
+const Q=[
+["use",["¿Cómo usa su equipo la IA hoy?","How does your team use AI today?"],[["none",["Todavía no la usamos","We don't use it yet"]],["personal",["Algunas personas usan cuentas gratis o personales","A few people use free or personal accounts"]],["mixed",["Algunas cuentas de negocio pagadas, otras personales","Some paid business accounts, some personal ones"]],["biz",["Cuentas de negocio para todos, administradas por nosotros","Business accounts for everyone, managed by us"]]]],
+["paste",["¿Alguna vez entra información de clientes en herramientas de IA?","Does client or customer information ever go into AI tools?"],[["unknown",["No sé","I don't know"]],["yes",["Sí, a veces","Yes, sometimes"]],["rule",["No, tenemos una regla o solo usamos herramientas aprobadas","No, we have a rule against it or use approved tools only"]],["na",["No usamos IA","We don't use AI"]]]],
+["policy",["¿Tiene reglas para el uso de la IA?","Do you have rules for using AI?"],[["none",["No","No"]],["verbal",["Solo reglas habladas","Spoken rules only"]],["written",["Por escrito, y todos las han firmado","Written down, and everyone has signed them"]]]],
+["mfa",["¿Usa verificación en dos pasos (MFA) para el correo y las aplicaciones clave?","Do you use two-step login (MFA) for email and key apps?"],[["all",["Sí, para todos","Yes, for everyone"]],["some",["Para algunas cuentas","For some accounts"]],["no",["No","No"]],["ns",["No estoy seguro","Not sure"]]]],
+["plan",["¿Tiene un plan escrito para proteger los datos de sus clientes?","Do you have a written plan for protecting client data?"],[["yes",["Sí","Yes"]],["wip",["En progreso","In progress"]],["no",["No","No"]],["ns",["No estoy seguro","Not sure"]]]],
+["train",["¿Alguien ha recibido adiestramiento para usar la IA bien y de forma segura?","Has anyone been trained to use AI well and safely?"],[["no",["No","No"]],["self",["Solo por cuenta propia","Self-taught only"]],["some",["Algún adiestramiento formal","Some formal training"]],["all",["Todo el equipo","The whole team"]]]],
+["plat",["¿Qué paquete de oficina usa?","Which office suite do you use?"],[["m365",["Microsoft 365","Microsoft 365"]],["gws",["Google Workspace","Google Workspace"]],["both",["Ambos","Both"]],["neither",["Ninguno / no estoy seguro","Neither / not sure"]]]]
+];
+const RULES={
+all:[["Ley de seguridad de bancos de información (Ley 111-2005)","Puerto Rico data breach law (Act 111-2005)"],["Todo negocio que guarde información personal de residentes de Puerto Rico debe avisar a las personas afectadas si hay una brecha, e informar al DACO en un plazo no prorrogable de 10 días. Las multas van de $500 a $5,000 por violación. Los datos cifrados quedan fuera del deber de notificar; pegar datos de clientes en una cuenta personal de IA no los protege.","Any business that keeps personal information about Puerto Rico residents must notify the people affected by a breach and report it to DACO (Consumer Affairs) within a non-extendable 10 days. Fines run from $500 to $5,000 per violation. Encrypted data is exempt from notice; pasting client data into a personal AI account doesn't protect it."],"https://bvirtualogp.pr.gov/ogp/Bvirtual/leyesreferencia/PDF/111-2005.pdf"],
+glba:[["Regla de Salvaguardas de la FTC (GLBA)","FTC Safeguards Rule (GLBA)"],["Los preparadores de planillas, contadores, tenedores de libros y prestamistas cuentan como instituciones financieras y necesitan un plan escrito de seguridad de la información (WISP). Toda herramienta de IA que toque datos de clientes debe estar en ese plan.","Tax preparers, accountants, bookkeepers and lenders count as financial institutions and need a written information security plan (WISP). Any AI tool that touches client data belongs in that plan."],"https://www.ftc.gov/legal-library/browse/rules/safeguards-rule"],
+irs:[["Publicación 4557 del IRS e IRC §7216","IRS Publication 4557 and IRC §7216"],["Si prepara planillas federales, esa información tiene límites de divulgación con penalidades criminales por uso no autorizado. Manténgala fuera de cuentas de IA de consumo.","If you prepare federal returns, that information has its own disclosure limits, with criminal penalties for unauthorized use. Keep it out of consumer AI accounts."],"https://www.irs.gov/pub/irs-pdf/p4557.pdf"],
+glbaIns:[["Deberes de privacidad y salvaguardas de GLBA","GLBA privacy and safeguards duties"],["Las agencias y asesores que guardan información financiera no pública tienen deberes de protección. Qué agencia los fiscaliza depende de su licencia; consulte con su regulador o su contacto de cumplimiento.","Agencies and advisers that hold nonpublic financial information have safeguarding duties. Which agency enforces them depends on your license, so check with your regulator or compliance contact."],"https://www.ftc.gov/legal-library/browse/rules/safeguards-rule"],
+rcp:[["Reglas de Conducta Profesional de Puerto Rico","Puerto Rico Rules of Professional Conduct"],["Vigentes desde el 1 de enero de 2026. Exigen competencia tecnológica: entender los beneficios y riesgos de herramientas como la IA y verificar lo que producen. En 2026 el Tribunal Supremo apercibió a abogadas por citas inexistentes en un escrito. El deber de confidencialidad con el cliente sigue aplicando.","In effect since January 1, 2026. They require technology competence: understand the benefits and risks of tools like AI and verify what they produce. In 2026 the Supreme Court admonished lawyers over non-existent citations in a filing. Client confidentiality duties still apply."],"https://www.lawnext.com/2025/06/puerto-rico-adopts-duty-of-technology-competence-with-rule-that-goes-farther-than-aba-model.html"],
+hipaa:[["Acuerdos de socio de negocios de HIPAA (BAA)","HIPAA business associate agreements"],["Un proveedor de IA que maneje información de pacientes es un socio de negocios y debe firmar un BAA primero. Las herramientas de IA gratis para consumidores generalmente no lo ofrecen.","An AI vendor that handles patient information is a business associate and must sign a BAA first. Free consumer AI tools generally don't offer one."],"https://www.hhs.gov/hipaa/for-professionals/covered-entities/sample-business-associate-agreement-provisions/index.html"],
+coppa:[["COPPA (privacidad de niños en línea)","COPPA (children's online privacy)"],["Si un sitio, app o herramienta en línea recoge información de niños menores de 13 años, se necesita el consentimiento verificable de los padres. Revise cualquier herramienta de IA que usen los estudiantes.","If a website, app or online tool collects information from children under 13, verifiable parental consent is required. Check any AI tool students use."],"https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa"]
+};
+const REC={
+email:[["Asistente aprobado para el correo","Approved assistant for email"],["Configure una cuenta de IA de negocio con plantillas para sus 20 correos más comunes. Los borradores toman minutos y los datos de clientes se quedan en una cuenta que usted controla.","Set up a business AI account with reply templates for your 20 most common emails. Drafts take minutes, and client details stay in an account you control."]],
+intake:[["Recibo de documentos que da seguimiento por usted","Document intake that chases for you"],["La IA organiza lo que envían los clientes, señala lo que falta y redacta el recordatorio. Úsela en una herramienta cubierta por su plan de protección de datos.","AI sorts what clients send, flags what's missing and drafts the reminder email. Run it in a tool covered by your data-protection plan."]],
+docs:[["Primeros borradores con sus propias plantillas","First drafts from your own templates"],["Cree una biblioteca de plantillas y deje que la IA escriba el primer borrador de las cartas y propuestas de cada semana. Una persona edita y envía cada una.","Build a template library and let AI write the first draft of the letters and proposals you produce every week. A person edits and sends each one."]],
+notes:[["Notas de reuniones y seguimientos","Meeting notes and follow-ups"],["Active las notas con IA en su herramienta de reuniones de negocio para que el resumen y las tareas estén listos al terminar la llamada.","Turn on AI notes in your business meeting tool so summaries and action items are ready when the call ends."]],
+admin:[["No más copiar y pegar","Stop retyping"],["Conecte su calendario, formularios y CRM para que las actualizaciones rutinarias fluyan solas, con la IA a cargo de los pasos intermedios.","Connect your calendar, forms and CRM so routine updates flow through automatically, with AI handling the messy middle steps."]],
+mkt:[["Una rutina mensual de contenido","A monthly content routine"],["La IA redacta publicaciones, boletines y respuestas a reseñas con su estilo a partir de una página de instrucciones, y usted las aprueba. Una tarde al mes en vez de todas las noches.","AI drafts posts, newsletters and review replies in your voice from a one-page brief, and you approve them. One afternoon a month instead of every evening."]],
+research:[["Investigación con fuentes","Research with sources"],["Dele al equipo un asistente que cite sus fuentes, con una regla firme: verificar cada dato antes de que llegue a un cliente.","Give the team an assistant that cites its sources, with a firm rule: check every fact before it reaches a client."]],
+quotes:[["Cotizaciones el mismo día","Same-day quotes"],["Cree un asistente de cotizaciones con su lista de precios y trabajos anteriores, para que el estimado salga mientras el cliente todavía recuerda que llamó.","Build a quoting helper from your price list and past jobs, so estimates go out while the customer still remembers calling you."]],
+faq:[["Una biblioteca de respuestas aprobadas","An approved answer library"],["Escriba sus mejores respuestas a las preguntas de cada semana. La IA redacta desde esa biblioteca y una persona envía.","Write down your best answers to the questions you get every week. AI drafts replies from that library, and a person sends them."]],
+train:[["Ponga por escrito lo que sabe","Get what's in your head on paper"],["Convierta su forma de trabajar en listas de cotejo y guías que un empleado nuevo pueda seguir desde el primer día.","Turn how you do things into checklists and how-to guides new hires can follow from their first day."]],
+sheets:[["Ayuda integrada en sus hojas de cálculo","Spreadsheet help built in"],["Use la IA integrada en Excel o Google Sheets para fórmulas, conciliaciones y resúmenes mensuales.","Use the AI built into Excel or Google Sheets for formulas, reconciliations and monthly summaries."]]
+};
+const SAFE={health:["Mantenga los datos de pacientes fuera, a menos que el proveedor haya firmado un BAA.","Keep patient details out unless the tool's vendor has signed a BAA."],legal:["Úsela solo con el consentimiento del cliente y en una herramienta cerrada de negocio.","Use only with client consent and a closed, business-grade tool."],fin:["Mantenga los números de Seguro Social y las planillas fuera de cuentas de IA de consumo.","Keep SSNs and return data out of consumer AI accounts."]};
+const SIZES=[["",["Escoja uno","Choose one"]],["1",["Solo yo","Just me"]],["3",["2 a 5","2 to 5"]],["8",["6 a 10","6 to 10"]],["18",["11 a 25","11 to 25"]],["38",["26 a 50","26 to 50"]],["75",["51 a 100","51 to 100"]],["120",["Más de 100","More than 100"]]];
+const LOCAL=[["retail",10025,["Comercio al detal","Retail"]],["food",5598,["Restaurantes y barras","Restaurants and bars"]],["med",3724,["Oficinas médicas","Medical offices"]],["consult",1543,["Consultoría","Consulting"]],["law",1284,["Servicios legales","Legal services"]],["np",1273,["Organizaciones y asociaciones","Organizations and associations"]],["ther",975,["Otros profesionales de la salud","Other health practitioners"]],["acct",950,["Contabilidad y contribuciones","Accounting and tax"]]];
+
+// ---------- UI strings ----------
+const S_={
+title:["Calculadora de preparación para IA · Puerto Rico · Ares Technical","AI Readiness Calculator · Puerto Rico · Ares Technical"],
+desc:["Estime las horas que la IA podría devolverle a su negocio en Puerto Rico y verifique si los datos de sus clientes están seguros.","Estimate the hours AI could give back to your Puerto Rico business, and check whether your client data is safe."],
+other:["English","Español"],
+h1:["¿Qué podría devolverle la IA a su negocio, de forma segura?","What could AI give back to your business, safely?"],
+hp:["Una evaluación de cinco minutos para pequeños negocios en Puerto Rico. Reciba un estimado de las horas que podría ahorrar, valoradas a salarios de Puerto Rico, y una puntuación que muestra si los datos de sus clientes están seguros mientras usa IA.","A five-minute check for small businesses in Puerto Rico. Get an estimate of hours saved, priced at Puerto Rico wages, plus a readiness score that shows whether your client data is safe while you use AI."],
+facts:[["<b>4</b> pasos cortos","<b>30</b> perfiles de industria","Salarios de <b>Puerto Rico</b>","<b>Sin</b> registro para ver resultados"],["<b>4</b> short steps","<b>30</b> industry profiles","<b>Puerto Rico</b> wage data","<b>No</b> sign-up to see results"]],
+figT:["Industrias más grandes en Puerto Rico","Largest industries in Puerto Rico"],
+figS:[`Establecimientos con empleados, 2023, de ${PR_TOTAL.toLocaleString("en-US")} en total`,`Employer establishments, 2023, out of ${PR_TOTAL.toLocaleString("en-US")} in total`],
+figSrc:["Fuente: US Census, County Business Patterns","Source: US Census County Business Patterns"],
+tab1:["Su negocio","Your business"],tab2:["Sus horas","Your hours"],tab3:["Sus datos","Your data"],tab4:["Su preparación","Your setup"],
+s1h:["Cuéntenos sobre el negocio.","Tell us about the business."],s1p:["Estas respuestas definen qué tareas, salarios y reglas de datos le aplican.","These answers set which tasks, wages and data rules apply to you."],
+indL:["Industria","Industry"],indChoose:["Escoja su industria","Choose your industry"],
+indHint0:["Escoja la opción más cercana. La lista sigue los tipos de pequeños negocios más comunes en Puerto Rico.","Pick the closest match. The list follows the most common small business types in Puerto Rico."],
+sizeL:["Tamaño del equipo, incluyéndole a usted","Team size, including you"],cityL:["Municipio","Municipality"],cityChoose:["Escoja uno","Choose one"],cityOther:["Otro municipio","Another municipality"],
+n2:["Siguiente: sus horas →","Next: your hours →"],n3:["Siguiente: sus datos →","Next: your data →"],n4:["Siguiente: su preparación →","Next: your setup →"],back:["← Atrás","← Back"],
+s2h:["¿En qué se van las horas?","Where do the hours go?"],s2p:["Indique cuántas horas, más o menos, dedica todo su equipo a cada tarea en una semana típica. Empezamos con cifras típicas para su industria y tamaño; ajústelas a su realidad.","Set roughly how many hours your whole team spends on each task in a typical week. We've started you with typical figures for your industry and size, so adjust them to match."],
+deskL:["Personas que hacen trabajo de oficina o en computadora:","People doing office or computer work:"],deskH:["Puede cambiar este número.","You can edit this number."],hrswk:["hrs/sem","hrs/wk"],
+s3h:["¿Qué información maneja?","What information do you hold?"],s3p:["El valor de la IA depende de mantener esta información segura. Marcamos lo típico en su industria; cambie lo que no aplique.","The value of AI depends on keeping this information safe. We've pre-checked what's typical for your industry, so change anything that doesn't fit."],
+dataL:["Usted guarda o maneja…","You keep or handle…"],
+s4h:["¿Cómo está preparado hoy?","How are you set up today?"],s4p:["Conteste con sinceridad. \"No estoy seguro\" es una respuesta útil y cuenta como un área a revisar.","Answer honestly. \"Not sure\" is a useful answer and counts as a gap to look at."],
+seePlan:["Ver mi plan ↓","See my plan ↓"],
+live:["Resultado en vivo","Live readout"],roInd0:["Escoja una industria","Choose an industry"],hrsmo:["hrs/mes","hrs/mo"],peryr:["/año","/yr"],
+roSub1:["Horas al mes que la IA podría devolverle una vez esté configurada.","Hours a month AI could give back once it's set up."],roSub0:["Escoja su industria y el tamaño del equipo para comenzar el estimado.","Pick your industry and team size to start the estimate."],
+perMonth:["Valor por mes","Value per month"],perYear:["Valor por año","Value per year"],
+share:["Eso es cerca del {p}% del tiempo de oficina de su equipo (estimado bajo). Como referencia, los trabajadores en EE. UU. que usan IA ahorran cerca del 5.4% en promedio.","That's about {p}% of your team's office time (low estimate). For comparison, US workers who use AI save about 5.4% on average."],
+readiness:["Preparación para IA","AI readiness"],
+pill:[[["Herramientas","Cuentas de negocio, no personales"],["Política","Reglas escritas y manejo de datos de clientes"],["Seguridad","Verificación en dos pasos y un plan de protección de datos"],["Personas","Adiestramiento para usar la IA bien y de forma segura"]],[["Tools","Business accounts, not personal ones"],["Policy","Written rules and client-data handling"],["Security","Two-step login and a data-protection plan"],["People","Training on using AI well and safely"]]],
+tag:[["Observado","Parcial","Brecha","Sin contestar"],["Observed","Partial","Gap","Not answered"]],
+sens:["Sensibilidad de los datos","Data sensitivity"],sensV:[{High:"Alta",Medium:"Media",Low:"Baja"},{High:"High",Medium:"Medium",Low:"Low"}],sensHi:[". La preparación le importa más que a la mayoría.",". Readiness matters more for you than for most."],
+indHint:["Hay cerca de <b>{n}</b> negocios con empleados como el suyo en Puerto Rico (Censo, 2023).","About <b>{n}</b> employer businesses like yours in Puerto Rico (Census, 2023)."],
+indHintO:["Escoja la opción más cercana si puede. Si no, usaremos tareas generales de oficina.","Pick the closest match if you can. Otherwise we'll use general office tasks."],
+cityHint:["<b>{c}</b> tiene {n} establecimientos con empleados (Censo, 2023).","<b>{c}</b> has {n} employer establishments (Census, 2023)."],
+planT0:["Su plan de IA","Your AI plan"],planL0:["Complete los cuatro pasos de arriba. Cada sección se actualiza a medida que avanza.","Answer the four steps above to fill this in. Each section updates as you go."],
+planT:["Su plan de IA: {i}","Your AI plan: {i}"],
+planL:["Entre {lo} y {hi} horas al mes, con un valor de cerca de {v} al año a salarios de Puerto Rico{s}. Comience aquí.","About {lo} to {hi} hours a month, worth around {v} a year at Puerto Rico wages{s}. Start here."],
+planS:[", con una puntuación de preparación de {s}/100",", with a readiness score of {s}/100"],
+c1:["Tres cosas para configurar primero","Three things to set up first"],c2:["Reglas que aplican a su uso de IA","Rules that apply to your AI use"],c3:["Dónde comenzaría Ares Technical","Where Ares Technical would start"],
+notLegal:["Este resumen es para ayudarle a prepararse. No es asesoría legal.","This is a summary to help you prepare. It isn't legal advice."],
+src:["Fuente","Source"],pickInd:["Escoja su industria en el paso 1.","Choose your industry in step 1."],moveSl:["Mueva las barras del paso 2 para ver por dónde empezar.","Move the sliders in step 2 to see where to start."],
+recoMeta:["Cerca de {h} hrs/mes · {v}/mes","About {h} hrs/mo · {v}/mo"],
+flags:[["Puede que información de clientes esté entrando en cuentas personales de IA que usted no controla. Corrija esto primero.","Su industria necesita un plan escrito de seguridad de la información (WISP) bajo la Regla de Salvaguardas de la FTC.","La información de pacientes solo puede entrar en herramientas de IA cuyo proveedor haya firmado un BAA.","Active la verificación en dos pasos en todas las cuentas de correo antes de implementar herramientas de IA.","Si hay una brecha con datos personales, tiene 10 días para informar al DACO. Tenga listo un plan de respuesta."],["Client information may be going into personal AI accounts that you don't control. Fix this first.","Your industry needs a written information security plan (WISP) under the FTC Safeguards Rule.","Patient information can only go into AI tools whose vendor has signed a BAA.","Turn on two-step login for every email account before rolling out AI tools.","If a breach exposes personal data, you have 10 days to report it to DACO. Have a response plan ready."]],
+pk:[{rev:["Evaluación de preparación para IA","Comience aquí. Una evaluación a precio fijo de sus herramientas, datos y hábitos, que termina con un plan escrito basado en este estimado."],pol:["Política de uso seguro","Reglas en lenguaje sencillo sobre qué puede entrar en la IA y qué no, escritas para {i}."],tool:["Selección y configuración de herramientas","Mueva a todos a cuentas de negocio con controles de administración, escogidas según sus datos y su presupuesto."],train:["Adiestramiento del equipo","Sesiones prácticas con sus tareas reales, incluido lo que nunca se debe pegar."],gem:["Preparación para Gemini","Revise los permisos y archivos compartidos antes de que la IA pueda buscar en todo lo que su equipo puede abrir."],cop:["Preparación para Copilot","Revise los permisos y archivos compartidos antes de que la IA pueda buscar en todo lo que su equipo puede abrir."],both:["Preparación para Copilot y Gemini","Revise los permisos y archivos compartidos antes de que la IA pueda buscar en todo lo que su equipo puede abrir."],sup:["Plan de apoyo continuo en IA","Una reunión mensual para añadir flujos de trabajo, revisar herramientas y mantener la política al día."],vn:"Independientes. No revendemos herramientas de IA."},
+{rev:["AI readiness review","Start here. A fixed-price review of your tools, data and habits, ending with a written plan built on this estimate."],pol:["Safe-use policy","Plain-English rules for what can go into AI and what can't, written for {i}."],tool:["Tool selection and setup","Move everyone onto business accounts with admin controls, chosen for your data and your budget."],train:["Team training","Hands-on sessions on your real tasks, including what never to paste in."],gem:["Gemini readiness","Check file sharing and permissions before AI can search everything your team can open."],cop:["Copilot readiness","Check file sharing and permissions before AI can search everything your team can open."],both:["Copilot and Gemini readiness","Check file sharing and permissions before AI can search everything your team can open."],sup:["Ongoing AI support plan","A monthly check-in to add workflows, review tools and keep the policy current."],vn:"Vendor-neutral. We don't resell AI tools."}],
+ctaH:["¿Quiere una segunda opinión sobre estos números?","Want a second opinion on these numbers?"],
+ctaP:["Reserve una llamada gratis de 30 minutos. Revisamos sus resultados, los comparamos con cómo funciona su negocio en realidad y decidimos si una evaluación de preparación a precio fijo tiene sentido.","Book a free 30-minute call. We'll go through your results, check them against how your business really works, and decide whether a fixed-price AI readiness review makes sense."],
+ctaB:["Reservar una llamada de 30 minutos","Book a 30-minute call"],ctaE:["O escriba a fernando.jorge@arestechnical.com","Or email fernando.jorge@arestechnical.com"],
+fH:["Envíeme una copia de estos resultados","Email me a copy of these results"],fN:["Nombre","First name"],fE:["Correo electrónico del trabajo","Work email"],fC:["Nombre del negocio (opcional)","Business name (optional)"],fSend:["Enviar mis resultados","Send my results"],fCopy:["Copiar resumen","Copy summary"],
+copied:["Resumen copiado.","Summary copied."],copyFail:["Su navegador bloqueó la copia aquí.","Your browser blocked copying here."],
+fBad:["Añada su nombre y un correo electrónico válido.","Please add your first name and a valid email."],sending:["Enviando…","Sending…"],
+fOk:["Gracias, {n}. Recibimos sus resultados y le enviaremos una copia por correo.","Thanks, {n}. We have your results and will email you a copy."],
+fErr:["Esta página no pudo enviar el formulario. Use Copiar resumen y envíelo a fernando.jorge@arestechnical.com, o reserve una llamada.","This page couldn't send the form. Use Copy summary and email it to fernando.jorge@arestechnical.com, or book a call."],
+mSum:["Cómo se calculan estos números","How these numbers are calculated"],
+foot:['Ares Technical · Evidencia, no promesas. · <a href="/pr/">IA para pequeños negocios en Puerto Rico</a> · <a href="https://arestechnical.com/ai/checklist/">Lista gratis de uso seguro de IA (en inglés)</a>','Ares Technical · Evidence, not claims. · <a href="/pr/?lang=en">AI for small businesses in Puerto Rico</a> · <a href="https://arestechnical.com/ai/checklist/">Free AI safe-use checklist</a>']
+};
+
+// ---------- state ----------
+const $=id=>document.getElementById(id);
+const KEY="ares-ai-calc-pr";
+let S={ind:"",size:"",city:"",desk:null,hours:{},data:null,a:{},lang:"es"};
+try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&s.a)S=Object.assign(S,s)}catch(e){}
+try{const q=new URLSearchParams(location.search).get("lang");const g=localStorage.getItem("ares-pr-lang");if(q==="en"||q==="es")S.lang=q;else if(g==="en"||g==="es")S.lang=g}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const L=()=>S.lang==="en"?1:0;
+const t=k=>S_[k][L()];
+const tr=x=>Array.isArray(x)?x[L()]:x;
+const fill=(s,o)=>s.replace(/\{(\w+)\}/g,(m,k)=>o[k]??m);
+const nf=n=>Math.round(n).toLocaleString("en-US");
+const fmt=n=>"$"+nf(n);
+const lc=s=>S.lang==="en"?s.toLowerCase():s.charAt(0).toLowerCase()+s.slice(1);
+
+const ind=()=>IND.find(i=>i.id===S.ind);
+const tasksFor=I=>(P[I?I.p:"oth"]).t.map(([k,h,o])=>Object.assign({k,per:h},T[k],o||{}));
+const wageOf=(tk,I,head)=>head===1?(I?I.w:ALL):(tk.r==="pro"?(I?I.w:ALL):W[tk.r]);
+const deskDefault=()=>{const I=ind();const head=+S.size||1;return Math.max(1,Math.round(head*(P[I?I.p:"oth"].desk)))};
+
+// ---------- static text ----------
+function paintStatic(){
+ document.documentElement.lang=S.lang;
+ document.title=t("title");
+ const md=document.querySelector('meta[name="description"]');if(md)md.content=t("desc");
+ document.querySelectorAll("[data-t]").forEach(el=>{const k=el.dataset.t;if(S_[k])el.textContent=t(k)});
+ $("langBtn").textContent=t("other");$("langBtn").setAttribute("lang",S.lang==="es"?"en":"es");
+ $("facts").innerHTML=t("facts").map(f=>`<span>${f}</span>`).join("");
+ $("foot").innerHTML=t("foot");
+ $("localBars").innerHTML=LOCAL.map(([k,n,l])=>`<div class="lb"><span>${tr(l)}</span><b>${nf(n)}</b><i style="--w:${(n/LOCAL[0][1]*100).toFixed(0)}%"></i></div>`).join("");
+ $("ind").innerHTML=`<option value="">${t("indChoose")}</option>`+Object.entries(G).map(([g,gl])=>`<optgroup label="${tr(gl)}">${IND.filter(i=>i.g===g).map(i=>`<option value="${i.id}">${tr(i.l)}</option>`).join("")}</optgroup>`).join("");
+ $("size").innerHTML=SIZES.map(([v,l])=>`<option value="${v}">${tr(l)}</option>`).join("");
+ $("city").innerHTML=`<option value="">${t("cityChoose")}</option>`+TOWNS.map(([c])=>`<option value="${c}">${c}</option>`).join("")+`<option value="other">${t("cityOther")}</option>`;
+ $("dataOpts").innerHTML=DATA.map(([k,l])=>`<label class="opt"><input type="checkbox" value="${k}"> <span>${tr(l)}</span></label>`).join("");
+ $("qs").innerHTML=Q.map(([k,q,os])=>`<fieldset><legend>${tr(q)}</legend><div class="opts two">${os.map(([v,l])=>`<label class="opt"><input type="radio" name="${k}" value="${v}"> <span>${tr(l)}</span></label>`).join("")}</div></fieldset>`).join("");
+ // restore values
+ $("ind").value=S.ind;$("size").value=S.size;$("city").value=S.city;
+ syncData();
+ Object.entries(S.a).forEach(([k,v])=>{const r=document.querySelector(`input[name="${k}"][value="${v}"]`);if(r)r.checked=true});
+ buildSliders(false);
+}
+
+function buildSliders(reset){
+ const I=ind();const desk=S.desk||deskDefault();
+ if(reset||!S.hours||!Object.keys(S.hours).length){S.hours={};tasksFor(I).forEach(x=>S.hours[x.k]=Math.round(x.per*desk))}
+ $("deskN").value=desk;
+ const max=Math.min(400,Math.max(20,desk*40));
+ $("sliders").innerHTML=tasksFor(I).map(x=>{const v=S.hours[x.k]??0;return `<div class="slider"><div class="sh"><b>${tr(x.l)}</b><output id="o-${x.k}">${v}<small> ${t("hrswk")}</small></output></div><p>${tr(x.n)}</p><input type="range" min="0" max="${max}" step="1" value="${Math.min(v,max)}" data-k="${x.k}" aria-label="${tr(x.l)}"></div>`}).join("");
+}
+function syncData(){const d=S.data||(ind()?ind().data:[]);document.querySelectorAll("#dataOpts input").forEach(c=>c.checked=d.includes(c.value))}
+
+function calc(){
+ const I=ind();const head=+S.size||1;const desk=S.desk||deskDefault();
+ let lo=0,hi=0,vlo=0,vhi=0;const rows=[];
+ tasksFor(I).forEach(x=>{const h=S.hours[x.k]||0,w=wageOf(x,I,head);
+  const l=h*x.lo*4.33,u=h*x.hi*4.33;lo+=l;hi+=u;vlo+=l*w;vhi+=u*w;rows.push({t:x,h,l,w})});
+ const a=S.a;const pts={
+  use:{none:8,personal:3,mixed:12,biz:25},paste:{unknown:0,yes:4,rule:25,na:15},policy:{none:0,verbal:10,written:25},
+  mfa:{all:12.5,some:6,no:0,ns:0},plan:{yes:12.5,wip:6,no:0,ns:0},train:{no:0,self:10,some:18,all:25}};
+ const g=k=>a[k]==null?null:pts[k][a[k]];
+ const vals=[g("use"),(g("paste")==null||g("policy")==null)?null:(g("paste")+g("policy"))/2,(g("mfa")==null||g("plan")==null)?null:g("mfa")+g("plan"),g("train")];
+ const score=vals.every(v=>v!=null)?Math.round(vals.reduce((s,v)=>s+v,0)):null;
+ const data=S.data||(I?I.data:[]);
+ const sens=data.some(d=>HIGH.includes(d))?"High":data.some(d=>["card","hr"].includes(d))?"Medium":"Low";
+ return {I,head,desk,lo,hi,vlo,vhi,rows,vals,score,sens,data};
+}
+const tagOf=v=>v==null?["t-na",t("tag")[3]]:v>=18?["t-ok",t("tag")[0]]:v>=9?["t-part",t("tag")[1]]:["t-gap",t("tag")[2]];
+
+function render(){
+ const R=calc();const I=R.I;
+ const done={1:!!(S.ind&&S.size),2:!!(S.ind&&S.size),3:!!S.ind,4:Q.every(([k])=>S.a[k])};
+ document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("done",!!done[b.dataset.s]));
+ $("roInd").textContent=I?tr(I.l):t("roInd0");
+ const ready=!!(S.ind&&S.size);
+ if(!ready){R.lo=R.hi=R.vlo=R.vhi=0}
+ const H=Math.round(R.lo),Hh=Math.round(R.hi);
+ $("roHours").innerHTML=ready?`${H}<small>${Hh>H?"–"+Hh:""} ${t("hrsmo")}</small>`:`–<small> ${t("hrsmo")}</small>`;
+ $("roHoursSub").textContent=ready?t("roSub1"):t("roSub0");
+ $("roMonth").textContent=fmt(R.vlo);$("roYear").textContent=fmt(R.vlo*12);
+ const share=R.desk?R.lo/4.33/(R.desk*40)*100:0;
+ $("roShare").textContent=ready&&H?fill(t("share"),{p:share.toFixed(1)}):"";
+ $("roScore").textContent=R.score==null?"–":R.score+"/100";
+ $("roBar").style.width=(R.score||0)+"%";
+ $("roPillars").innerHTML=t("pill").map(([n,d],i)=>{const c=tagOf(R.vals[i]);return `<li><span>${n}<br><small style="color:#A79F98">${d}</small></span><span class="tag ${c[0]}">${c[1]}</span></li>`}).join("");
+ $("roSens").innerHTML=I?`${t("sens")}: <b>${t("sensV")[R.sens]}</b>${R.sens==="High"?t("sensHi"):""}`:"";
+ $("mbH").textContent=H;$("mbV").textContent=fmt(R.vlo*12);$("mbS").textContent=R.score==null?"–":R.score;
+ $("indHint").innerHTML=I?(I.pr?fill(t("indHint"),{n:nf(I.pr)}):t("indHintO")):t("indHint0");
+ const town=TOWNS.find(x=>x[0]===S.city);
+ $("cityHint").innerHTML=town?fill(t("cityHint"),{c:town[0],n:nf(town[1])}):"";
+ renderMethod(R);renderPlan(R);save();
+}
+
+function renderMethod(R){
+ const I=R.I;const en=L()===1;
+ const pro=I?`$${I.w.toFixed(2)}`:"";
+ const rows=R.rows.map(r=>`<tr><td>${tr(r.t.l)}</td><td class="r">${Math.round(r.t.lo*100)}–${Math.round(r.t.hi*100)}%</td><td class="r">$${r.w.toFixed(2)}/hr</td></tr>`).join("");
+ const lawNote=I&&I.id==="law"?(en?" BLS doesn't publish lawyer wages for Puerto Rico, so law firms use the management occupations rate ($45.43) as a stand-in.":" El BLS no publica salarios de abogados para Puerto Rico, así que para bufetes usamos la tarifa de ocupaciones gerenciales ($45.43) como aproximación."):"";
+ $("method").innerHTML=en?
+ `<p><b>Hours.</b> For each task: weekly team hours × the share AI can realistically take on (a low and high estimate) × 4.33 weeks. The shares are cautious Ares Technical estimates, from 10% to 45% depending on the task. They aren't the 50–75% many calculators assume. The low end is the main figure.</p>
+ <p><b>Value.</b> Each hour is priced at the Puerto Rico mean wage for the people who usually do that task (BLS, May 2025): office and admin $15.67, marketing $21.86, owner and manager time $45.43, and your industry's professional rate${I?` (${pro} for ${lc(tr(I.l))})`:""}. If you work alone, every hour uses your industry rate. Wages don't include benefits or payroll taxes, so true cost is higher.${lawNote}</p>
+ <p><b>Sanity check.</b> In a St. Louis Fed survey, workers who used generative AI saved about 5.4% of their work hours on average. If your estimate is far above that, it assumes a well set-up team using AI daily.</p>
+ <p><b>Readiness.</b> Four areas worth 25 points each: Tools (are people on business accounts), Policy (written rules and client-data handling), Security (two-step login and a written data-protection plan), People (training). In each area, 18 or more points is Observed, 9–17 is Partial and under 9 is a Gap.</p>
+ <table><thead><tr><th>Task</th><th>AI share (low–high)</th><th>Paid at</th></tr></thead><tbody>${rows}</tbody></table>
+ <p><b>Sources:</b> business counts from the <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=040XX00US72" target="_blank" rel="noopener">US Census County Business Patterns 2023, Puerto Rico</a>. Wages from <a href="https://data.bls.gov/oes/#/area/7200000/2025" target="_blank" rel="noopener">BLS Occupational Employment and Wage Statistics, Puerto Rico, May 2025</a>. Time savings from the <a href="https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity" target="_blank" rel="noopener">St. Louis Fed</a> and <a href="https://www.nber.org/papers/w31161" target="_blank" rel="noopener">NBER Working Paper 31161</a>. These are estimates, not promises.</p>`
+ :
+ `<p><b>Horas.</b> Para cada tarea: horas semanales del equipo × la parte que la IA puede asumir de forma realista (un estimado bajo y uno alto) × 4.33 semanas. Las proporciones son estimados conservadores de Ares Technical, entre 10% y 45% según la tarea, no el 50–75% que suponen muchas calculadoras. La cifra principal es la baja.</p>
+ <p><b>Valor.</b> Cada hora se valora al salario promedio en Puerto Rico de quienes suelen hacer esa tarea (BLS, mayo de 2025): oficina y administración $15.67, mercadeo $21.86, tiempo del dueño o gerente $45.43, y la tarifa profesional de su industria${I?` (${pro} para ${lc(tr(I.l))})`:""}. Si trabaja solo, todas las horas usan la tarifa de su industria. Los salarios no incluyen beneficios ni aportaciones patronales, así que el costo real es mayor.${lawNote}</p>
+ <p><b>Comparación.</b> En una encuesta del Banco de la Reserva Federal de St. Louis, los trabajadores que usaban IA generativa ahorraron en promedio cerca del 5.4% de sus horas de trabajo. Si su estimado está muy por encima, supone un equipo bien preparado que usa IA a diario.</p>
+ <p><b>Preparación.</b> Cuatro áreas de 25 puntos cada una: Herramientas (¿usan cuentas de negocio?), Política (reglas escritas y manejo de datos de clientes), Seguridad (verificación en dos pasos y un plan escrito de protección de datos) y Personas (adiestramiento). En cada área, 18 puntos o más es Observado, de 9 a 17 es Parcial y menos de 9 es Brecha.</p>
+ <table><thead><tr><th>Tarea</th><th>Parte para IA (baja–alta)</th><th>Valorada a</th></tr></thead><tbody>${rows}</tbody></table>
+ <p><b>Fuentes:</b> conteo de negocios del <a href="https://data.census.gov/table/CBP2023.CB2300CBP?g=040XX00US72" target="_blank" rel="noopener">US Census, County Business Patterns 2023, Puerto Rico</a>. Salarios de <a href="https://data.bls.gov/oes/#/area/7200000/2025" target="_blank" rel="noopener">BLS, Occupational Employment and Wage Statistics, Puerto Rico, mayo de 2025</a>. Ahorro de tiempo según el <a href="https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity" target="_blank" rel="noopener">St. Louis Fed</a> y el <a href="https://www.nber.org/papers/w31161" target="_blank" rel="noopener">NBER Working Paper 31161</a>. Son estimados, no promesas.</p>`;
+}
+
+function renderPlan(R){
+ const I=R.I;
+ if(!I){$("planTitle").textContent=t("planT0");$("planLede").textContent=t("planL0");$("recos").innerHTML=`<p class="hint">${t("pickInd")}</p>`;$("rules").innerHTML="";$("pkgs").innerHTML="";$("flags").innerHTML="";return}
+ const town=S.city&&S.city!=="other"?", "+S.city:"";
+ $("planTitle").textContent=fill(t("planT"),{i:lc(tr(I.l))+town});
+ $("planLede").textContent=fill(t("planL"),{lo:Math.round(R.lo),hi:Math.round(R.hi),v:fmt(R.vlo*12),s:R.score!=null?fill(t("planS"),{s:R.score}):""});
+ const top=R.rows.filter(r=>r.h>0).sort((x,y)=>y.l*y.w-x.l*x.w).slice(0,3);
+ const safe=R.data.includes("health")?tr(SAFE.health):R.data.includes("legal")?tr(SAFE.legal):(R.data.includes("fin")||R.data.includes("id"))?tr(SAFE.fin):"";
+ $("recos").innerHTML=top.length?top.map((r,i)=>`<div class="reco"><div class="n">${i+1}</div><div><b>${tr(REC[r.t.k][0])}</b><p>${tr(REC[r.t.k][1])}</p><em>${fill(t("recoMeta"),{h:Math.round(r.l),v:fmt(r.l*r.w)})}${safe&&i===0?" · "+safe:""}</em></div></div>`).join(""):`<p class="hint">${t("moveSl")}</p>`;
+ const keys=["all"].concat(I.rules);
+ if(R.data.includes("health")&&!keys.includes("hipaa")&&I.p==="health")keys.push("hipaa");
+ if(R.data.includes("kids")&&!keys.includes("coppa"))keys.push("coppa");
+ if(R.data.includes("fin")&&I.p==="fin"&&!keys.some(k=>k.startsWith("glba")))keys.push("glbaIns");
+ $("rules").innerHTML=keys.map(k=>RULES[k]).map(([ti,d,u])=>`<li><b>${tr(ti)}</b>${tr(d)} <a href="${u}" target="_blank" rel="noopener">${t("src")}</a></li>`).join("");
+ const a=S.a,f=[],FL=t("flags");
+ if((a.use==="personal"||a.use==="mixed")&&(a.paste==="yes"||a.paste==="unknown")&&R.sens!=="Low")f.push(FL[0]);
+ if(a.plan&&a.plan!=="yes"&&I.rules.includes("glba"))f.push(FL[1]);
+ if(R.data.includes("health")&&(a.use==="personal"||a.use==="mixed"))f.push(FL[2]);
+ if(a.mfa&&a.mfa!=="all")f.push(FL[3]);
+ if(a.plan&&a.plan!=="yes"&&R.sens==="High")f.push(FL[4]);
+ $("flags").innerHTML=f.map(x=>`<p class="flag">${x}</p>`).join("");
+ const K=t("pk"),pk=[K.rev];
+ if(a.policy!=="written"||a.paste==="yes"||a.paste==="unknown")pk.push([K.pol[0],fill(K.pol[1],{i:lc(tr(I.l))})]);
+ if(a.use&&a.use!=="biz")pk.push(K.tool);
+ if(a.train&&a.train!=="all")pk.push(K.train);
+ if(["m365","gws","both"].includes(a.plat))pk.push(a.plat==="gws"?K.gem:a.plat==="m365"?K.cop:K.both);
+ if(R.head>=6)pk.push(K.sup);
+ $("pkgs").innerHTML=pk.slice(0,4).map(([ti,d])=>`<div class="pk"><b>${ti}</b><span>${d}</span></div>`).join("")+`<p class="hint">${K.vn}</p>`;
+}
+
+function summary(){
+ const R=calc();const I=R.I;const en=L()===1;
+ const pl=t("pill"),tg=x=>tagOf(x)[1];
+ return [en?"AI readiness results (Puerto Rico): Ares Technical":"Resultados de preparación para IA (Puerto Rico): Ares Technical",
+ `${en?"Industry":"Industria"}: ${I?tr(I.l):"n/a"} | ${en?"Team":"Equipo"}: ${$("size").selectedOptions[0]?.text||"n/a"} | ${S.city&&S.city!=="other"?S.city:""}`,
+ `${en?"Hours AI could give back":"Horas que la IA podría devolver"}: ${Math.round(R.lo)}–${Math.round(R.hi)} ${en?"per month":"al mes"}`,
+ `${en?"Value":"Valor"}: ${fmt(R.vlo)}/${en?"month":"mes"}, ${fmt(R.vlo*12)}/${en?"year (low estimate, Puerto Rico wages)":"año (estimado bajo, salarios de Puerto Rico)"}`,
+ `${t("readiness")}: ${R.score==null?(en?"not finished":"sin terminar"):R.score+"/100"} | ${t("sens")}: ${t("sensV")[R.sens]}`,
+ ...pl.map((p,i)=>`  ${p[0]}: ${tg(R.vals[i])}`),
+ `${en?"Start with":"Comience con"}: ${[...document.querySelectorAll("#recos b")].map(b=>b.textContent).join("; ")}`,
+ `${en?"Book a call":"Reserve una llamada"}: https://calendly.com/fernando-jorge-arestechnical/30min`].join("\n");
+}
+
+function go(n){
+ document.querySelectorAll(".step").forEach(s=>s.classList.toggle("on",s.id==="s"+n));
+ document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.s==n));
+ const c=$("calcCard");if(c.getBoundingClientRect().top<0)c.scrollIntoView({behavior:"smooth"});
+}
+
+// events
+$("langBtn").addEventListener("click",()=>{S.lang=S.lang==="es"?"en":"es";try{localStorage.setItem("ares-pr-lang",S.lang)}catch(e){}paintStatic();render()});
+$("ind").addEventListener("change",e=>{S.ind=e.target.value;S.desk=null;S.data=null;buildSliders(true);syncData();render()});
+$("size").addEventListener("change",e=>{S.size=e.target.value;S.desk=null;buildSliders(true);render()});
+$("city").addEventListener("change",e=>{S.city=e.target.value;render()});
+$("deskN").addEventListener("change",e=>{const v=Math.max(1,Math.min(200,parseInt(e.target.value)||1));S.desk=v;buildSliders(true);render()});
+$("sliders").addEventListener("input",e=>{const k=e.target.dataset.k;if(!k)return;S.hours[k]=+e.target.value;$("o-"+k).innerHTML=`${e.target.value}<small> ${t("hrswk")}</small>`;render()});
+$("dataOpts").addEventListener("change",()=>{S.data=[...document.querySelectorAll("#dataOpts input:checked")].map(c=>c.value);render()});
+$("qs").addEventListener("change",e=>{if(e.target.name){S.a[e.target.name]=e.target.value;render()}});
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>go(b.dataset.s)));
+document.querySelectorAll("[data-next]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.next)));
+$("copyBtn").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(summary());$("leadMsg").textContent=t("copied")}catch(e){$("leadMsg").textContent=t("copyFail")}});
+$("lead").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const name=$("ln").value.trim(),email=$("le").value.trim();
+ if(!name||!/^\S+@\S+\.\S+$/.test(email)){$("leadMsg").textContent=t("fBad");return}
+ if($("gotcha").value)return;
+ const R=calc();
+ const body={_subject:"AI calculator results (Puerto Rico): Ares Technical",region:"Puerto Rico",language:S.lang,name,email,company:$("lc").value.trim(),industry:R.I?R.I.l[1]:"",team_size:$("size").value,city:S.city,
+  hours_low:Math.round(R.lo),hours_high:Math.round(R.hi),value_year:Math.round(R.vlo*12),readiness:R.score,sensitivity:R.sens,answers:JSON.stringify(S.a),data:(R.data||[]).join(", "),summary:summary()};
+ $("leadMsg").textContent=t("sending");
+ try{const r=await fetch("https://formspree.io/f/xrpqlvkw",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(body)});
+  if(!r.ok)throw 0;$("leadMsg").textContent=fill(t("fOk"),{n:name});e.target.reset()}
+ catch(err){$("leadMsg").textContent=t("fErr")}
+});
+paintStatic();render();
+}
+</script>
+</body>
+</html>
