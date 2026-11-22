@@ -157,7 +157,7 @@ nav.site a[aria-current="page"]{color:#fff}
       <li><a href="/fernando/">About</a></li>
       <li><a href="/pr/" hreflang="es" lang="es">Español · Puerto Rico</a></li>
       <li><a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="mailto:fernando.jorge@arestechnical.com">Email</a></li>
+      <li><a href="mailto:info@arestechnical.com">Email</a></li>
     </ul>
   </div>
 </footer>
@@ -227,9 +227,9 @@ nav.site a[aria-current="page"]{color:#fff}
           if(res.ok){form.hidden=true; ok.hidden=false; ok.focus(); form.reset(); return}
           var errs=(res.d&&res.d.errors)||[], shown=false;
           errs.forEach(function(x){ if(x.field&&document.getElementById("e-"+x.field)){setErr(x.field,x.message);shown=true} });
-          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your message. Please try again, or email fernando.jorge@arestechnical.com.");
+          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your message. Please try again, or email info@arestechnical.com.");
         })
-        .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email fernando.jorge@arestechnical.com."})
+        .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email info@arestechnical.com."})
         .then(function(){btn.disabled=false; btn.innerHTML=btnHTML});
     });
   }

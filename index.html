@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"AI adoption for small businesses","serviceType":"AI adoption consulting","url":"https://arestechnical.com/","areaServed":["Williamson County, Texas","US"],"provider":{"@type":"ProfessionalService","name":"Ares Technical","url":"https://arestechnical.com/","email":"fernando.jorge@arestechnical.com"}}
+{"@context":"https://schema.org","@type":"Service","name":"AI adoption for small businesses","serviceType":"AI adoption consulting","url":"https://arestechnical.com/","areaServed":["Williamson County, Texas","US"],"provider":{"@type":"ProfessionalService","name":"Ares Technical","url":"https://arestechnical.com/","email":"info@arestechnical.com"}}
 </script>
 <link rel="stylesheet" href="/assets/site.css?v=1">
 <style>
@@ -287,7 +287,7 @@ nav.site a[aria-current="page"]{color:#fff}
         </ol>
       </div>
       <div class="book-call"><a class="btn btn-book" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Book a free call</a><span>Rather talk it through? Pick a time that suits you.</span></div>
-      <p class="mail-alt">Prefer email? Write to <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a>.</p>
+      <p class="mail-alt">Prefer email? Write to <a href="mailto:info@arestechnical.com">info@arestechnical.com</a>.</p>
     </div>
 
     <div class="form-card">
@@ -335,7 +335,7 @@ nav.site a[aria-current="page"]{color:#fff}
       <div class="f-success" id="formSuccess" tabindex="-1" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>
         <h3>Thanks, your message is on its way.</h3>
-        <p>I’ll reply within two business days. If it’s urgent, email <a href="mailto:fernando.jorge@arestechnical.com">fernando.jorge@arestechnical.com</a>.</p>
+        <p>I’ll reply within two business days. If it’s urgent, email <a href="mailto:info@arestechnical.com">info@arestechnical.com</a>.</p>
       </div>
     </div>
   </div>
@@ -354,7 +354,7 @@ nav.site a[aria-current="page"]{color:#fff}
       <li><a href="/fernando/">About</a></li>
       <li><a href="/pr/" hreflang="es" lang="es">Español · Puerto Rico</a></li>
       <li><a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="mailto:fernando.jorge@arestechnical.com">Email</a></li>
+      <li><a href="mailto:info@arestechnical.com">Email</a></li>
     </ul>
   </div>
 </footer>
@@ -424,9 +424,9 @@ nav.site a[aria-current="page"]{color:#fff}
           if(res.ok){form.hidden=true; ok.hidden=false; ok.focus(); form.reset(); return}
           var errs=(res.d&&res.d.errors)||[], shown=false;
           errs.forEach(function(x){ if(x.field&&document.getElementById("e-"+x.field)){setErr(x.field,x.message);shown=true} });
-          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your message. Please try again, or email fernando.jorge@arestechnical.com.");
+          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your message. Please try again, or email info@arestechnical.com.");
         })
-        .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email fernando.jorge@arestechnical.com."})
+        .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email info@arestechnical.com."})
         .then(function(){btn.disabled=false; btn.innerHTML=btnHTML});
     });
   }

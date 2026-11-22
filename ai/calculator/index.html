@@ -125,7 +125,7 @@
     <h3>Want a second opinion on these numbers?</h3>
     <p>Book a free 30-minute call. We'll go through your results, check them against how your business really works, and decide whether a fixed-price AI readiness review makes sense.</p>
     <p><a class="btn go" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener">Book a 30-minute call</a></p>
-    <p style="font-size:14px">Or email fernando.jorge@arestechnical.com</p>
+    <p style="font-size:14px">Or email info@arestechnical.com</p>
    </div>
    <form id="lead" novalidate>
     <h3 style="font-size:20px">Email me a copy of these results</h3>
@@ -409,7 +409,7 @@ $("lead").addEventListener("submit",async e=>{
  $("leadMsg").textContent="Sending…";
  try{const r=await fetch("https://formspree.io/f/xrpqlvkw",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(body)});
   if(!r.ok)throw 0;$("leadMsg").textContent=`Thanks, ${name}. We have your results and will email you a copy.`;e.target.reset()}
- catch(err){$("leadMsg").textContent="This page couldn't send the form. Use Copy summary and email it to fernando.jorge@arestechnical.com, or book a call."}
+ catch(err){$("leadMsg").textContent="This page couldn't send the form. Use Copy summary and email it to info@arestechnical.com, or book a call."}
 });
 render();
 }

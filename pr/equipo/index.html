@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>document.documentElement.classList.add("js");var t=null;try{t=localStorage.getItem("fj-theme")}catch(e){}document.documentElement.setAttribute("data-theme",t||"dark")</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nuestro equipo · Ares Technical Puerto Rico</title>
+<meta name="description" content="Conozca al equipo de Ares Technical en Puerto Rico: Fernando Jorge diseña el plan y las medidas de seguridad; Henry Moczo lo pone en marcha en la isla, adiestra a su equipo y da seguimiento.">
+<link rel="canonical" href="https://arestechnical.com/pr/equipo/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ares Technical">
+<meta property="og:title" content="Nuestro equipo · Ares Technical Puerto Rico">
+<meta property="og:description" content="Dos personas, un solo equipo: el plan y la seguridad, y alguien en la isla que lo pone en marcha.">
+<meta property="og:url" content="https://arestechnical.com/pr/equipo/">
+<meta property="og:locale" content="es_PR">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#09080A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Ares Technical","url":"https://arestechnical.com/pr/","areaServed":["Puerto Rico"],"employee":[{"@type":"Person","name":"Fernando Jorge","url":"https://arestechnical.com/fernando/"},{"@type":"Person","name":"Henry Moczo","workLocation":{"@type":"Place","name":"Puerto Rico"},"knowsLanguage":["es","en"]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css?v=1">
+<style>
+nav.site a[aria-current="page"]{color:#fff}
+nav.site ul{gap:1.25rem}
+header.site .wrap{gap:1.1rem}
+.lang-btn{width:auto; padding:0 .85rem; border-radius:999px; font:600 .85rem/1 "IBM Plex Sans",system-ui,sans-serif}
+.lang-btn .ls{display:none}
+@media (max-width:520px){ .lang-btn{padding:0 .6rem} .lang-btn .ll{display:none} .lang-btn .ls{display:inline} header.site .wrap{gap:.6rem} .hero .btn, .mid-cta .btn{white-space:normal; text-align:left} }
+.hero .wrap{grid-template-columns:1fr}
+.hero h1 em{display:block}
+.hero .lede{max-width:44rem}
+
+/* Two people */
+.duo{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem}
+.person{background:var(--surface); border:1px solid var(--rule); border-radius:16px; padding:1.75rem; position:relative; overflow:hidden}
+.person::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--grad)}
+.p-top{display:flex; align-items:center; gap:1rem; margin-bottom:1.1rem}
+.mono{flex:none; width:3.6rem; height:3.6rem; border-radius:50%; display:grid; place-items:center; font:600 1.15rem/1 var(--sans); letter-spacing:.02em; color:#fff; background:var(--btn)}
+.p-top h3{font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:0; line-height:1.1}
+.p-where{display:block; margin-top:.25rem; font-family:var(--mono); font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent)}
+.person > p{margin:0 0 1rem; color:var(--muted)}
+.leads{list-style:none; margin:0; padding:0; font-size:.96rem}
+.leads li{padding:.45rem 0 .45rem 1.4rem; position:relative; border-top:1px dashed var(--rule)}
+.leads li::before{content:""; position:absolute; left:.1rem; top:.9rem; width:.55rem; height:.55rem; border-radius:2px; background:var(--grad)}
+.together{margin:2rem 0 0; font-size:1.12rem; max-width:48rem}
+@media (max-width:860px){ .duo{grid-template-columns:1fr} }
+
+/* Bios */
+.about-body .roles{list-style:none; margin:1.5rem 0; padding:0}
+.about-body .roles li{display:grid; grid-template-columns:9rem 1fr; gap:1rem; padding:.7rem 0; border-top:1px solid var(--rule); font-size:.95rem}
+.about-body .roles span{font-family:var(--mono); color:var(--muted); font-size:.82rem}
+.about-body h3{font-size:1.05rem; font-weight:600; margin:2rem 0 .75rem}
+.about .sec-head .p-where{margin-top:.6rem}
+.about .sec-head .mono{width:4.5rem; height:4.5rem; font-size:1.35rem; margin-bottom:1.25rem}
+@media (max-width:860px){ .about{grid-template-columns:1fr; gap:2rem} .about-body .roles li{grid-template-columns:1fr; gap:.1rem} }
+.stats{list-style:none; margin:1.75rem 0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem}
+.stats li{background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:1rem}
+.stats b{display:block; font-size:1.7rem; font-weight:600; line-height:1; letter-spacing:-.02em; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:.4rem}
+.stats span{font-size:.84rem; color:var(--muted); line-height:1.35; display:block}
+@media (max-width:760px){ .stats{grid-template-columns:repeat(2,1fr)} }
+.does{list-style:none; margin:0; padding:0; display:grid; gap:.1rem}
+.does li{padding:.6rem 0 .6rem 1.4rem; position:relative; border-top:1px dashed var(--rule); font-size:.98rem}
+.does li::before{content:""; position:absolute; left:.1rem; top:1.05rem; width:.55rem; height:.55rem; border-radius:2px; background:var(--grad)}
+.does b{font-weight:600}
+.more-link{margin:1.25rem 0 0; font-weight:500}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i="skip">Saltar al contenido</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/pr/" aria-label="Ares Technical">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F2643F"/><stop offset=".4" stop-color="#DC2626"/><stop offset=".7" stop-color="#EA580C"/><stop offset="1" stop-color="#FBBF24"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lg)"/><path d="M14 50 32 13l18 37" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22.5 37h19" stroke="#1A0D12" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="13" r="5" fill="#FFFFFF"/></svg>
+      <span>Ares Technical</span>
+    </a>
+    <nav class="site" id="siteNav" aria-label="Menú">
+      <ul data-i="nav">
+        <li><a href="/pr/">Pequeños negocios</a></li>
+        <li><a href="/pr/calculator/" class="calc-link">Calculadora</a></li>
+        <li><a href="/pr/#packages">Servicios</a></li>
+        <li><a href="/pr/#faq">Preguntas</a></li>
+        <li><a href="/pr/equipo/" aria-current="page">Nuestro equipo</a></li>
+        <li><a href="/">Texas (English)</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary hdr-cta" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener" data-i="hdrCta">Llamada gratis</a>
+    <button class="icon-btn lang-btn" type="button" id="langBtn">English</button>
+    <button class="icon-btn theme-btn" type="button" id="themeBtn" aria-label="Cambiar el tema de color"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i="eyebrow">Nuestro equipo</p>
+      <h1 data-i="h1">Dos personas. <em>Un solo equipo.</em></h1>
+      <p class="lede" data-i="lede">Fernando diseña el plan y las medidas de seguridad. Henry lo pone en marcha en la isla, adiestra a su equipo y se mantiene a su lado después del lanzamiento. Usted tiene un solo equipo y una persona de contacto.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><span data-i="ctaRev">Llamada gratis</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#henry" data-i="ctaHenry">Conozca a Henry</a>
+      </div>
+      <p class="hero-note" data-i="heroNote">En español o en inglés. En persona en Puerto Rico, y por video cuando le resulte más cómodo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="duo-h">
+  <div class="wrap">
+    <div class="sec-head" data-i="duoHead">
+      <h2 id="duo-h">Cómo trabajamos juntos</h2>
+      <p>Cada proyecto tiene dos partes: decidir qué hacer y hacerlo bien. Cada uno de nosotros dirige una.</p>
+    </div>
+    <ul class="duo" data-i="duo">
+      <li class="person">
+        <div class="p-top"><span class="mono" aria-hidden="true">FJ</span><div><h3>Fernando Jorge</h3><span class="p-where">El plan y la seguridad</span></div></div>
+        <p>Más de 20 años en tecnología, los últimos en protección de datos y seguridad.</p>
+        <ul class="leads">
+          <li>La evaluación de preparación para IA</li>
+          <li>La selección de herramientas y los ajustes de privacidad</li>
+          <li>La política de uso seguro</li>
+          <li>La preparación para Copilot y Gemini</li>
+        </ul>
+      </li>
+      <li class="person">
+        <div class="p-top"><span class="mono" aria-hidden="true">HM</span><div><h3>Henry Moczo</h3><span class="p-where">En la isla · Puerto Rico</span></div></div>
+        <p>Más de 20 años en éxito del cliente, gestión de proyectos y adiestramiento técnico en Puerto Rico.</p>
+        <ul class="leads">
+          <li>Su contacto en la isla, en persona</li>
+          <li>La gestión del proyecto, de principio a fin</li>
+          <li>La implementación de las herramientas</li>
+          <li>El adiestramiento de su equipo y el apoyo continuo</li>
+        </ul>
+      </li>
+    </ul>
+    <p class="together" data-i="together">Los dos participamos desde la primera llamada. Fernando y Henry revisan juntos cada plan antes de presentárselo, y Henry le mantiene al tanto de cada paso.</p>
+  </div>
+</section>
+
+<section class="block" id="henry" aria-labelledby="henry-h">
+  <div class="wrap about">
+    <div class="sec-head">
+      <span class="mono" aria-hidden="true">HM</span>
+      <h2 id="henry-h">Henry Moczo</h2>
+      <span class="p-where" data-i="hWhere">Puerto Rico · español e inglés</span>
+    </div>
+    <div class="about-body" data-i="henry">
+      <p>Por más de 20 años, Henry Moczo ha trabajado del lado del cliente. Su enfoque: que las empresas reciban lo que se les prometió, que la tecnología nueva entre en funcionamiento a tiempo y que su gente sepa usarla.</p>
+      <p>Desde 2015, en WorldNet Telecommunications, Henry gestiona cuentas empresariales como su contacto técnico principal. Dirige proyectos de implementación de voz y datos de principio a fin: planificación, configuración, instalación, entrada en servicio y adiestramiento de los usuarios. Coordina a técnicos de campo, al centro de operaciones de red y a los equipos de ventas para resolver problemas y escalaciones. Además, prepara revisiones de servicio periódicas para que cada cliente sepa en qué estado está su cuenta y qué viene después. Sus clientes mantienen una satisfacción documentada de más de 95%.</p>
+      <p>Henry conoce de cerca cómo operan los negocios de la isla. Ha trabajado con oficinas médicas y otros proveedores de salud, comercios al detal, oficinas profesionales y hoteles y restaurantes. Entiende sus horarios, su manera de atender al cliente y la información delicada que manejan.</p>
+      <p>Antes de eso, en AT&amp;T Puerto Rico y Centennial de Puerto Rico, preparó a equipos técnicos para el lanzamiento de productos, servicios y plataformas nuevas. Rediseñó el programa de adiestramiento de técnicos nuevos, lo que redujo en 40% el tiempo para dominar el trabajo y en 35% los errores de instalación. También estandarizó procesos entre departamentos, lo que ayudó a subir la satisfacción del cliente en 15%. A lo largo de su carrera, sus iniciativas de adiestramiento y documentación han reducido las escalaciones de clientes en 35%.</p>
+      <ul class="stats">
+        <li><b>20+</b><span>años trabajando con clientes en Puerto Rico</span></li>
+        <li><b>95%+</b><span>satisfacción documentada de sus clientes</span></li>
+        <li><b>40%</b><span>menos tiempo para dominar el trabajo, tras su rediseño del adiestramiento</span></li>
+        <li><b>35%</b><span>menos escalaciones de clientes gracias a adiestramiento y documentación</span></li>
+      </ul>
+      <h3>Lo que Henry hace por usted</h3>
+      <ul class="does">
+        <li><b>Es su contacto en la isla.</b> Reuniones en persona, seguimiento constante y una persona que contesta cuando usted tiene una pregunta.</li>
+        <li><b>Gestiona el proyecto.</b> Desde la evaluación de preparación hasta que todo esté funcionando, con plan, fechas, responsables y un informe de progreso cada semana.</li>
+        <li><b>Implementa las herramientas.</b> Configura y pone en marcha las herramientas de IA aprobadas para su negocio.</li>
+        <li><b>Adiestra a su equipo.</b> Talleres prácticos con el trabajo real de su oficina, más guías sencillas que su equipo puede consultar después.</li>
+        <li><b>Da seguimiento a los resultados.</b> Revisiones periódicas para confirmar que las herramientas se usan, que dan resultado y que se ajustan cuando hace falta.</li>
+      </ul>
+      <h3>Experiencia</h3>
+      <ul class="roles">
+        <li><span>2015–hoy</span>WorldNet Telecommunications · Cuentas empresariales, gestión de proyectos de implementación y apoyo técnico</li>
+        <li><span>2012–2015</span>AT&amp;T Puerto Rico · Líder de adiestramiento técnico y preparación para lanzamientos</li>
+        <li><span>2003–2012</span>Centennial de Puerto Rico · Adiestramiento técnico, implementaciones y apoyo al cliente</li>
+      </ul>
+      <p>Henry gestiona proyectos con la metodología del Project Management Institute (PMI) y tiene formación en Customer Success Management y Technical Product Management. Trabaja en español o en inglés.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="fernando" aria-labelledby="fernando-h">
+  <div class="wrap about">
+    <div class="sec-head">
+      <span class="mono" aria-hidden="true">FJ</span>
+      <h2 id="fernando-h">Fernando Jorge</h2>
+      <span class="p-where" data-i="fWhere">Fundador · Texas y Puerto Rico</span>
+    </div>
+    <div class="about-body" data-i="fernando">
+      <p>Fernando ha pasado más de 20 años entre el laboratorio y el campo: probando productos e integraciones en AT&amp;T, dirigiendo un laboratorio de mercadeo técnico en Edgewater Networks y luego liderando evaluaciones competitivas en empresas de seguridad como Forcepoint, Devo, Splunk y Cyberhaven.</p>
+      <p>Ese trabajo le enseñó cómo se comportan de verdad las herramientas y qué pasa con los datos una vez entran en ellas. Hoy usa esa experiencia para ayudar a pequeños negocios a escoger herramientas de IA, poner reglas sencillas y proteger la información de sus clientes.</p>
+      <ul class="creds"><li>MBA, Management</li><li>CompTIA Security+</li><li>CompTIA Network+</li></ul>
+      <p class="more-link"><a href="/fernando/">Vea el perfil completo de Fernando</a> (en inglés)</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-label="Llamada gratis">
+  <div class="wrap">
+    <div class="mid-cta">
+      <p data-i="midP"><strong>¿Listo para hablar?</strong> La primera llamada es gratis y no tiene que preparar nada. Le contestamos en español o en inglés.</p>
+      <div class="mid-cta-btns"><a class="btn btn-primary" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span data-i="midB1">Llamada gratis</span></a><a class="btn btn-ghost" href="/pr/#contact" data-i="midB2">Envíe un mensaje</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span data-i="footL">© <span id="yr">2026</span> Ares Technical · Puerto Rico y Texas · Remoto primero</span>
+    <ul data-i="footNav">
+      <li><a href="/pr/">Pequeños negocios</a></li>
+      <li><a href="/pr/calculator/" class="calc-link">Calculadora</a></li>
+      <li><a href="/">Texas (English)</a></li>
+      <li><a href="/tech/">Empresas de tecnología</a></li>
+      <li><a href="/pr/equipo/">Nuestro equipo</a></li>
+      <li><a href="mailto:info@arestechnical.com">Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var EN={
+    skip:'Skip to content',
+    nav:'<li><a href="/pr/">Small Business</a></li><li><a href="/pr/calculator/" class="calc-link">Calculator</a></li><li><a href="/pr/#packages">Services</a></li><li><a href="/pr/#faq">Questions</a></li><li><a href="/pr/equipo/" aria-current="page">Our team</a></li><li><a href="/">Texas</a></li>',
+    hdrCta:'Free call',eyebrow:'Our team',h1:'Two people. <em>One team.</em>',
+    lede:'Fernando designs the plan and the safeguards. Henry puts it in place on the island, trains your team and stays with you after launch. You get one team and one point of contact.',
+    ctaRev:'Book a free call',ctaHenry:'Meet Henry',heroNote:'In Spanish or English. In person in Puerto Rico, and over video whenever that’s easier.',
+    duoHead:'<h2 id="duo-h">How we work together</h2><p>Every project has two parts: deciding what to do, and doing it well. Each of us leads one.</p>',
+    duo:'<li class="person"><div class="p-top"><span class="mono" aria-hidden="true">FJ</span><div><h3>Fernando Jorge</h3><span class="p-where">The plan and the safeguards</span></div></div><p>20+ years in technology, most recently in data protection and security.</p><ul class="leads"><li>The AI readiness review</li><li>Tool selection and privacy settings</li><li>The safe-use policy</li><li>Copilot and Gemini readiness</li></ul></li><li class="person"><div class="p-top"><span class="mono" aria-hidden="true">HM</span><div><h3>Henry Moczo</h3><span class="p-where">On the island · Puerto Rico</span></div></div><p>20+ years in customer success, project management and technical training in Puerto Rico.</p><ul class="leads"><li>Your in-person contact on the island</li><li>Project management, start to finish</li><li>Tool setup and rollout</li><li>Team training and ongoing support</li></ul></li>',
+    together:'We’re both involved from the first call. Fernando and Henry review every plan together before presenting it, and Henry keeps you updated at every step.',
+    hWhere:'Puerto Rico · Spanish and English',
+    henry:'<p>For more than 20 years, Henry Moczo has worked on the customer’s side of the table. His focus: businesses get what they were promised, new technology goes live on time, and their people know how to use it.</p><p>Since 2015 at WorldNet Telecommunications, Henry has managed enterprise accounts as their primary technical contact. He runs voice and data deployments end to end (planning, configuration, installation, go-live and end-user training) and coordinates field technicians, the network operations center and sales teams to resolve issues and escalations. He also prepares regular service reviews so every client knows where their account stands and what comes next. His accounts hold documented satisfaction above 95%.</p><p>Henry knows how island businesses run. He has worked with medical practices and other healthcare providers, retailers, professional offices, and hotels and restaurants, and he understands their schedules, their customer service and the sensitive information they handle.</p><p>Before that, at AT&amp;T Puerto Rico and Centennial de Puerto Rico, he prepared technical teams for new product, service and platform launches. He redesigned technician onboarding, which cut time-to-competency by 40% and installation errors by 35%, and he standardized cross-department processes that helped raise customer satisfaction by 15%. Across his career, his training and documentation work has reduced customer escalations by 35%.</p><ul class="stats"><li><b>20+</b><span>years working with customers in Puerto Rico</span></li><li><b>95%+</b><span>documented customer satisfaction</span></li><li><b>40%</b><span>faster time-to-competency after his training redesign</span></li><li><b>35%</b><span>fewer customer escalations through training and documentation</span></li></ul><h3>What Henry does for you</h3><ul class="does"><li><b>Your contact on the island.</b> In-person meetings, steady follow-up and a person who answers when you have a question.</li><li><b>Project management.</b> From the readiness review until everything is running, with a plan, dates, owners and a progress update every week.</li><li><b>Tool setup.</b> Configures and rolls out the AI tools approved for your business.</li><li><b>Team training.</b> Hands-on workshops using your office’s real work, plus simple guides your team can come back to.</li><li><b>Follow-up on results.</b> Regular reviews to confirm the tools are being used, are paying off and get adjusted when needed.</li></ul><h3>Experience</h3><ul class="roles"><li><span>2015–present</span>WorldNet Telecommunications · Enterprise accounts, deployment project management and technical support</li><li><span>2012–2015</span>AT&amp;T Puerto Rico · Technical training lead and launch readiness</li><li><span>2003–2012</span>Centennial de Puerto Rico · Technical training, implementations and customer support</li></ul><p>Henry manages projects using Project Management Institute (PMI) methods and has training in Customer Success Management and Technical Product Management. He works in Spanish or English.</p>',
+    fWhere:'Founder · Texas and Puerto Rico',
+    fernando:'<p>Fernando has spent more than 20 years between the lab and the field: testing products and integrations at AT&amp;T, running a technical marketing lab at Edgewater Networks, then leading competitive evaluations at security companies including Forcepoint, Devo, Splunk and Cyberhaven.</p><p>That work taught him how tools really behave and what happens to data once it goes into them. Today he uses that experience to help small businesses choose AI tools, set simple rules and protect their customers’ information.</p><ul class="creds"><li>MBA, Management</li><li>CompTIA Security+</li><li>CompTIA Network+</li></ul><p class="more-link"><a href="/fernando/">See Fernando’s full profile</a></p>',
+    midP:'<strong>Ready to talk?</strong> The first call is free and there’s nothing to prepare. We’ll reply in Spanish or English.',
+    midB1:'Book a free call',midB2:'Send a message',
+    footL:'© <span id="yr">2026</span> Ares Technical · Puerto Rico and Texas · Remote-first',
+    footNav:'<li><a href="/pr/">Small Business</a></li><li><a href="/pr/calculator/" class="calc-link">Calculator</a></li><li><a href="/">Texas</a></li><li><a href="/tech/">Tech Companies</a></li><li><a href="/pr/equipo/">Our team</a></li><li><a href="mailto:info@arestechnical.com">Email</a></li>'
+  };
+  var MSG={es:{menuO:"Abrir menú",menuC:"Cerrar menú",theme:"Cambiar el tema de color",title:"Nuestro equipo · Ares Technical Puerto Rico",other:"English"},
+           en:{menuO:"Open menu",menuC:"Close menu",theme:"Switch color theme",title:"Our team · Ares Technical Puerto Rico",other:"Español"}};
+  var ES={};
+  [].forEach.call(document.querySelectorAll("[data-i]"),function(n){ES[n.getAttribute("data-i")]=n.innerHTML});
+  var lang="es";
+  try{var q=new URLSearchParams(location.search).get("lang"); var s=localStorage.getItem("ares-pr-lang"); lang=(q==="en"||q==="es")?q:(s==="en"?"en":"es")}catch(e){}
+  function M(k){return MSG[lang][k]}
+  function setLang(l){
+    lang=l; root.lang=l==="en"?"en":"es";
+    [].forEach.call(document.querySelectorAll("[data-i]"),function(n){var k=n.getAttribute("data-i"); var v=l==="en"?EN[k]:ES[k]; if(v!=null)n.innerHTML=v});
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    var b=document.getElementById("langBtn");
+    b.innerHTML='<span class="ll">'+M("other")+'</span><span class="ls">'+(l==="en"?"ES":"EN")+'</span>';
+    b.setAttribute("lang",l==="en"?"es":"en");
+    document.getElementById("themeBtn").setAttribute("aria-label",M("theme"));
+    document.title=M("title");
+    [].forEach.call(document.querySelectorAll("a.calc-link"),function(a){a.setAttribute("href",l==="en"?"/pr/calculator/?lang=en":"/pr/calculator/")});
+    try{localStorage.setItem("ares-pr-lang",l)}catch(e){}
+  }
+  document.getElementById("langBtn").addEventListener("click",function(){setLang(lang==="es"?"en":"es")});
+  setLang(lang);
+
+  document.getElementById("themeBtn").addEventListener("click",function(){
+    var cur=root.getAttribute("data-theme")||"dark", next=cur==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next); try{localStorage.setItem("fj-theme",next)}catch(e){}
+  });
+
+  var nav=document.getElementById("siteNav"), mb=document.getElementById("menuBtn");
+  function setMenu(open){nav.classList.toggle("open",open); mb.setAttribute("aria-expanded",String(open)); mb.setAttribute("aria-label",open?M("menuC"):M("menuO"))}
+  mb.addEventListener("click",function(){setMenu(!nav.classList.contains("open"))});
+  nav.addEventListener("click",function(e){if(e.target.closest("a"))setMenu(false)});
+  addEventListener("keydown",function(e){if(e.key==="Escape")setMenu(false)});
+})();
+</script>
+</body>
+</html>

@@ -170,7 +170,7 @@ nav.site a[aria-current="page"]{color:#fff}
         <li><b>Review everything every 3 to 6 months.</b><span>AI tools and their settings change often. A quick review keeps your list, settings and rules current.</span></li>
       </ol>
       <p class="ck-note">This checklist is general guidance, not legal advice. Businesses that handle health, financial or children’s data may have extra rules to follow.</p>
-      <p class="ck-print-foot">Ares Technical · arestechnical.com/ai/checklist · fernando.jorge@arestechnical.com</p>
+      <p class="ck-print-foot">Ares Technical · arestechnical.com/ai/checklist · info@arestechnical.com</p>
       <div class="mid-cta">
         <p><strong>Want help putting this in place?</strong> A free 30-minute call is enough to see where you stand.</p>
         <div class="mid-cta-btns"><a class="btn btn-primary" href="https://calendly.com/fernando-jorge-arestechnical/30min" target="_blank" rel="noopener">Book a free call</a><a class="btn btn-ghost" href="/#contact">Send a message</a></div>
@@ -193,7 +193,7 @@ nav.site a[aria-current="page"]{color:#fff}
       <li><a href="/fernando/">About</a></li>
       <li><a href="/pr/" hreflang="es" lang="es">Español · Puerto Rico</a></li>
       <li><a href="https://www.linkedin.com/in/fernando-jorge" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="mailto:fernando.jorge@arestechnical.com">Email</a></li>
+      <li><a href="mailto:info@arestechnical.com">Email</a></li>
     </ul>
   </div>
 </footer>
@@ -263,9 +263,9 @@ nav.site a[aria-current="page"]{color:#fff}
           if(res.ok){form.hidden=true; ok.hidden=false; ok.focus(); form.reset(); return}
           var errs=(res.d&&res.d.errors)||[], shown=false;
           errs.forEach(function(x){ if(x.field&&document.getElementById("e-"+x.field)){setErr(x.field,x.message);shown=true} });
-          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your message. Please try again, or email fernando.jorge@arestechnical.com.");
+          formErr.textContent=shown?"Please fix the highlighted fields.":((errs[0]&&errs[0].message)||"Something went wrong sending your message. Please try again, or email info@arestechnical.com.");
         })
-        .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email fernando.jorge@arestechnical.com."})
+        .catch(function(){formErr.textContent="Couldn’t reach the form service. Check your connection and try again, or email info@arestechnical.com."})
         .then(function(){btn.disabled=false; btn.innerHTML=btnHTML});
     });
   }
